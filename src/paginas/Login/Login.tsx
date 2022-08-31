@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box } from '@mui/material';
 import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import React from 'react';
