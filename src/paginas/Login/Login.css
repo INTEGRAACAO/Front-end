@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.bg-login {
+    width: 100vw;
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #ADDDF7;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card {
+    width: 340px;
+    height: 50vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 24px;
+    background: linear-gradient(0deg, rgba(173,206,224,1) 0%, rgba(101,193,244,1) 100%);
+}
+
+.card-title {
+    font-weight: bold!important;
+    color:#305F78;
+}
+
+form {
+    width: 270px;
+}
+
+label {
+    color: #ffffff!important;
+    font-weight: bold!important;
+}
+
+input {
+    color: #42545E!important;
+}
+
+.form-input {
+    width: 100%;
+}
+
+.form-btn {
+    background-color: #305F78!important;
+    color: #ffffff!important;
+}
+
+.MuiInput-underline:before {
+    border-bottom: 1px solid #4894d8!important;
+}
+
+.MuiInput-underline:after {
+    border-bottom: 1px solid #444f52!important;
+}
+
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.criarConta {
+    color: #4487AB;
+    font-family: montserrat;
+    align-items: center;
+}
