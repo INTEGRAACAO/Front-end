@@ -1,0 +1,48 @@
+.container {
+    direction: row;
+    background-color: #ADDDF7;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    align-items: center;
+    background-color: #ADDDF7;
+}
+
+.botao {
+    border-color: #42545E !important;
+    background-color: #305f78 !important;
+    color: #ADDDF7 !important;
+}
+
+.botao:hover {
+    background-color: #082839 !important;
+    color: #daf0fc !important;
+}
+
+.img {
+    width: 500px;
+    height: 500px;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    color: #42545E;
+    text-align: center;
+    font-weight: bold;
+}
+
+.about {
+    color: #7899AB;
+    text-align: center;
+}
+.logo{
+    color: aliceblue;
+    font-size: 3rem!important;
+    text-align: center;
+}
