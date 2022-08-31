@@ -1,0 +1,37 @@
+.containerHome{
+    direction: row;
+    background-color: #ADDDF7;
+    justify-content: center;
+    align-items: center;
+}
+
+.gridHome{
+    align-items: center; 
+    background-color: #ADDDF7;
+}
+
+.botaoHome{
+    border-color:#42545E!important ;
+    background-color: #305f78!important;
+    color: #ADDDF7!important;
+}
+.botaoHome:hover{
+    background-color: #082839!important;
+    color: #daf0fc!important;
+}
+
+.imgHome{
+    width: 500px;
+    height: 500px;
+}
+
+.boxHome{
+    display: flex;
+    justify-content: center;
+  }
+.textHome{
+    color: #42545E;
+    text-align: center;
+    font-weight: bold;
+  }
+  

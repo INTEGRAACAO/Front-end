@@ -4,6 +4,7 @@ import './App.css';
 import Login from './paginas/Login/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import './App.css';
+import Home from'./paginas/Home/Home';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Routes> // Antigo Switch
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home/>}/>
           
         
         </Routes>
