@@ -1,8 +1,17 @@
 .container {
     display: flex;
-    justify-content: center;
+    justify-content:  space-around;
     align-items: center;
     height: 80vh;
+}
+
+.hello{
+    color: #305F78!important;
+    font-weight: bold!important;
+    font-family: montserrat;
+    align-items: center;
+    justify-content: center!important;
+    font-size: 3rem!important;
 }
 
 .bg-login {
@@ -20,8 +29,8 @@
 }
 
 .card {
-    width: 340px;
-    height: 50vh;
+    width: 400px;
+    height: 60vh;
 
     display: flex;
     flex-direction: column;
