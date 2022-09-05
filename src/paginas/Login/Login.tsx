@@ -41,7 +41,7 @@ function Login() {
   async function onSubmit(e: ChangeEvent<HTMLFormElement>){
     e.preventDefault();
     try{
-      await login('/usuarios/logar', userLogin, setToken)
+      await login('/usuario/logar', userLogin, setToken)
 
       alert('Usuário logado com sucesso!')
     }catch (error){
@@ -63,19 +63,19 @@ function Login() {
                             Login
                         </Typography>
 
-                        <form>
+                        <form onSubmit={onSubmit}>
                             <Box marginY={4}>
-                                <TextField className='form-input' id="standard-basic" type="email" label="Email" required />
+                                <TextField value={userLogin.apelido} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="standard-basic" type="text" label="Usuário" name="apelido" required />
                             </Box>
 
                             <Box marginY={4}>
-                                <TextField className='form-input' id="standard-basic" type="password" label="Senha" required />
+                                <TextField value={userLogin.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="standard-basic" type="password" label="Senha" name="senha"required />
                             </Box>
-                            <Link to='/home' className='text-decoration-none'>
+                            
                                 <Button className="form-btn" variant="contained" type='submit'>
                                     Acessar
                                 </Button>
-                            </Link>
+                            
 
                         </form>
                         <Box display='flex' justifyContent='center' marginTop={2} className='criarConta'>
