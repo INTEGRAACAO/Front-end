@@ -24,7 +24,6 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/contato" element={<Contato/>}/>
           
-        
         </Routes>
       </div>
 
