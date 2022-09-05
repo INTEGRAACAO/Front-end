@@ -8,6 +8,7 @@ import Home from'./paginas/Home/Home';
 import Navbar from './components/static/navbar/Navbar';
 import Footer from './components/static/footer/Footer';
 import Contato from './paginas/contato/Contato';
+import CadastroUsuario from './paginas/CadastroUsuario/CadastroUsuario';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home/>}/>
           <Route path="/contato" element={<Contato/>}/>
+          <Route path='/cadastroUsuario' element={<CadastroUsuario/>}/>
           
         </Routes>
       </div>

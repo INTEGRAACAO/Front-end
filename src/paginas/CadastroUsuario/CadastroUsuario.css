@@ -9,8 +9,15 @@
 
 .texto2 {
   font-weight: bold !important;
+  color: black;
 }
 
 .btnCancelar {
   margin-right: 20px !important;
+}
+
+
+
+label{
+  color: #000000 !important;
 }
