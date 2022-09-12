@@ -4,7 +4,7 @@ interface UserLogin {
     apelido:string;
     linkFoto: string;
     senha: string;
-    token?: string | null;
+    token: string;
     email: string;
 }
 

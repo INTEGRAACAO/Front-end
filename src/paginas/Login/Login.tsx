@@ -3,14 +3,16 @@ import { Button, Grid, TextField, Typography } from '@material-ui/core';
 import { Link, useNavigate } from 'react-router-dom';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
-import useLocalStorage from 'react-use-localstorage';
 import React, {ChangeEvent, useState, useEffect} from 'react';
+import { useDispatch } from 'react-redux';
+import { addToken, addId } from "../../store/user/action";
 
 import './Login.css'
 
 function Login() {
     let history = useNavigate();
-  const [token, setToken] = useLocalStorage('token');
+    const dispatch = useDispatch();
+    const [token, setToken] = useState('');
 
   const [userLogin, setUserLogin] = useState<UserLogin>(
     {
@@ -24,6 +26,16 @@ function Login() {
     }
   )
 
+  const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
+    id: 0,
+      nome: '',
+      apelido: '',
+      linkFoto: '',
+      senha: '',
+      token: '',
+      email: ''
+})
+
   function updatedModel(e: ChangeEvent<HTMLInputElement>){
     setUserLogin({
       ...userLogin,
@@ -32,16 +44,23 @@ function Login() {
   }
 
   useEffect(() => {
-    if(token != '') {
-      history('/home')
+    if(respUserLogin.token !== ""){
+
+        // Verifica os dados pelo console (Opcional)
+        console.log("Token: " + respUserLogin.token)
+        console.log("ID: " + respUserLogin.id)
+
+        // Guarda as informações dentro do Redux (Store)
+        dispatch(addToken(respUserLogin.token)) 
+        dispatch(addId(respUserLogin.id.toString()))    // Faz uma conversão de Number para String
+        history('/home')
     }
-  }, [token]
-  )
+}, [respUserLogin.token])
   
   async function onSubmit(e: ChangeEvent<HTMLFormElement>){
     e.preventDefault();
     try{
-      await login('/usuario/logar', userLogin, setToken)
+      await login('/usuario/logar', userLogin, setRespUserLogin)
 
       alert('Usuário logado com sucesso!')
     }catch (error){

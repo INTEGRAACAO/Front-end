@@ -2,10 +2,9 @@ import React, { useEffect, useState } from 'react'
 import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/core"
 import { Box } from '@mui/material'
 import './DeletarProjetos.css';
-import Projetos from '../../../models/Projetos';
+import Projeto from '../../../models/Projeto';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
@@ -15,7 +14,7 @@ function DeletarProjetos() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
     );
-    const [post, setPosts] = useState<Projetos>()
+    const [post, setPosts] = useState<Projeto>()
 
     useEffect(() => {
         if(token == "") {
@@ -62,7 +61,7 @@ function DeletarProjetos() {
                 Deseja deletar o Projeto:
               </Typography>
               <Typography color="textSecondary" >
-              {post?.titulo}
+              {post?.nome}
               </Typography>
             </Box>
 

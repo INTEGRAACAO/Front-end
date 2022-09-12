@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+.bg-menu{
+    background:radial-gradient(circle, #eeaeca 0%, rgba(148,187,233,1) 100%);
+}
+
+.container{
+    display: flex;
+    justify-content: space-between;
+   height: 5vh;
+}
+
+.title{
+    font-weight: bold!important;
+    font-family: 'Nunito', sans-serif!important;
+}
+
+.cursor{
+    cursor: pointer;
+    color: white;
+
+}
+
+.text-decoration-none{
+    text-decoration: none;
+    color: white;
+ 
+}
+.MuiTypography-body1 {
+    font-size: 1.1rem;
+    font-family: 'Nunito', sans-serif!important;
+    line-height: 1.5;
+    letter-spacing: 0.00938em;
+    font-weight: bold!important;
+}
+.botaoNav{
+    background-color: #fff9fc2b!important;
+    border-radius: 10px;
+    border: 1px solid azure;
+    padding: 0.3rem;
+   
+}
+
+.botaoNav:hover{
+    color: #df146c;
+    background-color: rgba(247, 251, 251, 0.821)!important;
+    font-weight: bold!important;
+    transform: scale(1.1);
+    transition: all 0.4s;
+}
+
+.botoes{
+    display:flex;
+    justify-content:flex-end;
+    align-items: center;
+}

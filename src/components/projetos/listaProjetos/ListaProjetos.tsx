@@ -2,16 +2,14 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from "@material-ui/core";
 import { Box } from '@mui/material'
-import useLocalStorage from 'react-use-localstorage';
 import { busca } from '../../../services/Service'
-import Projetos from '../../../models/Projetos';
-import {Navigate} from 'react-router-dom';
+import Projeto from '../../../models/Projeto';
 import './ListaProjetos.css';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function ListaProjetos() {
-  const [posts, setPosts] = useState<Projetos[]>([])
+  const [posts, setPosts] = useState<Projeto[]>([])
   let navigate  = useNavigate();
   const token = useSelector<TokenState, TokenState["tokens"]>(
     (state) => state.tokens
@@ -50,13 +48,19 @@ function ListaProjetos() {
                   Projetos
                 </Typography>
                 <Typography variant="h5" component="h2">
-                  {post.titulo}
+                  {post.nome}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {post.apoios}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {post.texto}
+                  {post.linkImagem}
                 </Typography>
                 <Typography variant="body2" component="p">
-                  {post.tema?.descricao}
+                  {post.descricao}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {post.usuario?.nome}
                 </Typography>
               </CardContent>
               <CardActions>

@@ -1,4 +1,5 @@
 import User from './User';
+import Comentario from './Comentario';
 
 interface Projeto {
     id: number;
@@ -7,8 +8,8 @@ interface Projeto {
     linkImagem: string;
     descricao: string;
     data: string;
-    user?: User | null;
-    //comentario?: Comentario | null
+    usuario?: User | null;
+    comentario?: Comentario | null
 }
 
 export default Projeto

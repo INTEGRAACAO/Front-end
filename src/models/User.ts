@@ -1,6 +1,6 @@
 
 interface User{
-  id: 0;
+  id: number;
   nome:string;
   email: string;
   apelido:string;  
@@ -8,7 +8,7 @@ interface User{
   linkFoto: string;
   bio:string;
   tipoAcesso:string;
-  dataNascimento:''
+  dataNascimento:string;
   }
   
   export default User;
