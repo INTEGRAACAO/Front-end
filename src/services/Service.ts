@@ -14,3 +14,7 @@ export const login = async(url:any, dados: any, setDados: any) => {
     const resposta = await api.post(url, dados)
     setDados(resposta.data.token)
 }
+
+export const deleteId = async(url:any, header:any) => {
+    await api.delete(url,header)
+}
