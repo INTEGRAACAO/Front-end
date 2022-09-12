@@ -24,6 +24,7 @@ function App() {
           <Route path="/contato" element={<Contato/>}/>
           <Route path='/cadastroUsuario' element={<CadastroUsuario/>}/>
           <Route path='/projetos' element={<CadastroProjeto/>}/>
+          <Route path='/projetos/:id' element={<CadastroProjeto/>}/>
           
         </Routes>
       </div>
