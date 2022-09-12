@@ -32,7 +32,7 @@ function Navbar() {
       <Toolbar className='container' variant="dense">
           <Box className='cursor' >
               <Typography variant="h5" className='title'>
-                  PI
+                  INTEGRAÇÃO
               </Typography>
           </Box>
 
@@ -47,28 +47,14 @@ function Navbar() {
               <Link to='/projetos' className='text-decoration-none'>
                   <Box mx={1} className='cursor, botaoNav'>
                       <Typography >
-                          Postagens
-                      </Typography>
-                  </Box>
-              </Link>
-              <Link to='/temas' className='text-decoration-none'>
-                  <Box mx={1} className='cursor, botaoNav'>
-                      <Typography  >
-                          Temas
-                      </Typography>
-                  </Box>
-              </Link>
-              <Link to='/formularioTema' className='text-decoration-none'>
-                  <Box mx={1} className='cursor, botaoNav'>
-                      <Typography >
-                          Novo Tema
+                          Projetos
                       </Typography>
                   </Box>
               </Link>
               <Link to='/formularioProjetos' className='text-decoration-none'>
                   <Box mx={1} className='cursor, botaoNav'>
                       <Typography >
-                          Nova Postagem
+                         Novo Projeto
                       </Typography>
                   </Box>
               </Link>

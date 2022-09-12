@@ -1,6 +1,6 @@
 .container {
     display: flex;
-    justify-content:  space-around;
+    justify-content: space-between;
     align-items: center;
     height: 80vh;
 }
@@ -46,11 +46,11 @@
     color:#305F78;
 }
 
-form {
+.form {
     width: 270px;
 }
 
-label {
+.label {
     color: #ffffff!important;
     font-weight: bold!important;
 }

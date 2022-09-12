@@ -137,7 +137,7 @@ console.log(userId);
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-        <TextField className = "input" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
+        <TextField className = "input-projeto" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
         <TextField value={projeto.apoios} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="apoios" label="apoios" variant="outlined" name="apoios" margin="normal" fullWidth />
         <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="linkImagem" variant="outlined" name="linkImagem" margin="normal" fullWidth />
         <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
