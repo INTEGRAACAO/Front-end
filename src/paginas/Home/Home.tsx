@@ -2,6 +2,7 @@ import React from 'react';
 import {Typography, Grid, Button} from '@material-ui/core';
 import { Box } from '@mui/material'
 import './Home.css';
+import ModalProjeto from '../../components/projetos/modalProjeto/ModalProjeto';
 
 function Home() {
     return (
@@ -14,6 +15,7 @@ function Home() {
                     </Box>
                     <Box className='boxHome'>
                         <Box marginRight={1}>
+                        <ModalProjeto />
                         </Box>
                         <Button className='botaoHome' variant="outlined">Ver Postagens</Button>
                     </Box>

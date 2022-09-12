@@ -1,7 +1,7 @@
 import React, {useState, useEffect, ChangeEvent} from 'react'
 import { Container, Typography, TextField, Button } from "@material-ui/core"
 import {useNavigate, useParams } from 'react-router-dom'
-import './CadastroTema.css';
+import './CadastroProjeto.css';
 import useLocalStorage from 'react-use-localstorage';
 import { buscaId, post, put } from '../../../services/Service';
 import Projeto from '../../../models/Projeto';
@@ -13,9 +13,11 @@ function CadastroProjeto() {
   const [token, setToken] = useLocalStorage('token');
   const [projeto, setProjeto] = useState<Projeto>({
     id: 0,
+    apoios: '',
     nome: '',
     linkImagem: '',
     descricao: '',
+    data: '',
     user: null
   })
 
