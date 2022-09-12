@@ -1,14 +1,12 @@
-
-import React from 'react';
 import './App.css';
-import Login from './paginas/Login/Login';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import './App.css';
-import Home from'./paginas/Home/Home';
-import Navbar from './components/static/navbar/Navbar';
-import Footer from './components/static/footer/Footer';
-import Contato from './paginas/contato/Contato';
+import CadastroProjeto from './components/projetos/CadastroProjeto/CadastroProjeto';
 import CadastroUsuario from './paginas/CadastroUsuario/CadastroUsuario';
+import Contato from './paginas/contato/Contato';
+import Footer from './components/static/footer/Footer';
+import Home from'./paginas/Home/Home';
+import Login from './paginas/Login/Login';
+import Navbar from './components/static/navbar/Navbar';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
@@ -25,6 +23,7 @@ function App() {
           <Route path="/home" element={<Home/>}/>
           <Route path="/contato" element={<Contato/>}/>
           <Route path='/cadastroUsuario' element={<CadastroUsuario/>}/>
+          <Route path='/projetos' element={<CadastroProjeto/>}/>
           
         </Routes>
       </div>
