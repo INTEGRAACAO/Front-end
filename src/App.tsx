@@ -36,7 +36,8 @@ function App() {
           <Route path='/deletarProjetos/:id' element={<DeletarProjetos/>}/>
           <Route path='/temas' element={<ListaTema/>}/>
           <Route path='/formularioTemas' element={<CadastroTema/>}/>
-          <Route path='/temas/:id' element={<DeletarTema/>}/>
+          <Route path='/formularioTemas/:id' element={<CadastroTema/>}/>
+          <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
           
         </Routes>
       </div>

@@ -64,14 +64,14 @@ function ListaTema() {
             <CardActions>
               <Box display="flex" justifyContent="center" mb={1.5} >
   
-                <Link to={`/formularioTema/${temas.id}`} className="text-decorator-none">
+                <Link to={`/formularioTemas/${temas.id}`} className="text-decorator-none">
                   <Box mx={1}>
                     <Button variant="contained" className="marginLeft" size='small' color="primary" >
                       atualizar
                     </Button>
                   </Box>
                 </Link>
-                <Link to={`/deletarTema/${temas.id}`} className="text-decorator-none">
+                <Link to={`/deletarTemas/${temas.id}`} className="text-decorator-none">
                   <Box mx={1}>
                     <Button variant="contained" size='small' color="secondary">
                       deletar
