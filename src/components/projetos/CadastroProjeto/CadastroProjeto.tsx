@@ -8,6 +8,7 @@ import Projeto from '../../../models/Projeto';
 import { UserState } from '../../../store/user/userReducer';
 import User from '../../../models/User';
 import Temas from '../../../models/Tema';
+import {toast} from 'react-toastify'
 
 
 function CadastroProjeto() {
@@ -58,7 +59,16 @@ function CadastroProjeto() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      toast.error('Você precisa estar logado', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    });
       navigate("/login")
   
     }
@@ -100,11 +110,28 @@ function CadastroProjeto() {
                   }
               })
 
-              alert('Postagem atualizada com sucesso');
+              toast.success('Postagem atualizada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
 
           } catch (error) {
-              console.log(`Error: ${error}`)
-              alert('Ops, algo deu errado tente novamente.')
+              toast.error('Ops, algo deu errado tente novamente.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
           }
 
       } else {
@@ -117,11 +144,29 @@ function CadastroProjeto() {
                   }
               })
 
-              alert('Postagem cadastrada com sucesso');
+              toast.success('Postagem cadastrada com sucesso', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
 
           } catch (error) {
-              console.log("Error: " + error)
-              alert('Ops, algo deu errado tente novamente.')
+
+              toast.error('Ops, algo deu errado tente novamente.', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
           }
 
       }
