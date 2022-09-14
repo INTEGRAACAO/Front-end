@@ -7,7 +7,7 @@ import { buscaId, post, put } from '../../../services/Service';
 import Projeto from '../../../models/Projeto';
 import { UserState } from '../../../store/user/userReducer';
 import User from '../../../models/User';
-import Comentario from '../../../models/Comentario';
+import Tema from '../../../models/Tema';
 
 
 function CadastroProjeto() {
@@ -49,10 +49,10 @@ console.log(userId);
       dataNascimento:'',
     })
 
-    const [comentario, setComentario] =useState<Comentario> (
+    const [comentario, setComentario] =useState<Tema> (
       {
         id: 1,
-        comentario: ''
+        tema: ''
       }
     )
 
