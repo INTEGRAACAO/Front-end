@@ -9,7 +9,7 @@ import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
 function DeletarProjetos() {
-  let navigate = useNavigate();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
@@ -34,7 +34,7 @@ function DeletarProjetos() {
             headers: {
               'Authorization': token
             }
-          })
+        })
     }
 
     function sim() {
