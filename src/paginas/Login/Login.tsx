@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
 import React, {ChangeEvent, useState, useEffect} from 'react';
-import { useDispatch } from 'react-redux';
+import {useDispatch} from 'react-redux';
 import { addToken, addId } from "../../store/user/action";
 
 import './Login.css'
