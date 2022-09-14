@@ -1,5 +1,5 @@
 import User from './User';
-import Comentario from './Comentario';
+import Tema from './Tema';
 
 interface Projeto {
     id: number;
@@ -9,7 +9,7 @@ interface Projeto {
     descricao: string;
     data: string;
     usuario?: User | null;
-    comentario?: Comentario | null
+    tema?: Tema | null;
 }
 
 export default Projeto
