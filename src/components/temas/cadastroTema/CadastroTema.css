@@ -1,0 +1,18 @@
+label{
+    color: blue!important;
+}
+
+.input-projeto{
+    color: black!important;
+}
+
+.MuiInputBase-input{
+    color: black!important;
+}
+
+.topo {
+    display: flex;
+    margin-top: 20px;
+}
+
+
