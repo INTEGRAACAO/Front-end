@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react'
 import {Typography, Grid, Button} from '@material-ui/core';
 import { Box } from '@mui/material'
 import './Home.css';
 import ModalProjeto from '../../components/projetos/modalProjeto/ModalProjeto';
+import { TokenState } from '../../store/tokens/tokensReducer';
+import { useSelector } from 'react-redux';
+import { useNavigate, useParams } from 'react-router-dom';
 
 function Home() {
+    let navigate = useNavigate();
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+      (state) => state.tokens
+    );
+    useEffect(() => {
+        if(token == "") {
+            alert("Você precisa estar logado!")
+            navigate("/login")
+        }
+    }, [token])
+
     return (
         <>
             <Grid container direction="row" className='containerHome'>
