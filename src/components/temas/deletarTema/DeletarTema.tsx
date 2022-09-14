@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/core"
 import { Box } from '@mui/material'
-import './DeletarProjetos.css';
-import Projeto from '../../../models/Projeto';
+import './DeletarTema.css';
+import Tema from '../../../models/Tema';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
 
-function DeletarProjetos() {
+function DeletarTema() {
   let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
     );
-    const [post, setPosts] = useState<Projeto>()
+    const [tema, setTemas] = useState<Tema>()
 
     useEffect(() => {
         if(token == "") {
@@ -30,7 +30,7 @@ function DeletarProjetos() {
     }, [id])
 
     async function findById(id: string) {
-        buscaId(`/projetos/${id}`, setPosts, {
+        buscaId(`/temas/${id}`, setTemas, {
             headers: {
               'Authorization': token
             }
@@ -38,17 +38,17 @@ function DeletarProjetos() {
     }
 
     function sim() {
-      navigate('/projetos')
-      deleteId(`/projetos/${id}`, {
+      navigate('/temas')
+      deleteId(`/temas/${id}`, {
         headers: {
           'Authorization': token
         }
       });
-      alert('Projeto deletado com sucesso!');
+      alert('tema deletado com sucesso!');
     }
   
     function nao() {
-      navigate('/posts')
+      navigate('/temas')
     }
    
   return (
@@ -58,10 +58,10 @@ function DeletarProjetos() {
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar o Projeto:
+                Deseja deletar o Tema:
               </Typography>
               <Typography color="textSecondary" >
-              {post?.nome}
+              {tema?.tema}
               </Typography>
             </Box>
 
@@ -85,4 +85,4 @@ function DeletarProjetos() {
     </>
   );
 }
-export default DeletarProjetos;
+export default DeletarTema;
