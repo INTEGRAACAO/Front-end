@@ -4,9 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 import { buscaId, post, put } from '../../../services/Service';
 import { UserState } from '../../../store/user/userReducer';
-
-import Tema from '../../../models/Tema';
-
+import Projeto from '../../../models/Projeto'
+import Temas from '../../../models/Tema';
 import './CadastroTema.css';
 
 function CadastroTema() {
@@ -17,9 +16,21 @@ function CadastroTema() {
     (state) => state.tokens
   );
 
-  const [tema, setTema] = useState<Tema>({
+  const [projeto, setProjeto] = useState<Projeto>({
     id: 0,
-    tema: '',
+    apoios: '',
+    nome: '',
+    linkImagem: '',
+    descricao: '',
+    data: '',
+    usuario: null,
+    temas: null
+  })
+
+  const [temas, setTema] = useState<Temas>({
+    id: 0,
+    temas: '',
+    projeto: null
   })
 
   useEffect(() => {
@@ -45,8 +56,9 @@ function CadastroTema() {
 
   function updatedTema(e: ChangeEvent<HTMLInputElement>) {
     setTema({
-      ...tema,
-      [e.target.name]: e.target.value,
+      ...temas,
+      [e.target.name]: e.target.value
+    
     })
 
   }
@@ -57,7 +69,7 @@ function CadastroTema() {
       if (id !== undefined) {
 
         try {
-            await put(`/temas`, tema, setTema, {
+            await put(`/temas`, temas, setTema, {
                 headers: {
                     'Authorization': token
                 }
@@ -72,8 +84,8 @@ function CadastroTema() {
 
     } else {
         try {
-          console.log(tema)
-          await post(`/temas`, tema, setTema, {
+          console.log(temas)
+          await post(`/temas`, temas, setTema, {
               headers: {
                   'Authorization': token
               }
@@ -96,7 +108,7 @@ function CadastroTema() {
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-        <TextField value={tema.tema} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="tema" variant="outlined" name="tema" margin="normal" fullWidth />
+        <TextField value={temas.temas} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="tema" variant="outlined" name="temas" margin="normal" fullWidth />
         <Button type="submit" variant="contained" color="primary">
           Finalizar
         </Button>

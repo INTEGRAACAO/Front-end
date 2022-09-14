@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/core"
 import { Box } from '@mui/material'
 import './DeletarTema.css';
-import Tema from '../../../models/Tema';
+import Temas from '../../../models/Tema';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -14,7 +14,7 @@ function DeletarTema() {
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
     );
-    const [tema, setTemas] = useState<Tema>()
+    const [temas, setTemas] = useState<Temas>()
 
     useEffect(() => {
         if(token == "") {
@@ -61,7 +61,7 @@ function DeletarTema() {
                 Deseja deletar o Tema:
               </Typography>
               <Typography color="textSecondary" >
-              {tema?.tema}
+              {temas?.temas}
               </Typography>
             </Box>
 
