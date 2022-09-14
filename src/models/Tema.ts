@@ -1,7 +1,9 @@
-interface Tema {
+import Projeto from './Projeto';
+interface Temas {
     id: number;
-    tema: string;
+    temas: string;
+    projeto?: Projeto|null;
 }
 
-export default Tema;
+export default Temas;
 

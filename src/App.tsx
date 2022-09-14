@@ -11,6 +11,9 @@ import ListaProjetos from './components/projetos/listaProjetos/ListaProjetos';
 import DeletarProjetos from './components/projetos/deletarPostagem/DeletarProjetos';
 import { Provider } from 'react-redux';
 import store from './store/store';
+import CadastroTema from './components/temas/cadastroTema/CadastroTema';
+import DeletarTema from './components/temas/deletarTema/DeletarTema';
+import ListaTema from './components/temas/listaTema/ListaTema';
 
 function App() {
 
@@ -31,6 +34,10 @@ function App() {
           <Route path='/formularioProjetos/:id' element={<CadastroProjeto/>}/>
           <Route path='/projetos' element={<ListaProjetos/>}/>
           <Route path='/deletarProjetos/:id' element={<DeletarProjetos/>}/>
+          <Route path='/temas' element={<ListaTema/>}/>
+          <Route path='/formularioTemas' element={<CadastroTema/>}/>
+          <Route path='/formularioTemas/:id' element={<CadastroTema/>}/>
+          <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
           
         </Routes>
       </div>
