@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React, { useEffect, useState } from 'react'
 import {Typography, Grid, Button} from '@material-ui/core';
 import { Box } from '@mui/material'
 import './Home.css';
@@ -32,6 +32,7 @@ function Home() {
   
       }
   }, [token])
+
     return (
         <>
             <Grid container direction="row" className='containerHome'>

@@ -13,7 +13,6 @@ import './Login.css'
 function Login() {
     let history = useNavigate();
     const dispatch = useDispatch();
-    const [token, setToken] = useState('');
 
   const [userLogin, setUserLogin] = useState<UserLogin>(
     {

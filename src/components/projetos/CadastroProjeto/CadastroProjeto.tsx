@@ -17,14 +17,14 @@ function CadastroProjeto() {
   
   const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
-);
+  );
 
-// Pega o ID guardado no Store
-const userId = useSelector<UserState, UserState["id"]>(
-  (state) => state.id
-);
+  // Pega o ID guardado no Store
+  const userId = useSelector<UserState, UserState["id"]>(
+    (state) => state.id
+  );
 
-console.log(userId);
+  //console.log(userId);
 
   const [projeto, setProjeto] = useState<Projeto>({
     id: 0,
@@ -50,12 +50,12 @@ console.log(userId);
       dataNascimento:'',
     })
 
-    const [temas, setTema] =useState<Temas> (
-      {
-        id: 1,
-        temas: ''
-      }
-    )
+  const [temas, setTema] =useState<Temas> (
+    {
+      id: 1,
+      temas: ''
+    }
+  )
 
   useEffect(() => {
     if (token == "") {
