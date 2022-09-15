@@ -1,14 +1,14 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
-import { Link } from 'react-router-dom'
-import Projeto from '../../../models/Projeto'
-import Comentarios from '../comentarios/Comentarios'
+import { Link } from 'react-router-dom';
+import Projeto from '../../../models/Projeto';
+import comentarios from '../comentarios/comentarios';
 
 interface PostsProps {
-    post: Projeto
+    projeto: Projeto
 }
 
-function Posts({ post }: PostsProps) {
+function Projeto ({ projeto }: PostsProps) {
 
     const [comments, setComments] = useState([
         'Post muito bacana, hein?! 👏👏'
@@ -36,15 +36,15 @@ function Posts({ post }: PostsProps) {
                     </Typography>
 
                     <Typography variant="h5" component="h2">
-                        {post.titulo}
+                        {Projeto.nome}
                     </Typography>
 
                     <Typography variant="body2" component="p">
-                        {post.texto}
+                        {Projeto.descricao}
                     </Typography>
 
                     <Typography variant="body2" component="p">
-                        {post.tema?.descricao}
+                        {Projeto.temas?.temas}
                     </Typography> 
 
                 </CardContent>
@@ -52,7 +52,7 @@ function Posts({ post }: PostsProps) {
                 <CardActions>
                     <Box display="flex" justifyContent="center" mb={1.5}>
 
-                        <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
+                        <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
                             <Box mx={1}>
                                 <Button variant="contained" className="marginLeft" size='small' color="primary" >
                                     Atualizar
@@ -60,7 +60,7 @@ function Posts({ post }: PostsProps) {
                             </Box>
                         </Link>
 
-                        <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
+                        <Link to={`/deletarProjetos/${projeto.id}`} className="text-decorator-none">
                             <Box mx={1}>
                                 <Button variant="contained" size='small' color="secondary">
                                     Deletar
@@ -88,7 +88,7 @@ function Posts({ post }: PostsProps) {
                 <div>
                     {comments.map(comment => {
                         return (
-                            <Comentarios conteudo={comment} />
+                            <comentarios conteudo={comment} />
                         )
                     })}
                 </div>
@@ -98,4 +98,4 @@ function Posts({ post }: PostsProps) {
     )
 }
 
-export default Posts
+export default Projeto
