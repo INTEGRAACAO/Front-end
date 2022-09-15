@@ -1,18 +1,18 @@
 import { Box } from '@mui/material';
-import { Button, Grid, TextField, Typography } from '@material-ui/core';
+import { Button, Grid, TextField, Typography } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import UserLogin from '../../models/UserLogin';
 import { login } from '../../services/Service';
-import React, {ChangeEvent, useState, useEffect} from 'react';
+import React, { ChangeEvent, useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { addToken, addId } from "../../store/user/action";
-import {toast} from 'react-toastify';
+import { toast } from 'react-toastify';
 
 import './Login.css'
 
 function Login() {
-    let history = useNavigate();
-    const dispatch = useDispatch();
+  let history = useNavigate();
+  const dispatch = useDispatch();
 
   const [userLogin, setUserLogin] = useState<UserLogin>(
     {
@@ -28,15 +28,15 @@ function Login() {
 
   const [respUserLogin, setRespUserLogin] = useState<UserLogin>({
     id: 0,
-      nome: '',
-      apelido: '',
-      linkFoto: '',
-      senha: '',
-      token: '',
-      email: ''
-})
+    nome: '',
+    apelido: '',
+    linkFoto: '',
+    senha: '',
+    token: '',
+    email: ''
+  })
 
-  function updatedModel(e: ChangeEvent<HTMLInputElement>){
+  function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUserLogin({
       ...userLogin,
       [e.target.name]: e.target.value
@@ -44,17 +44,17 @@ function Login() {
   }
 
   useEffect(() => {
-    if(respUserLogin.token !== ""){
-        
-        dispatch(addToken(respUserLogin.token)) 
-        dispatch(addId(respUserLogin.id.toString()))   
-        history('/home')
+    if (respUserLogin.token !== "") {
+
+      dispatch(addToken(respUserLogin.token))
+      dispatch(addId(respUserLogin.id.toString()))
+      history('/home')
     }
-}, [respUserLogin.token])
-  
-  async function onSubmit(e: ChangeEvent<HTMLFormElement>){
+  }, [respUserLogin.token])
+
+  async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
     e.preventDefault();
-    try{
+    try {
       await login('/usuario/logar', userLogin, setRespUserLogin)
 
       toast.success('Usuário logado com sucesso!', {
@@ -66,9 +66,9 @@ function Login() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
-    }catch (error){
-    
+      });
+    } catch (error) {
+
       toast.error('Dados do usuário inconsistentes. Erro ao logar!', {
         position: "top-right",
         autoClose: 2000,
@@ -78,55 +78,57 @@ function Login() {
         draggable: false,
         theme: "colored",
         progress: undefined,
-    });
+      });
     }
-    
+
   }
 
-    return (
-        <Grid container className="bg-login">
-            <Grid item xs={12} sm={12}>
-                <Box className='container'>
-                    <Box>
-                        <Typography variant='subtitle1' gutterBottom className='hello'>Olá, Bem-Vinde!</Typography>
-                        <Typography variant='subtitle1' gutterBottom className='hello'>INTEGRAÇÃO</Typography>
-                    </Box>
-                    <Box className="card">
-                        <Typography className='card-title' variant="h4" align="center">
-                            Login
-                        </Typography>
+  return (
+    <Grid container className='container-login'  direction='row' justifyContent='center' alignItems='center'>
+      <Grid item xs={12} sm={6}>
+      <Box>
+            <Typography variant='subtitle1' gutterBottom className='image-login'></Typography>
+            <Typography variant='subtitle1' gutterBottom ></Typography>
+          </Box>
+      </Grid>
 
-                        <form onSubmit={onSubmit}>
-                            <Box marginY={4}>
-                                <TextField value={userLogin.apelido} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="standard-basic" type="text" label="Usuário" name="apelido" required />
-                            </Box>
+      <Grid item xs={12} sm={6} className="fundo-login">
+          
+          <Box className="card-login">
+            <Typography className='card-title-login' variant="h4" align="center">
+              Login
+            </Typography>
 
-                            <Box marginY={4}>
-                                <TextField value={userLogin.senha} onChange={(e:ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input' id="standard-basic" type="password" label="Senha" name="senha"required />
-                            </Box>
-                            
-                                <Button className="form-btn" variant="contained" type='submit'>
-                                    Acessar
-                                </Button>
-                            
+            <form onSubmit={onSubmit}>
+              <Box marginY={4}>
+                <TextField value={userLogin.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input-login' id="standard-basic" type="text" label="Usuário" name="apelido" required />
+              </Box>
 
-                        </form>
-                        <Box display='flex' justifyContent='center' marginTop={2} className='criarConta'>
-                            <Box marginRight={1}>
-                                <Typography variant='subtitle1' gutterBottom>Não tem uma conta?</Typography>
-                            </Box>
-                            <Link to='/cadastroUsuario' className='text-decoration-none'>
-                            <Typography variant='subtitle1' gutterBottom align='center' style=
-                                {{ fontWeight: 'bold', cursor: "pointer" }}>Cadastre-se</Typography>
-                            </Link>
-                        </Box>
+              <Box marginY={4}>
+                <TextField value={userLogin.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} className='form-input-login' id="standard-basic" type="password" label="Senha" name="senha" required />
+              </Box>
 
-                    </Box>
-                </Box>
+              <Button className="form-btn-login" variant="contained" type='submit'>
+                Acessar
+              </Button>
 
-            </Grid>
-        </Grid>
-    )
+
+            </form>
+            <Box display='flex' justifyContent='center' marginTop={2} className='criarConta-login'>
+              <Box marginRight={1}>
+                <Typography variant='subtitle1' gutterBottom>Não tem uma conta?</Typography>
+              </Box>
+              <Link to='/cadastroUsuario' className='text-decoration-none-login'>
+                <Typography variant='subtitle1' gutterBottom align='center' style=
+                  {{ fontWeight: 'bold', cursor: "pointer" }}>Cadastre-se</Typography>
+              </Link>
+            </Box>
+
+          </Box>
+
+      </Grid>
+    </Grid>
+  )
 }
 
 export default Login
