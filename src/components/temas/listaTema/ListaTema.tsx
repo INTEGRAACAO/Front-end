@@ -8,6 +8,7 @@ import './ListaTema.css';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import ModalTema from '../modalTemas/ModalTema';
 //import { toast } from 'react-toastify';
 //
 
@@ -49,6 +50,9 @@ function ListaTema() {
 
     return (
       <>
+      <Box>
+        <ModalTema />
+      </Box>
       { 
         temas.map(temas => (
         <Box m={2} >
