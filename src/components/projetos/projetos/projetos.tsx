@@ -1,5 +1,6 @@
 import React, { ChangeEvent, FormEvent, useState } from 'react'
-import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
+import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import Projeto from '../../../models/Projeto';
 import Comentarios from '../comentarios/Comentarios';
