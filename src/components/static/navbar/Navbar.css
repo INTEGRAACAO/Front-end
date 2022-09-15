@@ -1,13 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
-
+.main {
+  display: flex;
+  min-height: 100vh;
+}
 .bg-menu{
     background:radial-gradient(circle, #eeaeca 0%, rgba(148,187,233,1) 100%);
-}
-
-.container{
-    display: flex;
-    justify-content: space-between;
-   height: 5vh;
 }
 
 .title{
@@ -53,4 +50,44 @@
     display:flex;
     justify-content:flex-end;
     align-items: center;
+}
+
+/* Navbar Novo */
+.navbar {
+  width: 20%;
+  height: 100vh;
+  display: block;
+  border-right: 1px solid rgba(0,0,0,.2);
+}
+.navbar img {
+  width: 40%;
+  margin: 10px auto;
+  display: block;
+}
+.navbar #busca {
+  width: 80%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  font-size: 1rem;
+  margin-left: 15px;
+  padding: 0;
+}
+.navbar #busca:focus {
+  outline: none;
+}
+.navbar a {
+  text-decoration: none;
+  display: block;
+  margin: 10px 0;
+  width: 100%;
+}
+.navbar a button {
+  border: none;
+  width: 100%;
+  justify-content: left;
+}
+.navbar a button svg {
+  width: 10%;
+  margin: 0 10px 0 0;
+  fill: red;
 }

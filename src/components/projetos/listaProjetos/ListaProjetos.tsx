@@ -49,6 +49,7 @@ function ListaProjetos() {
 
   return (
     <>
+      <section className="projetos">
       {
         posts.map(post => (
           <Box m={2} className="listaProjeto">
@@ -96,6 +97,7 @@ function ListaProjetos() {
           </Box>
         ))
       }
+      </section>
     </>
   )
 }
