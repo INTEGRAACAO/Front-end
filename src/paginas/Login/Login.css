@@ -1,34 +1,52 @@
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80vh;
+.container-login {
+    height: 100vh;
+    background-color: white;
 }
 
-.hello{
-    color: #305F78!important;
-    font-weight: bold!important;
-    font-family: montserrat;
-    align-items: center;
-    justify-content: center!important;
-    font-size: 3rem!important;
-}
-
-.bg-login {
-    width: 100vw;
-    min-height: 100vh;
-
+.fundo-login {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    background: linear-gradient(40deg, rgb(50, 52, 165) 10%, rgba(101, 193, 244, 1) 70%);
+}
 
-    background-color: #ADDDF7;
+.image-login {
+    color: #3a0c91bb !important;
+    font-weight: bold !important;
+    font-family: montserrat;
+    align-items: center;
+    justify-content: center !;
+    font-size: 3rem !important;
+    width: 80vh;
+    min-height: 20vh;
+    display: flex;
+    justify-content: center;
+    background-image: url(https://cdn.discordapp.com/attachments/1019990086751899698/1019990273801068615/logo_integra_tiny_2.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 200px;
+    background-size: auto;
+}
+
+ .bg-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 100vw;
+    min-height: 90vh;
+    width: 100vh;
+    height: 355px;
+
+    background: rgb(red, green, blue);
+    background: radial-gradient(circle, rgb(62, 114, 240,1) 30%, rgba(59,55,55,1) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.card {
+.card-login {
     width: 400px;
     height: 60vh;
 
@@ -38,12 +56,11 @@
     align-items: center;
 
     border-radius: 24px;
-    background: linear-gradient(0deg, rgba(173,206,224,1) 0%, rgba(101,193,244,1) 100%);
 }
 
-.card-title {
-    font-weight: bold!important;
-    color:#305F78;
+.card-title-login {
+    font-weight: bold !important;
+    color: #305F78;
 }
 
 .form {
@@ -51,38 +68,38 @@
 }
 
 .label {
-    color: #ffffff!important;
-    font-weight: bold!important;
+    color: #ffffff !important;
+    font-weight: bold !important;
 }
 
-input {
-    color: #42545E!important;
+.input {
+    color: #42545E !important;
 }
 
-.form-input {
+.form-input-login {
     width: 100%;
 }
 
-.form-btn {
-    background-color: #305F78!important;
-    color: #ffffff!important;
+.form-btn-login {
+    background-color: #305F78 !important;
+    color: #ffffff !important;
 }
 
 
 .MuiInput-underline:before {
-    border-bottom: 1px solid #4894d8!important;
+    border-bottom: 1px solid #4894d8 !important;
 }
 
 .MuiInput-underline:after {
-    border-bottom: 1px solid #444f52!important;
+    border-bottom: 1px solid #444f52 !important;
 }
 
-.text-decoration-none {
+.text-decoration-none-login {
     text-decoration: none;
 }
 
-.criarConta {
-    color: #4487AB;
+.criarConta-login {
+    color: white;
     font-family: montserrat;
     align-items: center;
 }

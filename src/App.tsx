@@ -4,7 +4,7 @@ import CadastroProjeto from './components/projetos/CadastroProjeto/CadastroProje
 import CadastroUsuario from './paginas/CadastroUsuario/CadastroUsuario';
 import Contato from './paginas/contato/Contato';
 import Footer from './components/static/footer/Footer';
-import Home from'./paginas/Home/Home';
+import Home from './paginas/Home/Home';
 import Login from './paginas/Login/Login';
 import Navbar from './components/static/navbar/Navbar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
@@ -15,7 +15,7 @@ import store from './store/store';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaTema from './components/temas/listaTema/ListaTema';
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Perfil from './paginas/Perfil/Perfil';
 
@@ -24,6 +24,7 @@ function App() {
 
   return (
     <Provider store={store}>
+
       <ToastContainer/>
     <Router>
     
