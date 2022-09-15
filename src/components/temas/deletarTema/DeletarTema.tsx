@@ -2,23 +2,33 @@ import React, { useEffect, useState } from 'react'
 import {Typography, Button, Card, CardActions, CardContent } from "@material-ui/core"
 import { Box } from '@mui/material'
 import './DeletarTema.css';
-import Tema from '../../../models/Tema';
+import Temas from '../../../models/Tema';
 import { buscaId, deleteId } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/tokensReducer';
+import {toast} from 'react-toastify'
 
 function DeletarTema() {
-  let navigate = useNavigate();
+    let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
     const token = useSelector<TokenState, TokenState["tokens"]>(
       (state) => state.tokens
     );
-    const [tema, setTemas] = useState<Tema>()
+    const [temas, setTemas] = useState<Temas>()
 
     useEffect(() => {
         if(token == "") {
-            alert("Você precisa estar logado!")
+          toast.error('Você precisa estar logado', {
+            position: "top-right",
+            autoClose: 2000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: false,
+            theme: "colored",
+            progress: undefined,
+        });
             navigate("/login")
         }
     }, [token])
@@ -44,7 +54,16 @@ function DeletarTema() {
           'Authorization': token
         }
       });
-      alert('tema deletado com sucesso!');
+      toast.success('tema deletado com sucesso!', {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    });
     }
   
     function nao() {
@@ -61,7 +80,7 @@ function DeletarTema() {
                 Deseja deletar o Tema:
               </Typography>
               <Typography color="textSecondary" >
-              {tema?.tema}
+              {temas?.temas}
               </Typography>
             </Box>
 

@@ -9,7 +9,7 @@ interface Projeto {
     descricao: string;
     data: string;
     usuario?: User | null;
-    tema?: Tema | null;
+    temas?: Tema | null;
 }
 
 export default Projeto
