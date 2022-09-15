@@ -10,6 +10,7 @@ import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 
 import { toast } from 'react-toastify';
+import ModalTema from '../modalTemas/ModalTema';
 
 
 function ListaTema() {
