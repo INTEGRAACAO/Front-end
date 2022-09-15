@@ -17,37 +17,39 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaTema from './components/temas/listaTema/ListaTema';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import Perfil from './paginas/Perfil/Perfil';
 
 
 function App() {
 
   return (
     <Provider store={store}>
-      <ToastContainer />
-      <Router>
 
+      <ToastContainer/>
+    <Router>
+    
+      <div className="main" style={{ minHeight: '100vh' }}>
         <Navbar />
-
-        <div style={{ minHeight: '100vh' }}>
-          <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/contato" element={<Contato />} />
-            <Route path='/cadastroUsuario' element={<CadastroUsuario />} />
-            <Route path='/formularioProjetos' element={<CadastroProjeto />} />
-            <Route path='/formularioProjetos/:id' element={<CadastroProjeto />} />
-            <Route path='/projetos' element={<ListaProjetos />} />
-            <Route path='/deletarProjetos/:id' element={<DeletarProjetos />} />
-            <Route path='/temas' element={<ListaTema />} />
-            <Route path='/formularioTemas' element={<CadastroTema />} />
-            <Route path='/formularioTemas/:id' element={<CadastroTema />} />
-            <Route path='/deletarTemas/:id' element={<DeletarTema />} />
-
-          </Routes>
-        </div>
-        <Footer />
-      </Router>
+        <Routes> 
+          <Route path="/" element={<Login />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/home" element={<Home/>}/>
+          <Route path="/contato" element={<Contato/>}/>
+          <Route path='/cadastroUsuario' element={<CadastroUsuario/>}/>
+          <Route path='/formularioProjetos' element={<CadastroProjeto/>}/>
+          <Route path='/formularioProjetos/:id' element={<CadastroProjeto/>}/>
+          <Route path='/projetos' element={<ListaProjetos/>}/>
+          <Route path='/deletarProjetos/:id' element={<DeletarProjetos/>}/>
+          <Route path='/temas' element={<ListaTema/>}/>
+          <Route path='/formularioTemas' element={<CadastroTema/>}/>
+          <Route path='/formularioTemas/:id' element={<CadastroTema/>}/>
+          <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
+          <Route path='/perfil' element={<Perfil/>}/>
+          
+        </Routes>
+      </div>
+      <Footer />
+    </Router>
     </Provider>
   );
 }

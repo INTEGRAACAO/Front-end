@@ -50,6 +50,7 @@ function CadastroProjeto() {
       bio: '',
       tipoAcesso: '',
       dataNascimento: '',
+      dataCadastro: ''
     })
 
   const [tema, setTema] = useState<Temas>(
@@ -108,7 +109,7 @@ function CadastroProjeto() {
   }
 
   async function getTemas() {
-    await busca("/tema", setTemas, {
+    await busca("/temas", setTemas, {
       headers: {
         'Authorization': token
       }
@@ -241,7 +242,5 @@ function CadastroProjeto() {
 }
 
 export default CadastroProjeto;
-function findByIdProjeto(id: string) {
-  throw new Error('Function not implemented.');
-}
+
 
