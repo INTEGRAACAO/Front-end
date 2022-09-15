@@ -6,14 +6,14 @@ import { busca } from '../../../services/Service'
 import Projeto from '../../../models/Projeto';
 import './ListaProjetos.css';
 import { useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 import {toast} from 'react-toastify'
 import Projetos from '../projetos/projetos';
 
 function ListaProjetos() {
   const [posts, setPosts] = useState<Projeto[]>([])
   let navigate  = useNavigate();
-  const token = useSelector<TokenState, TokenState["tokens"]>(
+  const token = useSelector<UserState, UserState["tokens"]>(
     (state) => state.tokens
   );
 

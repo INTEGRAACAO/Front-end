@@ -6,10 +6,9 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { TokenState } from '../../../store/tokens/tokensReducer';
+import { UserState } from '../../../store/tokens/tokensReducer';
 import { addToken } from '../../../store/user/action';
 import './Navbar.css';
-import { UserState } from '../../../store/user/userReducer';
 import {toast} from 'react-toastify';
 
 
@@ -51,6 +50,13 @@ function Navbar() {
                         <Box mx={1} className='cursor, botaoNav'>
                             <Typography >
                                 Home
+                            </Typography>
+                        </Box>
+                    </Link>
+                    <Link to='/perfil' className='text-decoration-none'>
+                        <Box mx={1} className='cursor, botaoNav'>
+                            <Typography >
+                                Perfil
                             </Typography>
                         </Box>
                     </Link>

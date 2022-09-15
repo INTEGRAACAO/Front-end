@@ -50,6 +50,7 @@ function CadastroProjeto() {
       bio: '',
       tipoAcesso: '',
       dataNascimento: '',
+      dataCadastro: ''
     })
 
   const [tema, setTema] = useState<Temas>(
