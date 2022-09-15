@@ -8,8 +8,9 @@ import './ListaTema.css';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
-//import { toast } from 'react-toastify';
-//
+
+import { toast } from 'react-toastify';
+
 
 function ListaTema() {
   const [temas, setTemas] = useState<Temas[]>([])
@@ -20,16 +21,16 @@ function ListaTema() {
 
   useEffect(()=> {
     if(token == ''){
-        // toast.error('Você precisa estar logado', {
-        //     position: "top-right",
-        //     autoClose: 2000, // fecha depois de 2s
-        //     hideProgressBar: false,
-        //     closeOnClick: true, 
-        //     pauseOnHover: false, // pausa o tempo com o mouse
-        //     draggable: false, // não pode mover
-        //     theme: "colored", 
-        //     progress: undefined,
-        // })    
+         toast.error('Você precisa estar logado', {
+           position: "top-right",
+             autoClose: 2000, // fecha depois de 2s
+            hideProgressBar: false,
+            closeOnClick: true, 
+             pauseOnHover: false, // pausa o tempo com o mouse
+            draggable: false, // não pode mover
+             theme: "colored", 
+            progress: undefined,
+         })    
         alert('Alerta 1')
       navigate("/login")
     }
@@ -49,7 +50,13 @@ function ListaTema() {
 
     return (
       <>
+
+      <Box>
+        <ModalTema />
+      </Box>
+
       <section className="temas">
+
       { 
         temas.map(temas => (
         <Box m={2} >
