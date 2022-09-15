@@ -39,7 +39,7 @@ function Perfil() {
     })
 
     useEffect(() => {
-        if (token === "") {
+        if (token == "") {
             alert("Você precisa estar logado")
             history("/login")
         }
@@ -98,4 +98,4 @@ function Perfil() {
     )
 }
 
-export default Perfil
+export default Perfil;

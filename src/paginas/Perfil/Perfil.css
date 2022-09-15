@@ -19,7 +19,7 @@
 
 .card-imagem{
     object-fit: cover;
-    max-height: 5rem;
+    max-height: 2rem;
 }
 
 .card-container-texto{
