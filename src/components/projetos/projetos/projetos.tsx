@@ -10,9 +10,7 @@ interface PostsProps {
 
 function Projetos ({ projeto }: PostsProps) {
 
-    const [comments, setComments] = useState([
-        'Post muito bacana, hein?! 👏👏'
-    ])
+    const [comments, setComments] = useState([''])
 
     const [newCommentText, setNewCommentText] = useState('')
 
