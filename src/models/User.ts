@@ -9,6 +9,7 @@ interface User{
   bio:string;
   tipoAcesso:string;
   dataNascimento:string;
+  dataCadastro: string;
   }
   
   export default User;

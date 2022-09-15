@@ -17,6 +17,7 @@ import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaTema from './components/temas/listaTema/ListaTema';
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
+import Perfil from './paginas/Perfil/Perfil';
 
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
           <Route path='/formularioTemas' element={<CadastroTema/>}/>
           <Route path='/formularioTemas/:id' element={<CadastroTema/>}/>
           <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
+          <Route path='/perfil' element={<Perfil/>}/>
           
         </Routes>
       </div>

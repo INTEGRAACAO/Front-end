@@ -23,10 +23,12 @@ export default function CadastroUsuario() {
     apelido: '',
     senha: '',
     linkFoto: '',
-    bio: '',
-    tipoAcesso: '',
-    dataNascimento: ''
+    bio:'',
+    tipoAcesso:'',
+    dataNascimento:'',
+    dataCadastro: ''
   })
+  
   const [userResult, setUserResult] = useState<User>({
     id: 0,
     nome: '',
@@ -34,9 +36,10 @@ export default function CadastroUsuario() {
     apelido: '',
     senha: '',
     linkFoto: '',
-    bio: '',
-    tipoAcesso: '',
-    dataNascimento: ''
+    bio:'',
+    tipoAcesso:'',
+    dataNascimento:'',
+    dataCadastro: '' 
   })
 
   useEffect(() => {
