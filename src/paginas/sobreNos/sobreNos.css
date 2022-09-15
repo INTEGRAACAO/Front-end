@@ -1,0 +1,50 @@
+.img-sobrenos{
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    
+}
+ .text-sobrenos{
+    display: flex !important;
+    flex-direction: center !important;
+    justify-content: center !important;
+    align-items: center !important;
+
+    padding: 40px;
+  
+ }
+
+ .img-equipe{
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+ }
+
+ .equipe-container{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    align-items: center;
+    margin: 5% 0;
+   
+ }
+
+
+
+ .img-participante{
+    width: 20rem;
+    height: 20rem;
+    display: block;
+    margin:0 auto;
+ }
+
+ .equipe-container h4{
+    display: block;
+    margin:0 auto;
+    width: 50%;
+
+ }
+
+ .div-participante{
+    display: ;
+ }
