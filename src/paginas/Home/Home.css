@@ -1,37 +1,57 @@
-.containerHome{
-    direction: row;
-    background-color: #ADDDF7;
-    justify-content: center;
-    align-items: center;
+.home {
+  width: 100%;
+  background-color: rgb(188, 115, 233, .2);
+  margin: 0 auto;
 }
+.container-home {
+  width: 80%;
+  display: block;
+  margin: 0 auto;
+}
+.home .titulo {
+  display: block;
+  text-align: center;
+}
+.home .msg-block {
+  background-color: rgba(255,255,255,1);
+  max-width: 60%;
+  margin: 0 auto;
+  padding: 1%;
+}
+.home .msg-block .msg-field {
+  display: flex;
+  margin-bottom: 3%;
+}
+.home .msg-block .msg-field img {
+  border-radius: 50%;
+  width: 20%;
+  margin: 0 2% 0 0;
+}
+.home .msg-block .msg-field textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid rgba(0,0,0,.2);
+  font-size: 0.875rem;
+}
+.home .msg-block .msg-field textarea:focus {
+  outline: none;
+}
+.home .msg-block .btn-acao {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.home .msg-block .btn-acao .icones {
+  width: 50%;
+  display: flex;
+  justify-content: center;
 
-.gridHome{
-    align-items: center; 
-    background-color: #ADDDF7;
 }
-
-.botaoHome{
-    border-color:#42545E!important ;
-    background-color: #305f78!important;
-    color: #ADDDF7!important;
+.home .msg-block .btn-acao .icones svg {
+  max-width: 5%;
+  margin: 0 1%;
 }
-.botaoHome:hover{
-    background-color: #082839!important;
-    color: #daf0fc!important;
+.home .msg-block .btn-acao button {
+  display: block;
+  justify-content: right;
 }
-
-.imgHome{
-    width: 500px;
-    height: 500px;
-}
-
-.boxHome{
-    display: flex;
-    justify-content: center;
-  }
-.textHome{
-    color: #42545E;
-    text-align: center;
-    font-weight: bold;
-  }
-  
