@@ -2,13 +2,13 @@ import React, { ChangeEvent, FormEvent, useState } from 'react'
 import { Box, Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import { Link } from 'react-router-dom';
 import Projeto from '../../../models/Projeto';
-import comentarios from '../comentarios/comentarios';
+import Comentarios from '../comentarios/Comentarios';
 
 interface PostsProps {
     projeto: Projeto
 }
 
-function Projeto ({ projeto }: PostsProps) {
+function Projetos ({ projeto }: PostsProps) {
 
     const [comments, setComments] = useState([
         'Post muito bacana, hein?! 👏👏'
@@ -36,15 +36,31 @@ function Projeto ({ projeto }: PostsProps) {
                     </Typography>
 
                     <Typography variant="h5" component="h2">
-                        {Projeto.nome}
+                        {projeto.apoios}
                     </Typography>
 
                     <Typography variant="body2" component="p">
-                        {Projeto.descricao}
+                        {projeto.nome}
                     </Typography>
 
                     <Typography variant="body2" component="p">
-                        {Projeto.temas?.temas}
+                        {projeto.linkImagem}
+                    </Typography>
+
+                    <Typography variant="body2" component="p">
+                        {projeto.descricao}
+                    </Typography>
+
+                    <Typography variant="body2" component="p">
+                        {projeto.data}
+                    </Typography>
+
+                    <Typography variant="body2" component="p">
+                        {projeto.usuario?.nome}
+                    </Typography>
+
+                    <Typography variant="body2" component="p">
+                        {projeto.temas?.temas}
                     </Typography> 
 
                 </CardContent>
@@ -88,7 +104,7 @@ function Projeto ({ projeto }: PostsProps) {
                 <div>
                     {comments.map(comment => {
                         return (
-                            <comentarios conteudo={comment} />
+                            <Comentarios conteudo={comment} />
                         )
                     })}
                 </div>
@@ -98,4 +114,4 @@ function Projeto ({ projeto }: PostsProps) {
     )
 }
 
-export default Projeto
+export default Projetos;
