@@ -14,6 +14,8 @@ export default function CadastroUsuario() {
 
   const [confirmarSenha, setConfirmarSenha] = useState<String>("")
 
+  const [dataNascimento, setDataNascimento] = useState("");
+
   const [user, setUser] = useState<User>({
     id: 0,
     nome: '',
@@ -47,7 +49,8 @@ export default function CadastroUsuario() {
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUser({
       ...user,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      dataNascimento: dataNascimento
     })
   }
 
@@ -60,6 +63,8 @@ export default function CadastroUsuario() {
 
     // Estrutura Condicional que verifica se as senhas batem e se a Senha tem mais de 8 caracteres
     if (confirmarSenha === user.senha && user.senha.length >= 8) {
+
+      console.log(user)
 
       //Tenta executar o cadastro
       try {
@@ -110,13 +115,9 @@ export default function CadastroUsuario() {
     }
   }
 
-  const [dataNascimento, setDataNascimento] = useState("");
-
   function getDate(e: ChangeEvent<HTMLInputElement>) {
     setDataNascimento(e.target.value);
   }
-
-  user.dataNascimento = dataNascimento + " 00:00:00";
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
