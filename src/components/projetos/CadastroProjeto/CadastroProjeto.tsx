@@ -242,7 +242,5 @@ function CadastroProjeto() {
 }
 
 export default CadastroProjeto;
-function findByIdProjeto(id: string) {
-  throw new Error('Function not implemented.');
-}
+
 

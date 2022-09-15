@@ -27,9 +27,8 @@ function App() {
       <ToastContainer/>
     <Router>
     
-      <Navbar />
-      
-      <div style={{ minHeight: '100vh' }}>
+      <div className="main" style={{ minHeight: '100vh' }}>
+        <Navbar />
         <Routes> 
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
