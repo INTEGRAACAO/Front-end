@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import Box from '@mui/material/Box';
-import { Grid, Typography, Button, TextField } from '@material-ui/core';
+import { Grid, Typography, Button, TextField, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { cadastroUsuario } from '../../services/Service';
@@ -131,7 +131,7 @@ export default function CadastroUsuario() {
             <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='Email' variant='outlined' name='email' margin='normal' fullWidth required />
             <TextField value={user.linkFoto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='linkFoto' label='Link Foto' variant='outlined' name='linkFoto' margin='normal' fullWidth />
             <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio' variant='outlined' name='bio' margin='normal' fullWidth />
-            <TextField value={user.tipoAcesso} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipoAcesso' label='Tipo Acesso' variant='outlined' name='tipoAcesso' margin='normal' fullWidth required />
+           
             <TextField
               value={dataNascimento}
               onChange={(e: ChangeEvent<HTMLInputElement>) => getDate(e)}
@@ -148,6 +148,15 @@ export default function CadastroUsuario() {
             />
             <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth required />
             <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth required />
+
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Tipo Acesso</FormLabel>
+              <RadioGroup aria-label="gender" name="tipoAcesso" value={user.tipoAcesso} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                <FormControlLabel value="Ong" control={<Radio />} label="Ong" />
+                <FormControlLabel value="Apoiador" control={<Radio />} label="Apoiador" />                
+              </RadioGroup>
+            </FormControl> 
+            
             <Box marginTop={2} textAlign='center'>
               <Link to='/login' className="text-decorator-none">
                 <Button variant='contained' color='secondary'>
