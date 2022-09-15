@@ -1,6 +1,6 @@
 import React, { useState, useEffect, ChangeEvent } from "react";
 import Box from '@mui/material/Box';
-import { Grid, Typography, Button, TextField } from '@material-ui/core';
+import { Grid, Typography, Button, TextField, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { cadastroUsuario } from '../../services/Service';
@@ -14,6 +14,8 @@ export default function CadastroUsuario() {
 
   const [confirmarSenha, setConfirmarSenha] = useState<String>("")
 
+  const [dataNascimento, setDataNascimento] = useState("");
+
   const [user, setUser] = useState<User>({
     id: 0,
     nome: '',
@@ -21,10 +23,12 @@ export default function CadastroUsuario() {
     apelido: '',
     senha: '',
     linkFoto: '',
-    bio: '',
-    tipoAcesso: '',
-    dataNascimento: ''
+    bio:'',
+    tipoAcesso:'',
+    dataNascimento:'',
+    dataCadastro: ''
   })
+  
   const [userResult, setUserResult] = useState<User>({
     id: 0,
     nome: '',
@@ -32,9 +36,10 @@ export default function CadastroUsuario() {
     apelido: '',
     senha: '',
     linkFoto: '',
-    bio: '',
-    tipoAcesso: '',
-    dataNascimento: ''
+    bio:'',
+    tipoAcesso:'',
+    dataNascimento:'',
+    dataCadastro: '' 
   })
 
   useEffect(() => {
@@ -47,7 +52,8 @@ export default function CadastroUsuario() {
   function updatedModel(e: ChangeEvent<HTMLInputElement>) {
     setUser({
       ...user,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      dataNascimento: dataNascimento
     })
   }
 
@@ -60,6 +66,8 @@ export default function CadastroUsuario() {
 
     // Estrutura Condicional que verifica se as senhas batem e se a Senha tem mais de 8 caracteres
     if (confirmarSenha === user.senha && user.senha.length >= 8) {
+
+      console.log(user)
 
       //Tenta executar o cadastro
       try {
@@ -110,13 +118,9 @@ export default function CadastroUsuario() {
     }
   }
 
-  const [dataNascimento, setDataNascimento] = useState("");
-
   function getDate(e: ChangeEvent<HTMLInputElement>) {
     setDataNascimento(e.target.value);
   }
-
-  user.dataNascimento = dataNascimento + " 00:00:00";
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
@@ -130,7 +134,7 @@ export default function CadastroUsuario() {
             <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='Email' variant='outlined' name='email' margin='normal' fullWidth required />
             <TextField value={user.linkFoto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='linkFoto' label='Link Foto' variant='outlined' name='linkFoto' margin='normal' fullWidth />
             <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio' variant='outlined' name='bio' margin='normal' fullWidth />
-            <TextField value={user.tipoAcesso} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='tipoAcesso' label='Tipo Acesso' variant='outlined' name='tipoAcesso' margin='normal' fullWidth required />
+           
             <TextField
               value={dataNascimento}
               onChange={(e: ChangeEvent<HTMLInputElement>) => getDate(e)}
@@ -147,6 +151,15 @@ export default function CadastroUsuario() {
             />
             <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth required />
             <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth required />
+
+            <FormControl component="fieldset">
+              <FormLabel component="legend">Tipo Acesso</FormLabel>
+              <RadioGroup aria-label="gender" name="tipoAcesso" value={user.tipoAcesso} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
+                <FormControlLabel value="Ong" control={<Radio />} label="Ong" />
+                <FormControlLabel value="Apoiador" control={<Radio />} label="Apoiador" />                
+              </RadioGroup>
+            </FormControl> 
+            
             <Box marginTop={2} textAlign='center'>
               <Link to='/login' className="text-decorator-none">
                 <Button variant='contained' color='secondary'>
