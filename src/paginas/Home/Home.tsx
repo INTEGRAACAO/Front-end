@@ -1,14 +1,12 @@
-import React, { useEffect, useState } from 'react'
-import {Typography, Grid, Button} from '@material-ui/core';
-import { Box } from '@mui/material'
-import './Home.css';
-import ModalProjeto from '../../components/projetos/modalProjeto/ModalProjeto';
+import { useEffect } from 'react'
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../store/tokens/tokensReducer';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import TabProjetos from '../../components/projetos/tabProjetos/TabProjetos';
+
+import ListaProjetos from '../../components/projetos/listaProjetos/ListaProjetos'
+
+import './Home.css';
 
 function Home() {
     let navigate = useNavigate();
@@ -52,6 +50,9 @@ function Home() {
                 <button type="submit">Postar</button>
               </div>
             </section>
+        </section>
+        <section className="projetos-home container-home">
+          <ListaProjetos />
         </section>
       </div>
     );
