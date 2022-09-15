@@ -49,6 +49,7 @@ function ListaTema() {
 
     return (
       <>
+      <section className="temas">
       { 
         temas.map(temas => (
         <Box m={2} >
@@ -84,6 +85,7 @@ function ListaTema() {
         </Box>
         )) 
       }
+      </section>
       </>
     );
   }

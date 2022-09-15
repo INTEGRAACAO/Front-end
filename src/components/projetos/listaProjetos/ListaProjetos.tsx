@@ -50,11 +50,12 @@ function ListaProjetos() {
 
   return (
     <>
-    {posts.map(post => (
-      <Projetos projeto={post}/> 
-    ))}
-  </>
-
+    <section className="projetos">
+      {posts.map(post => (
+        <Projetos projeto={post}/> 
+      ))}
+    </section>
+    </>
   )
 }
 
