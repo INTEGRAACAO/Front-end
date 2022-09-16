@@ -19,6 +19,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Perfil from './paginas/Perfil/Perfil';
 import SobreNos from './paginas/sobreNos/sobreNos';
+import Valores from './paginas/Valores/valores';
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path='/formularioTemas/:id' element={<CadastroTema/>}/>
           <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
+          <Route path='/valores' element={<Valores/>}/>
           
         </Routes>
       </div>
