@@ -14,7 +14,11 @@ function SobreNos() {
                 </Box>
                 <Box className='text-sobrenos'>
                     <h3>
-                        <p>São incontáveis a quantidade de ações que o ser humano faz em prol uns dos outros todos os dias, desde gentilezas a ações que salvam vidas, elas se mostram reais todos os dias e no intuito de unir esforços em prol de algo maior existem muitas ONGs com iniciativas que podem mudar o mundo, mesmo que essa comece no quintal da sua casa, e com essa ideia, querendo valorizar toda ideia que tente trazer o bem do próximo e dar a ela um canal dela para o mundo, nossa plataforma traz consigo uma rede onde apenas há o conteúdo voltado ao combate a violência. Onde ONGs com este foco podem utilizar da plataforma para promover seu trabalho, se conectar com pessoas apoiadoras em um ambiente onde o único foco são essas ações e como elas podem mudar a vida de pessoas que estão passando por situações de violência, seja ela qual for.
+                        <p> São incontáveis as ações que os seres humanos fazem em prol uns dos outros todos os dias, desde pequenas gentilezas diárias à feitos que salvam vidas.
+Essas atitudes se provam reais a todos os momentos e no intuito de unir esforços em prol de algo maior existem muitas ONG's com iniciativas que visam impactar o mundo, para isso é necessário a participação de muitos, unindo seus apoiadores e os conectando com os beneficiários dessas ações. 
+Com essa ideia, querendo valorizar toda iniciativa que tente trazer o bem do próximo e dar à ela visibilidade para o mundo, nossa plataforma traz consigo uma rede com conteúdo voltado ao combate a violência. 
+Escolhemos esse tema por ser uma problemática que atinge milhões de brasileiros e por acreditarmos que existem muitas iniciativas não governamentais que podem impactar a vida das pessoas que lidam com a violência diariamente, seja ela qual for.
+No INTEGR&#123;A&#125;AÇÃO as ONG's com projetos sociais voltados à este tema podem utilizar a plataforma para promover seu trabalho, se conectar com pessoas apoiadoras e também beneficiárias de suas iniciativas, integrando tudo e todos em um único ambiente.
                         </p>
                     </h3>
                 </Box>
