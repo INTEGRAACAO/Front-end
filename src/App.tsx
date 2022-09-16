@@ -18,6 +18,7 @@ import ListaTema from './components/temas/listaTema/ListaTema';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import Perfil from './paginas/Perfil/Perfil';
+import SobreNos from './paginas/sobreNos/sobreNos';
 
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
       <div className="main" style={{ minHeight: '100vh' }}>
         <Navbar />
         <Routes> 
+          <Route path="/sobrenos" element={<SobreNos />} />
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home/>}/>
