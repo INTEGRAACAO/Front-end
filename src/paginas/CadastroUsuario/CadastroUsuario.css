@@ -16,6 +16,14 @@
   margin-right: 20px !important;
 }
 
+.img-cadastro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5rem;
+  margin-top: 2rem;
+  height: 800px;
+}
 
 
 label{
