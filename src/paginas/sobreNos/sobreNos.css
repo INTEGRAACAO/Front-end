@@ -2,16 +2,32 @@
     display: flex;
     flex-direction: center;
     justify-content: center;
+    margin-top: 2%;
     
 }
- .text-sobrenos{
-    display: flex !important;
-    flex-direction: center !important;
-    justify-content: center !important;
-    align-items: center !important;
 
+.sobrenos-bg{
+    background-color: rgb(188, 115, 233, .1);
+}
+ .text-sobrenos {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: justify !important;
+    
     padding: 40px;
+    margin-bottom: 5%;
   
+ }
+
+ .text-sobrenos h3{
+    font-family: sans-serif;
+    font-weight: lighter;
+    
+ }
+ .text-sobrenos h3 p{
+    margin: 0;
+    text-indent: 3ch;
+    
  }
 
  .img-equipe{
@@ -23,7 +39,7 @@
  .equipe-container{
     display: flex;
     flex-direction: row;
-    justify-content:space-around;
+    justify-content:space-evenly;
     align-items: center;
     margin: 5% 0;
    
@@ -36,15 +52,23 @@
     height: 20rem;
     display: block;
     margin:0 auto;
+    margin-bottom: 3vh;
+  
+    
  }
+
+
 
  .equipe-container h4{
     display: block;
     margin:0 auto;
     width: 50%;
+    font-family: sans-serif;
+    font-weight: lighter;
 
  }
 
  .div-participante{
-    display: ;
+    display: inline-block;
+    width: 30rem;
  }
