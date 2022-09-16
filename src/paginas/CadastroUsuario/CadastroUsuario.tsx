@@ -124,8 +124,10 @@ export default function CadastroUsuario() {
 
   return (
     <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid item xs={6} className="imagem2" />
-      <Grid item xs={6} alignItems="center">
+      <Grid item xs={3} className="imagem2">
+      <img src="https://i.imgur.com/Zzef03Z.png" alt="" className='img-cadastro' />
+      </Grid>
+      <Grid item xs={9} alignItems="center">
         <Box paddingX={10}>
           <form onSubmit={cadastrar} className='formCadastrar'>
             <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className="textos2">Cadastrar</Typography>
@@ -174,6 +176,7 @@ export default function CadastroUsuario() {
             </Box>
           </form>
         </Box>
+       
       </Grid>
     </Grid>
   );
