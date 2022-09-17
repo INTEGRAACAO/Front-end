@@ -1,6 +1,6 @@
 .container-login {
     height: 100vh;
-    background-color: white;
+    background-color:  #6D53E6;
 }
 
 .fundo-login {
@@ -60,7 +60,7 @@
 
 .card-title-login {
     font-weight: bold !important;
-    color: #305F78;
+    color: #6D53E6;
 }
 
 .form {
@@ -68,12 +68,15 @@
 }
 
 .label {
-    color: #ffffff !important;
+    color:  #6D53E6 !important;
     font-weight: bold !important;
 }
 
 .input {
-    color: #42545E !important;
+    color: #6D53E6 !important;
+}
+.input:focus{
+    background-color:  rgb(188, 115, 233, .1) 
 }
 
 .form-input-login {
@@ -81,17 +84,21 @@
 }
 
 .form-btn-login {
-    background-color: #305F78 !important;
-    color: #ffffff !important;
+    background-color: #6D53E6 !important;
+  color: white !important;
+}
+.form-btn-login:hover {
+    background-color: rgb(169, 43, 223)  !important;
+  color: white !important;
 }
 
 
 .MuiInput-underline:before {
-    border-bottom: 1px solid #4894d8 !important;
+    border-bottom: 1px solid  #6D53E6 !important;
 }
 
 .MuiInput-underline:after {
-    border-bottom: 1px solid #444f52 !important;
+    border-bottom: 1px solid  #6D53E6!important;
 }
 
 .text-decoration-none-login {
@@ -99,7 +106,27 @@
 }
 
 .criarConta-login {
-    color: white;
+    color: #6D53E6;
     font-family: montserrat;
     align-items: center;
+}
+
+.box-login{
+    width: 400px;
+    height: 400px;
+}
+
+.box-login-frase{
+    width: 500px;
+    height: 200px;
+}
+
+.img-login{
+    width: 100%;
+    height: 100%;
+}
+
+.img-login-frase{
+    width: 100%;
+    height: 100%;
 }

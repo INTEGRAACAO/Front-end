@@ -123,7 +123,7 @@ export default function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className='bg-cadastrar'>
       <Grid item xs={2} className="imagem2">
       <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-cadastro' />
       </Grid>
