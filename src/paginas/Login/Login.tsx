@@ -84,17 +84,15 @@ function Login() {
   }
 
   return (
-    <Grid container className='container-login'  direction='row' justifyContent='center' alignItems='center'>
-      <Grid item xs={12} sm={6}>
-      <Box>
-            <Typography variant='subtitle1' gutterBottom className='image-login'></Typography>
-            <Typography variant='subtitle1' gutterBottom ></Typography>
-          </Box>
-      </Grid>
 
-      <Grid item xs={12} sm={6} className="fundo-login">
-          
-          <Box className="card-login">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className='bg-login' >
+      
+      <Grid item xs={2} className="imagem2">
+      <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-login'/>
+      </Grid>
+      
+      <Grid item xs={5} alignItems="center">
+      <Box className="card-login">
             <Typography className='card-title-login' variant="h4" align="center">
               Login
             </Typography>
@@ -125,9 +123,16 @@ function Login() {
             </Box>
 
           </Box>
+      </Grid>
+      <Grid item xs={5} alignItems='center'>
+        <img src="https://i.imgur.com/05EJeab.png" alt="" />
+      </Grid>
+      
+          
+          
 
       </Grid>
-    </Grid>
+    
   )
 }
 
