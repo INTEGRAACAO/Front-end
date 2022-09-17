@@ -12,7 +12,6 @@ import './Navbar.css';
 import {toast} from 'react-toastify';
 import { Button, TextField } from "@material-ui/core";
 
-
 function Navbar() {
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
