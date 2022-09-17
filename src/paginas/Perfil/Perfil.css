@@ -22,6 +22,10 @@
     max-height: 2rem;
 }
 
+.card-imagem img{
+    max-height: 100%;
+}
+
 .card-container-texto{
     max-width: 550px;
     color: rgb(18, 147, 169);
