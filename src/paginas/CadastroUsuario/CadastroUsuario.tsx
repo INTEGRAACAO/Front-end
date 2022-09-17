@@ -123,7 +123,7 @@ export default function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
+    <Grid container direction="row" justifyContent="center" alignItems="center" className='bg-cadastrar'>
       <Grid item xs={2} className="imagem2">
       <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-cadastro' />
       </Grid>
@@ -132,7 +132,7 @@ export default function CadastroUsuario() {
           <form onSubmit={cadastrar} className='formCadastrar'>
             
             <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth required  className='form-cadastro text1' />
-            <TextField value={user.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='apelido' label='Apelido' variant='outlined' name='apelido' margin='normal' fullWidth required className='form-cadastro' />
+            <TextField value={user.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='apelido' label='Usuário' variant='outlined' name='apelido' margin='normal' fullWidth required className='form-cadastro' />
             <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='Email' variant='outlined' name='email' margin='normal' fullWidth required className='form-cadastro'/>
             <TextField value={user.linkFoto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='linkFoto' label='Link Foto' variant='outlined' name='linkFoto' margin='normal' fullWidth className='form-cadastro'/>
             <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio' variant='outlined' name='bio' margin='normal' fullWidth className='form-cadastro'/>
