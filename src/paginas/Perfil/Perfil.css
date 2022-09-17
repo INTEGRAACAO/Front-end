@@ -2,41 +2,84 @@
 .card-container{
     display: grid;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-start;
+    width: 100%;
     height: 100vh;
+    background-color: rgb(188, 115, 233, .2);
 }
 
 .card-container-info{
-    background-color: rgba(62, 115, 240, 0.182);
+    background-color: rgba(255, 255, 255, 0.916);
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     display: flex;
     flex-direction: row;
-    align-items: stretch;
-    width: 90%;
+    max-width: 40rem;
+    height: 150px!important;
+    margin-top: 5rem;
 }
 
 .card-imagem{
     object-fit: cover;
-    max-height: 2rem;
+    justify-content: flex-start;
+    width: 20%;
+    height: 100%;
 }
 
-.card-imagem img{
-    max-height: 100%;
+.img {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.dados-usuarios{
+    object-fit:contain;
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+}
+.info{
+    padding: 0.3rem;
+    font-weight:bold;
+    font-family: sans-serif!important;
+}
+.info-b{
+    padding: 0.3rem;
+    font-family: sans-serif!important;
+    margin: 0!important;
+}
+
+.vazio{
+    width: 2rem;
 }
 
 .card-container-texto{
     max-width: 550px;
-    color: rgb(18, 147, 169);
+    height: 100%;
+    margin-top: 2rem!important;
+    display: flex!important;
+    justify-content: center!important;
+    padding: 0!important;
+}
+
+.card-container-texto p{
+    width: 100%;
+    height: 100%;
+    margin: 0!important;
     text-align: justify;
 }
 
 .card-container-about{
-    align-items: start;
-    height: 80%;
-    border-radius: 2rem;
-    background-color: rgba(255, 255, 255, 0.465);
-    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.916);
+    align-items: flex-start;
+    height: 20rem!important;
+    width: 40rem!important;
+    border-radius: 1rem;
     margin-bottom: 10%;
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
 }

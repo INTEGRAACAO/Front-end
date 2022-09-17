@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import { AppBar, Tab, Tabs, Typography } from '@material-ui/core';
 import Box from '@mui/material/Box';
 import { TabContext, TabPanel } from '@material-ui/lab';
-import ListaPostagem from '../listaProjetos/ListaProjetos';
+import ListaProjetos from '../listaProjetos/ListaProjetos';
 import './TabProjetos.css';
 
 
@@ -22,7 +22,7 @@ function TabProjetos() {
         </AppBar>
         <TabPanel value="1" >
           <Box display="flex" flexWrap="wrap" justifyContent="center">
-            <ListaPostagem />
+            <ListaProjetos />
           </Box>
         </TabPanel>
         <TabPanel value="2">
