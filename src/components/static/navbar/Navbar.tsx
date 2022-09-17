@@ -64,7 +64,7 @@ function Navbar() {
               Temas
             </Button>
           </Link>
-          <Link to= "/sobreNos" >
+          <Link to= "/sobrenos" >
             <Button variant="outlined">
               Sobre nós
             </Button>
