@@ -8,6 +8,7 @@
 
 .sobrenos-bg{
     background-color: rgb(188, 115, 233, .1) ;
+    width: 100%;
 }
  .text-sobrenos {
     display: flex !important;

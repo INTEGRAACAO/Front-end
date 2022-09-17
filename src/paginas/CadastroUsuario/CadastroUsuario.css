@@ -7,29 +7,29 @@
   background-position: center;
 }
 .form-cadastro label {
-  color:   rgb(188, 115, 233) !important ;
+  color: #6D53E6 !important ;
 }
  .form-cadastro input:focus{
   background-color:  rgb(188, 115, 233, .1) ;
  }
 
  .form-cadastro input{
-  color: rgb(93, 7, 146) !important;
+  color: #6D53E6 !important;
  }
 .form-cadastro{
-  color:rgb(188, 115, 233) !important;
+  color:#6D53E6 !important;
 }
 .texto2 h3 {
   font-weight: bold !important;
-  color: rgb(188, 115, 233) !important;
+  color: #6D53E6 !important;
 }
 
 .MuiTypography-colorTextPrimary {
-  color: rgb(188, 115, 233) !important;
+  color: #6D53E6 !important;
 }
 .btnCancelar {
   margin-right: 20px !important;
-  background-color: rgba(201,108,240) !important;
+  background-color: #6D53E6  !important;
   color: white !important;
 }
 
@@ -44,7 +44,7 @@
 }
 
 .btnConfirmar:hover{
-  background-color: rgba(201,108,240) !important;
+  background-color:#6D53E6  !important;
   color: white;
 }
 
@@ -58,10 +58,14 @@
 }
 
 .TextField{
-  color: rgb(59, 18, 77) !important;
+  color: #6D53E6  !important;
 }
 
 
 .text1{
   margin-top: 2rem !important;
+}
+
+.bg-cadastrar{
+  background-color: rgb(188, 115, 233, 0.05) ;
 }
