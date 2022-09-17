@@ -135,7 +135,7 @@ export default function CadastroUsuario() {
             <TextField value={user.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='apelido' label='Usuário' variant='outlined' name='apelido' margin='normal' fullWidth required className='form-cadastro' />
             <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='Email' variant='outlined' name='email' margin='normal' fullWidth required className='form-cadastro'/>
             <TextField value={user.linkFoto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='linkFoto' label='Foto Perfil' variant='outlined' name='linkFoto' margin='normal' fullWidth className='form-cadastro'/>
-           
+            <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio' variant='outlined' name='bio' margin='normal' fullWidth className='form-cadastro'/>
            
             <TextField
               value={dataNascimento}
