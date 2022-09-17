@@ -15,17 +15,17 @@ import store from './store/store';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
 import ListaTema from './components/temas/listaTema/ListaTema';
+import Perfil from './paginas/Perfil/Perfil';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
-import Perfil from './paginas/Perfil/Perfil';
 import SobreNos from './paginas/sobreNos/sobreNos';
+import Valores from './paginas/Valores/valores';
 
 
 function App() {
 
   return (
     <Provider store={store}>
-
       <ToastContainer/>
     <Router>
     
@@ -47,6 +47,7 @@ function App() {
           <Route path='/formularioTemas/:id' element={<CadastroTema/>}/>
           <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
+          <Route path='/valores' element={<Valores/>}/>
           
         </Routes>
       </div>
