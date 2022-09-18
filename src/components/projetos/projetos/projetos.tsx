@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,9 @@ import Projeto from '../../../models/Projeto';
 import Comentarios from '../comentarios/Comentarios';
 import { UserState } from '../../../store/user/userReducer';
 import { useSelector } from 'react-redux';
+import { busca, buscaId, post, put } from '../../../services/Service';
+import User from '../../../models/User';
+import Temas from '../../../models/Tema';
 
 interface PostsProps {
     projeto: Projeto
@@ -13,6 +16,9 @@ interface PostsProps {
 
 function Projetos ({ projeto }: PostsProps) {
 
+    const token = useSelector<UserState, UserState["tokens"]>(
+      (state) => state.tokens
+    );
     // Pega o ID guardado no Store
     const userId = useSelector<UserState, UserState["id"]>(
       (state) => state.id
@@ -32,26 +38,94 @@ function Projetos ({ projeto }: PostsProps) {
         setNewCommentText(event.target.value)
     }
 
-    function apoiar(e: React.MouseEvent<HTMLElement>) {
+    const [user, setUser] = useState<User>(
+      {
+        id: +userId,
+        nome: '',
+        email: '',
+        apelido: '',
+        senha: '',
+        linkFoto: '',
+        bio: '',
+        tipoAcesso: '',
+        dataNascimento: '',
+      })
+
+    const [tema, setTema] = useState<Temas>(
+      {
+        id: 0,
+        temas: ''
+      }
+    )
+
+    useEffect(() => {
+      setProjeto({
+        ...projeto,
+        usuario: user,
+        temas: tema
+
+      })
+    }, [tema])
+
+    async function findById(id: string) {
+      await buscaId(`/projetos/${id}`, setProjeto, {
+        headers: {
+          'Authorization': token
+        }
+      })
+    }
+    const [proj, setProjeto] = useState<Projeto>({
+      id: projeto.id,
+      apoios: projeto.apoios,
+      nome: projeto.nome,
+      linkImagem: projeto.linkImagem,
+      descricao: projeto.descricao,
+      data: projeto.data,
+      usuario: null,
+      temas: null
+    })
+
+    const apoioTexto = ["✌️ apoiei", "✋ apoiar"];
+    const apoioColor = ["#BC73E9", "#6650E6"];
+    function apoioCheck() {
+      if(projeto.apoios.split(",").indexOf(userId) == -1){
+        return (
+          <p id="btn-apoiar" style={{ color: apoioColor[1], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
+            {apoioTexto[1]}
+          </p>
+        );
+      } else {
+        return (
+          <p id="btn-apoiar" style={{ color: apoioColor[0], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
+            {apoioTexto[0]}
+          </p>
+        )
+      }
+    }
+    async function apoiar(e: React.MouseEvent<HTMLElement>) {
       let apoiosArray = projeto.apoios.split(",");
       let element = e.target as HTMLElement;
-      let contador = document.querySelector("#apoios-contador");
 
       if (apoiosArray.indexOf(userId) == -1){
-        element.innerText = "✌ apoiei";
-        element.style.color = "#BC73E9";
+        element.innerText = apoioTexto[0];
+        element.style.color = apoioColor[0];
         apoiosArray.push(userId);
         projeto.apoios = apoiosArray.join(",");
-        //contador.innerText = `${apoiosArray.length} apoiaram`;
       } else {
-        element.innerText = "🖐 apoiar";
-        element.style.color = "#6650E6";
+        element.innerText = apoioTexto[1];
+        element.style.color = apoioColor[1];
         apoiosArray.splice(apoiosArray.indexOf(userId), 1);
         projeto.apoios = apoiosArray.join(",");
-        //contador.innerText = `${apoiosArray.length} apoiaram`;
       }
-      console.log(apoiosArray);
+
+      await put(`/projetos`, proj, setProjeto, {
+        headers: {
+          'Authorization': token
+        }
+      })
+
       console.log(projeto.apoios);
+
     }
 
     return (
@@ -87,13 +161,11 @@ function Projetos ({ projeto }: PostsProps) {
                         {projeto.temas?.temas}
                     </Typography> 
 
-                    <p id="apoios-contador" style={{ fontWeight: "bold", }}> 
-                      {projeto.apoios.split(",").length} apoiaram
+                    <p id="contador-apoiar" style={{ color: apoioColor[0], cursor: "pointer", fontWeight: "bold", }} > 
+                      {projeto.apoios.split(",").length} apoiam
                     </p>
 
-                    <p id="btn-apoiar" style={{ color: "#6650E6", cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
-                      apoiar
-                    </p>
+                    {apoioCheck()}
 
                 </CardContent>
 
