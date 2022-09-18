@@ -1,10 +1,20 @@
-.imagem2 {
-  background-image: url(https://drive.google.com/file/d/1TbACV5IRF0Hgh0mD2hM_zDkdb5DkxKXK/view?usp=sharing);
-  background-repeat: no-repeat;
-  width: 100vh;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
+.bg-cadastrar{
+  background-color: rgb(188, 115, 233, 0.05);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.imagem2 > img{
+  
+  margin-left: 5rem;
+  height: 600px;
+}
+
+.formCadastrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .form-cadastro label {
   color: #6D53E6 !important ;
@@ -49,9 +59,7 @@
 }
 
 .img-cadastro{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  
   margin-left: 7rem;
  
   height: 700px;
@@ -66,6 +74,3 @@
   margin-top: 2rem !important;
 }
 
-.bg-cadastrar{
-  background-color: rgb(188, 115, 233, 0.05) ;
-}
