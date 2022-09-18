@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
@@ -6,6 +6,8 @@ import Projeto from '../../../models/Projeto';
 import Comentarios from '../comentarios/Comentarios';
 import { UserState } from '../../../store/user/userReducer';
 import { useSelector } from 'react-redux';
+import User from '../../../models/User';
+import { buscaId } from '../../../services/Service';
 
 interface PostsProps {
     projeto: Projeto
@@ -18,9 +20,15 @@ function Projetos ({ projeto }: PostsProps) {
       (state) => state.id
     );
 
+      // Pega o Token guardado no Store
+      const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
     const [comments, setComments] = useState([''])
 
     const [newCommentText, setNewCommentText] = useState('')
+
 
     function handleCreateNewComment(event: FormEvent) {
         event.preventDefault()
@@ -67,9 +75,11 @@ function Projetos ({ projeto }: PostsProps) {
                         {projeto.nome}
                     </Typography>
 
-                    <Typography variant="body2" component="p">
-                        {projeto.linkImagem}
-                    </Typography>
+                    <Box className='cardImg'>
+                       <img className='img'
+                            src={projeto.linkImagem}
+                            ></img> 
+                    </Box>
 
                     <Typography variant="body2" component="p">
                         {projeto.descricao}
