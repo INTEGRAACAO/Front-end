@@ -8,6 +8,7 @@ import { UserState } from '../../../store/user/userReducer';
 import { useSelector } from 'react-redux';
 import User from '../../../models/User';
 import { buscaId } from '../../../services/Service';
+import { Grid } from '@mui/material';
 
 interface PostsProps {
     projeto: Projeto
@@ -63,6 +64,7 @@ function Projetos ({ projeto }: PostsProps) {
     }
 
     return (
+        
         <Box m={2} >
             <Card variant="outlined">
                 <CardContent>
@@ -128,20 +130,23 @@ function Projetos ({ projeto }: PostsProps) {
 
                     </Box>
                 </CardActions>
-
+                <Box className='box-comentario'>
                 <form onSubmit={handleCreateNewComment}>
-                    <strong>Deixe seu feedback</strong>
+                    <Box className='comentario'>
+                    <strong> Comentários </strong></Box>
+                    <Box>
                     <textarea
                         name='comment'
                         placeholder='Deixe seu comentário'
                         value={newCommentText}
                         onChange={handleNewCommentChange}
                         required
-                    />
+                    /></Box>
                     <footer>
                         <button type="submit">Publicar</button>
                     </footer>
                 </form>
+                </Box>
 
                 <div>
                     {comments.map(comment => {
@@ -153,6 +158,7 @@ function Projetos ({ projeto }: PostsProps) {
 
             </Card>
         </Box>
+      
     )
 }
 
