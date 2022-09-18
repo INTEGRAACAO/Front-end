@@ -1,136 +1,111 @@
-.container-login {
-    height: 100vh;
-    background-color:  #6D53E6;
+.bg-login {
+  background-color: rgb(188, 115, 233, 0.1);
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
-
-.fundo-login {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(40deg, rgb(50, 52, 165) 10%, rgba(101, 193, 244, 1) 70%);
-}
-
-.image-login {
-    color: #3a0c91bb !important;
-    font-weight: bold !important;
-    font-family: montserrat;
-    align-items: center;
-    justify-content: center !;
-    font-size: 3rem !important;
-    width: 80vh;
-    min-height: 20vh;
-    display: flex;
-    justify-content: center;
-    background-image: url(https://cdn.discordapp.com/attachments/1019990086751899698/1019990273801068615/logo_integra_tiny_2.svg);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: 200px;
-    background-size: auto;
-}
-
- .bg-login {
-    background-color: rgb(188, 115, 233, .1);
-    
+.logo-login > img {
+  margin-left: 5rem;
+  height: 600px;
 }
 
 .card-login {
-    width: 400px;
-    height: 60vh;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 24px;
+  width: 400px;
+  height: 60vh;
+  border-radius: 24px;
 }
 
 .card-title-login {
-    font-weight: bold !important;
-    color: #6D53E6;
+  font-weight: bold !important;
+  color: #6d53e6;
 }
 
 .form {
-    width: 270px;
+  width: 270px;
 }
 
 .label {
-    color:  #6D53E6 !important;
-    font-weight: bold !important;
+  color: #6d53e6 !important;
+  font-weight: bold !important;
 }
 
 .input {
-    color: #6D53E6 !important;
+  color: #6d53e6 !important;
 }
-.input:focus{
-    background-color:  rgb(188, 115, 233, .1) 
+.input:focus {
+  background-color: rgb(188, 115, 233, 0.1);
 }
 
 .form-input-login {
-    width: 100%;
+  width: 100%;
 }
 
 .form-btn-login {
-    background-color: #6D53E6 !important;
-  color: white !important;
-}
-.form-btn-login:hover {
-    background-color: rgb(169, 43, 223)  !important;
+  display: flex;
+  justify-content: center;
   color: white !important;
 }
 
+.form-btn-login > button{
+    background-color: #6d53e6 !important;
+}
+.form-btn-login>button:hover {
+  background-color: rgb(169, 43, 223) !important;
+  color: white !important;
+}
 
 .MuiInput-underline:before {
-    border-bottom: 1px solid  #6D53E6 !important;
+  border-bottom: 1px solid #6d53e6 !important;
 }
 
 .MuiInput-underline:after {
-    border-bottom: 1px solid  #6D53E6!important;
+  border-bottom: 1px solid #6d53e6 !important;
 }
 
 .text-decoration-none-login {
-    text-decoration: none;
+  text-decoration: none;
 }
 
 .criarConta-login {
-    color: #6D53E6;
-    font-family: montserrat;
-    align-items: center;
+  color: #6d53e6;
+  font-family: montserrat;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 
-.box-login{
-    width: 400px;
-    height: 400px;
+.cadastre {
+    margin-left: 3px !important;
 }
 
-.box-login-frase{
-    width: 500px;
-    height: 200px;
+.box-login {
+  width: 400px;
+  height: 400px;
 }
 
-.img-login{
-    margin-left: 5rem;
-    height: 600px;
+.box-login-frase {
+  width: 500px;
+  height: 200px;
 }
 
-.img-login-frase{
-    width: 100%;
-    height: 100%;
+.img-login-frase {
+  width: 100%;
+  height: 100%;
 }
 
 .form-input-login label {
-    color: #6D53E6 !important ;
-  }
-
-.form-input-login{
-    color:#6D53E6  !important;
+  color: #6d53e6 !important ;
 }
 
- .form-input-login input:focus{
-    background-color:  rgb(188, 115, 233, .1) ;
-   }
+.form-input-login {
+  color: #6d53e6 !important;
+}
 
-   .TextField{
-    color: #6D53E6  !important;
-  }
+.form-input-login input:focus {
+  background-color: rgb(188, 115, 233, 0.1);
+}
+
+.TextField {
+  color: #6d53e6 !important;
+}
