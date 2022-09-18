@@ -7,6 +7,8 @@ import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 import {toast} from 'react-toastify'
 import Projetos from '../projetos/projetos';
+import CadastroProjeto from '../CadastroProjeto/CadastroProjeto';
+import { Box } from '@mui/material';
 
 function ListaProjetos() {
   const [posts, setPosts] = useState<Projeto[]>([])
@@ -48,6 +50,7 @@ function ListaProjetos() {
 
   return (
     <>
+    <Box> <CadastroProjeto/></Box>
     <section className="projetos">
       {posts.map(post => (
         <Projetos projeto={post}/> 
