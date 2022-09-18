@@ -14,13 +14,15 @@
     border-radius: 4px;
     display: flex;
     flex-direction: row;
+    width:60rem;
+    height:15rem;
 }
 
 .card-imagem {
     object-fit: cover;
     justify-content: flex-start;
     width: 20%;
-    height: 100%;
+    max-height: 100%;
     padding: 2rem;
 }
 
@@ -31,11 +33,11 @@
 }
 
 .dados-usuarios {
-    flex-direction: row;
     display: flex;
     width: 100%;
     height: 100%;
     padding: 2rem;
+    margin-top: 2rem!important
 }
 
 .info {
@@ -66,24 +68,26 @@
 .bio {
     width: 100%;
     height: 100%;
-    margin: 0 !important;
+    margin: 1rem !important;
     text-align: justify;
 }
 
 .card-container-about {
     background-color: rgba(255, 255, 255, 0.916);
-    /* align-items: flex-start;
-    height: 20rem;
-    width: 100%;
+    align-items: flex-start;
+    height: 15rem;
+    width: 60rem;
     border-radius: 4px;
-    margin: 2% auto;
-    padding: 1%;
     display: flex;
-    /* justify-content: center; */
-    
     margin: 2% auto;
     padding: 1%;
+}
+
+.postagem{
     border-radius: 4px;
     display: flex;
     flex-direction: row;
+    width:60rem;
+    height:100%; 
+    align-items: flex-start!important;
 }

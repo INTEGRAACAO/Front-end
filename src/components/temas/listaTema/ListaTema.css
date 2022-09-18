@@ -1,6 +1,50 @@
+.container{
+  width:100%;
+  /* height: 100%; */
+  display: grid;
+  justify-content: center;
+  background-color: rgb(188, 115, 233, .2);
+}
+
+.modal-tema{
+  display: flex;
+  justify-content:center;
+  margin-top:5rem;
+
+}
 .text-decorator-none{
     text-decoration: none;
 }
 .temas {
   width: 100%;
+}
+
+.botaoTema:hover{
+  color: #df146c;
+  background-color: rgba(247, 251, 251, 0.821)!important;
+  font-weight: bold!important;
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+.botaoTema{
+  display:flex;
+  justify-content:flex-end;
+  align-items: center;
+  background-color:rgba(201,108,240,0.5)!important;
+}
+
+.botaoDeletar:hover{
+  color: #df146c;
+  background-color: rgba(247, 251, 251, 0.821)!important;
+  font-weight: bold!important;
+  transform: scale(1.1);
+  transition: all 0.4s;
+}
+
+.botaoDeletar{
+  display:flex;
+  background-color: rgba(62,114,240,0.5)!important;
+  justify-content:flex-end;
+  align-items: center;
 }
