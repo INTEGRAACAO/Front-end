@@ -128,10 +128,10 @@ function Projetos ({ projeto }: PostsProps) {
 
                     </Box>
                 </CardActions>
-
-                <form onSubmit={handleCreateNewComment}>
-                    <strong>Deixe seu feedback</strong>
-                    <textarea
+        
+                    <form onSubmit={handleCreateNewComment}>
+                    <strong>Deixe seu comentário!</strong>
+                    <textarea 
                         name='comment'
                         placeholder='Deixe seu comentário'
                         value={newCommentText}
@@ -141,7 +141,8 @@ function Projetos ({ projeto }: PostsProps) {
                     <footer>
                         <button type="submit">Publicar</button>
                     </footer>
-                </form>
+                </form> 
+               
 
                 <div>
                     {comments.map(comment => {
