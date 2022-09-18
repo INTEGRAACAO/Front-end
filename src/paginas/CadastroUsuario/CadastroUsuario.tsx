@@ -123,13 +123,13 @@ export default function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center" className='bg-cadastrar'>
-      <Grid item xs={2} className="imagem2">
+    <Grid container sm={12} className='bg-cadastrar'>
+      <Grid  className="imagem2">
       <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-cadastro' />
       </Grid>
-      <Grid item xs={10} alignItems="center">
-        <Box paddingX={10}>
-          <form onSubmit={cadastrar} className='formCadastrar'>
+      <Grid item xs={5} alignItems="center" className='formCadastrar'>
+        <Box paddingX={10} >
+          <form onSubmit={cadastrar} >
             
             <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth required  className='form-cadastro text1' />
             <TextField value={user.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='apelido' label='Usuário' variant='outlined' name='apelido' margin='normal' fullWidth required className='form-cadastro' />
