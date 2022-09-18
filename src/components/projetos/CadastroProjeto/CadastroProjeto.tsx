@@ -9,7 +9,6 @@ import { UserState } from '../../../store/user/userReducer';
 import User from '../../../models/User';
 import Temas from '../../../models/Tema';
 import { toast } from 'react-toastify'
-import { Grid } from '@mui/material';
 
 
 function CadastroProjeto() {
@@ -62,7 +61,7 @@ function CadastroProjeto() {
   )
 
   useEffect(() => {
-    if (token === "") {
+    if (token == "") {
       toast.error('Você precisa estar logado', {
         position: "top-right",
         autoClose: 2000,
@@ -208,7 +207,6 @@ function CadastroProjeto() {
   }
 
   return (
-    <Grid item sm={12} className='cadastro-container'>
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
         <Typography variant="h3" color="textSecondary" component="h1" align="center" >Conte um pouco mais sobre o seu projeto</Typography>
@@ -239,7 +237,6 @@ function CadastroProjeto() {
         </FormControl >
       </form>
     </Container>
-    </Grid>
   )
 }
 
