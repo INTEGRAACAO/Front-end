@@ -54,7 +54,7 @@ function Navbar() {
               Perfil
             </Button>
           </Link>
-          <Link to= "/projetos" >
+          <Link to= "/formularioProjetos" >
             <Button variant="outlined">
               Projetos
             </Button>

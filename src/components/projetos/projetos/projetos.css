@@ -1,0 +1,13 @@
+.cardImg {
+    object-fit: cover;
+    justify-content: flex-start;
+    width: 40rem;
+    height: 2rem;
+    padding: 2rem;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}

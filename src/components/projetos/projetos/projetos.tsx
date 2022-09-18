@@ -1,9 +1,13 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import Projeto from '../../../models/Projeto';
 import Comentarios from '../comentarios/Comentarios';
+import { UserState } from '../../../store/user/userReducer';
+import { useSelector } from 'react-redux';
+import User from '../../../models/User';
+import { buscaId } from '../../../services/Service';
 
 interface PostsProps {
     projeto: Projeto
@@ -11,9 +15,20 @@ interface PostsProps {
 
 function Projetos ({ projeto }: PostsProps) {
 
+    // Pega o ID guardado no Store
+    const userId = useSelector<UserState, UserState["id"]>(
+      (state) => state.id
+    );
+
+      // Pega o Token guardado no Store
+      const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
+
     const [comments, setComments] = useState([''])
 
     const [newCommentText, setNewCommentText] = useState('')
+
 
     function handleCreateNewComment(event: FormEvent) {
         event.preventDefault()
@@ -25,6 +40,28 @@ function Projetos ({ projeto }: PostsProps) {
         setNewCommentText(event.target.value)
     }
 
+    function apoiar(e: React.MouseEvent<HTMLElement>) {
+      let apoiosArray = projeto.apoios.split(",");
+      let element = e.target as HTMLElement;
+      let contador = document.querySelector("#apoios-contador");
+
+      if (apoiosArray.indexOf(userId) == -1){
+        element.innerText = "✌ apoiei";
+        element.style.color = "#BC73E9";
+        apoiosArray.push(userId);
+        projeto.apoios = apoiosArray.join(",");
+        //contador.innerText = `${apoiosArray.length} apoiaram`;
+      } else {
+        element.innerText = "🖐 apoiar";
+        element.style.color = "#6650E6";
+        apoiosArray.splice(apoiosArray.indexOf(userId), 1);
+        projeto.apoios = apoiosArray.join(",");
+        //contador.innerText = `${apoiosArray.length} apoiaram`;
+      }
+      console.log(apoiosArray);
+      console.log(projeto.apoios);
+    }
+
     return (
         <Box m={2} >
             <Card variant="outlined">
@@ -34,17 +71,15 @@ function Projetos ({ projeto }: PostsProps) {
                         Postagens
                     </Typography>
 
-                    <Typography variant="h5" component="h2">
-                        {projeto.apoios}
-                    </Typography>
-
                     <Typography variant="body2" component="p">
                         {projeto.nome}
                     </Typography>
 
-                    <Typography variant="body2" component="p">
-                        {projeto.linkImagem}
-                    </Typography>
+                    <Box className='cardImg'>
+                       <img className='img'
+                            src={projeto.linkImagem}
+                            ></img> 
+                    </Box>
 
                     <Typography variant="body2" component="p">
                         {projeto.descricao}
@@ -61,6 +96,14 @@ function Projetos ({ projeto }: PostsProps) {
                     <Typography variant="body2" component="p">
                         {projeto.temas?.temas}
                     </Typography> 
+
+                    <p id="apoios-contador" style={{ fontWeight: "bold", }}> 
+                      {projeto.apoios.split(",").length} apoiaram
+                    </p>
+
+                    <p id="btn-apoiar" style={{ color: "#6650E6", cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
+                      apoiar
+                    </p>
 
                 </CardContent>
 
