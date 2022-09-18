@@ -85,11 +85,10 @@ function Perfil() {
             <Grid item sm={12} className="card-container">
 
                 <div className='card-container-info'>
-                    <div className='card-imagem'>
-                        <img className='img'
+                <img className='img'
                             src={user.linkFoto}
                             alt={user.nome} />
-                    </div>
+                        
                     <div className='vazio'></div>
                     <div className="dados-usuário">
                        <div className='info'>{user.nome} </div> 
@@ -107,12 +106,6 @@ function Perfil() {
                     </Box>
                     
                 </Box>
-
-                <Box className="postagem">
-                    <ListaProjetos />
-                
-                </Box>
-
             </Grid>
 
         </Grid>
