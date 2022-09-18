@@ -76,7 +76,7 @@ function Projetos ({ projeto }: PostsProps) {
                     </Typography>
 
                     <Box className='cardImg'>
-                       <img className='img'
+                       <img alt='' className='img'
                             src={projeto.linkImagem}
                             ></img> 
                     </Box>
