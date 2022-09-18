@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
-import { Box, Grid } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
+import Box from '@mui/material/Box'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { UserState } from '../../store/tokens/tokensReducer'
