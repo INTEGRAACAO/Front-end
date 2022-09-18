@@ -101,7 +101,7 @@ function Perfil() {
 
                 <Box className='card-container-about'>
                     <Box className='card-container-texto'>
-                        <div className='bio'>Biografia</div>
+                        <div className='bio'>Sobre mim</div>
                         <div className='bioTexto'> {user.bio}</div> 
                         
                     </Box>

@@ -50,7 +50,6 @@ function ListaProjetos() {
 
   return (
     <>
-    <Box> <CadastroProjeto/></Box>
     <section className="projetos">
       {posts.map(post => (
         <Projetos projeto={post}/> 
