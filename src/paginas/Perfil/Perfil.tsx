@@ -85,8 +85,10 @@ function Perfil() {
     return (
         <Grid container>
 
-            <Grid item sm={12} className="card-container">
-
+            <Grid item sm={12} className="card-container ">
+                <Box className="img-perfil">
+                <img  src="https://i.imgur.com/xRxVaSZ.png" alt="Perfil" />
+                </Box>
                 <div className='card-container-info'>
                     <img className='img'
                         src={user.linkFoto}
