@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from "@material-ui/core";
-import { Box } from '@mui/material'
+import { Box, Grid } from '@mui/material'
 import { Navigate } from 'react-router-dom';
 import Temas from '../../../models/Tema'
 import './ListaTema.css';
@@ -52,6 +52,9 @@ function ListaTema() {
   return (
     <>
       <Box className="container">
+      <Box className="imagem-topicos">
+      <img src="https://i.imgur.com/94F66F1.png" alt="" className='img-topicos' />
+      </Box>
         <Box className='modal-tema'>
           <ModalTema />
         </Box>
