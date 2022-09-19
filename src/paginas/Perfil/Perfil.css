@@ -1,11 +1,11 @@
 .card-container {
+
   height: 100%; 
   background-color: rgb(188, 115, 233, 0.2);
 
   width: 80%;
   display: block;
   margin: 0 auto;
-
 }
 
 .card-container-info {

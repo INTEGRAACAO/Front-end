@@ -209,11 +209,10 @@ function CadastroProjeto() {
   return (
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
-        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Crie um Projeto</Typography>
-        <TextField className="input-projeto" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
-        <TextField value={projeto.apoios} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="apoios" label="apoios" variant="outlined" name="apoios" margin="normal" fullWidth />
-        <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="linkImagem" variant="outlined" name="linkImagem" margin="normal" fullWidth />
-        <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Conte um pouco mais sobre o seu projeto</Typography>
+        <TextField className="input-projeto" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
+        <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="Coloque sua Imagem" variant="outlined" name="linkImagem" margin="normal" fullWidth />
+        <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="Escreva aqui as suas ideias" variant="outlined" name="descricao" margin="normal" fullWidth />
 
         <FormControl >
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
