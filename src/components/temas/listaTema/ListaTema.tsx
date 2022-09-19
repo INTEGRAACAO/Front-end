@@ -52,47 +52,47 @@ function ListaTema() {
   return (
     <>
       <Box className="container">
-      <Box className="imagem-topicos">
-      <img src="https://i.imgur.com/94F66F1.png" alt="" className='img-topicos' />
-      </Box>
+        <Box className="imagem-topicos">
+          <img src="https://i.imgur.com/oDDHh4t.png" alt="topicos" />
+        </Box>
         <Box className='modal-tema'>
           <ModalTema />
         </Box>
-          <Box className='temas'>
-              {temas.map(temas => (
-              <Box m={2} >
-                <Card variant="outlined">
-                  <CardContent>
-                    <Typography color="textSecondary" gutterBottom>
-                      Esse tópico se refere à
-                    </Typography>
-                    <Typography variant="h5" component="h2">
-                      {temas.temas}
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Box display="flex" justifyContent="center" mb={1.5} >
+        <Box className='temas'>
+          {temas.map(temas => (
+            <Box m={2} >
+              <Card variant="outlined">
+                <CardContent>
+                  <Typography color="textSecondary" gutterBottom>
+                    Esse tópico se refere à
+                  </Typography>
+                  <Typography variant="h5" component="h2">
+                    {temas.temas}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Box display="flex" justifyContent="center" mb={1.5} >
 
-                      <Link to={`/formularioTemas/${temas.id}`} className="text-decorator-none">
-                        <Box mx={1}>
-                          <Button variant="contained" className="marginLeft botaoTema" size='small'  >
-                            atualizar
-                          </Button>
-                        </Box>
-                      </Link>
-                      <Link to={`/deletarTemas/${temas.id}`} className="text-decorator-none">
-                        <Box mx={1}>
-                          <Button variant="contained" size='small' className='botaoDeletar'>
-                            deletar
-                          </Button>
-                        </Box>
-                      </Link>
-                    </Box>
-                  </CardActions>
-                </Card>
-              </Box>
-            ))}
-          </Box>
+                    <Link to={`/formularioTemas/${temas.id}`} className="text-decorator-none">
+                      <Box mx={1}>
+                        <Button variant="contained" className="marginLeft botaoTema" size='small'  >
+                          atualizar
+                        </Button>
+                      </Box>
+                    </Link>
+                    <Link to={`/deletarTemas/${temas.id}`} className="text-decorator-none">
+                      <Box mx={1}>
+                        <Button variant="contained" size='small' className='botaoDeletar'>
+                          deletar
+                        </Button>
+                      </Box>
+                    </Link>
+                  </Box>
+                </CardActions>
+              </Card>
+            </Box>
+          ))}
+        </Box>
 
       </Box>
     </>
