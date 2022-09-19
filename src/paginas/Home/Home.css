@@ -49,13 +49,18 @@
   justify-content: center;
 
 }
-.home .msg-block .btn-acao .icones svg {
+.home .msg-block .btn-acao .icones img {
   max-width: 5%;
   margin: 0 1%;
 }
 .home .msg-block .btn-acao button {
   display: block;
-  justify-content: right;
+  width: 20%;
+  border: none;
+  background-color: #6650e6;
+  color: #fff;
+  border-radius: 4%;
+  cursor: pointer;
 }
 .home .projetos-home .css-1c5ij41 {
   margin: 0 !important;

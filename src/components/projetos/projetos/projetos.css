@@ -16,18 +16,7 @@
 }
 
 .comentario{
+    
     padding: 2rem !important;
 
-}
-
-.box-comentario{
-    padding: 2rem;
-}
-
-.form-btn-projeto > button{
-    background-color: #6d53e6 !important;
-}
-.form-btn-projeto > Button:hover {
-  background-color: rgb(169, 43, 223) !important;
-  color: white !important;
 }
