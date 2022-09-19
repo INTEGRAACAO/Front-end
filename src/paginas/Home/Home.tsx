@@ -1,20 +1,42 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router';
 import { useSelector } from 'react-redux';
 import { UserState } from '../../store/tokens/tokensReducer';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import User from '../../models/User';
+import { buscaId } from '../../services/Service'
 
 import ListaProjetos from '../../components/projetos/listaProjetos/ListaProjetos'
 
 import './Home.css';
 
-function Home() {
+function Home () {
     let navigate = useNavigate();
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
       );
     
+    // Pega o ID guardado no Store
+    const id = useSelector<UserState, UserState["id"]>(
+        (state) => state.id
+    );
+    
+    const [user, setUser] = useState<User>({
+        id: +id,
+        nome: '',
+        email: '',
+        apelido: '',
+        senha: '',
+        linkFoto: '',
+        bio: '',
+        tipoAcesso: '',
+        dataNascimento: '',
+        dataCadastro: ''
+    })
+
+    console.log(user)
+
     useEffect(() => {
       if (token == "") {
         toast.error('Você precisa estar logado', {
@@ -30,7 +52,23 @@ function Home() {
         navigate("/login")
   
       }
-  }, [token])
+    }, [token])
+   
+    // Métedo para pegar os dados de um Usuário especifico pelo ID
+    async function findById(id: string) {
+        await buscaId(`/usuario/${id}`, setUser, {
+            headers: {
+                'Authorization': token
+            }
+
+        })
+    }
+
+    useEffect(() => {
+        if (id !== undefined) {
+            findById(id)
+        }
+    }, [id])
 
   function postarMensagem(){
     let mensagem = document.querySelector("#mensagem");
@@ -43,8 +81,8 @@ function Home() {
           <h4 className="titulo">Página Inicial</h4>
             <section className="msg-block">
               <div className="msg-field">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3sc-fsCyocQAzjSfo2XgFUFXOOhO_TzDUJg&usqp=CAU" alt="" />
-                <textarea id="mensagem" placeholder="Nos diga o que está pensando!" />
+                <img src={user.linkFoto} alt="" />
+                <textarea placeholder="Nos diga o que está pensando!" />
               </div>
               <div className="btn-acao">
                 <div className="icones">
