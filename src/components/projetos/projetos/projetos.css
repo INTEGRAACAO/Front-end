@@ -15,9 +15,19 @@
     background-color: rgb(188, 115, 233, 0.1);
 }
 
-.comentario{
+.box-comentario label{
     
     padding: 2rem !important;
+    margin-bottom: 5rem !important;
+    color:black !important;
+    
 
 }
 
+.box-comentario {
+    color: black !important;
+}
+
+.Textfield label{
+    color: black !important;
+}
