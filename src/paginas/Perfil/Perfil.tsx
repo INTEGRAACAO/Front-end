@@ -66,7 +66,7 @@ function Perfil() {
 
     //let dia, mes, ano
 
-        try {
+    try {
         console.log(user.id)
         const formatadorDeData = new Intl.DateTimeFormat('pt-BR')
         console.log(formatadorDeData)
@@ -78,36 +78,40 @@ function Perfil() {
         console.log(error);
         dataCadastroFormatada = "carregando"
     }
-    
+
 
     //console.log(dia)
     return (
         <Grid container>
-           
+
             <Grid item sm={12} className="card-container">
 
                 <div className='card-container-info'>
-                <img className='img'
-                            src={user.linkFoto}
-                            alt={user.nome} />
-                        
+                    <img className='img'
+                        src={user.linkFoto}
+                        alt={user.nome} />
+
                     <div className='vazio'></div>
                     <div className="dados-usuário">
-                       <div className='info'>{user.nome} </div> 
-                       <div className='info-b'>{user.tipoAcesso} </div> 
-                       <div className='info-b'>Contato: {user.email} </div> 
-                       <div className='info-b'>Integrante desde: {dataCadastroFormatada}</div> 
+                        <div className='info'>{user.nome} </div>
+                        <div className='info-b'>{user.tipoAcesso} </div>
+                        <div className='info-b'>Contato: {user.email} </div>
+                        <div className='info-b'>Integrante desde: {dataCadastroFormatada}</div>
                     </div>
                 </div>
 
                 <Box className='card-container-about'>
                     <Box className='card-container-texto'>
                         <div className='bio'>Sobre mim</div>
-                        <div className='bioTexto'> {user.bio}</div> 
-                        
+                        <div className='bioTexto'> {user.bio}</div>
+
                     </Box>
                     <img src={perfilgf} alt="perfil gif" />
                 </Box>
+
+                <section className="projetos-perfil container-home">
+                    <ListaProjetos />
+                </section>
             </Grid>
 
         </Grid>
