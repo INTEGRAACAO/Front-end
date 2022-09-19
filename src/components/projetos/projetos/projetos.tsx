@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEvent, useState } from 'react'
+import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
 import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
@@ -6,21 +6,30 @@ import Projeto from '../../../models/Projeto';
 import Comentarios from '../comentarios/Comentarios';
 import { UserState } from '../../../store/user/userReducer';
 import { useSelector } from 'react-redux';
+import User from '../../../models/User';
+import { buscaId } from '../../../services/Service';
+import { Grid } from '@mui/material';
 
 interface PostsProps {
     projeto: Projeto
 }
 
-function Projetos ({ projeto }: PostsProps) {
+function Projetos({ projeto }: PostsProps) {
 
     // Pega o ID guardado no Store
     const userId = useSelector<UserState, UserState["id"]>(
-      (state) => state.id
+        (state) => state.id
     );
+
+    // Pega o Token guardado no Store
+    const token = useSelector<UserState, UserState["tokens"]>(
+        (state) => state.tokens
+    )
 
     const [comments, setComments] = useState([''])
 
     const [newCommentText, setNewCommentText] = useState('')
+
 
     function handleCreateNewComment(event: FormEvent) {
         event.preventDefault()
@@ -74,10 +83,11 @@ function Projetos ({ projeto }: PostsProps) {
           </p>
         )
       }
-        
+      
     }
 
     return (
+
         <Box m={2} >
             <Card variant="outlined">
                 <CardContent>
@@ -90,9 +100,11 @@ function Projetos ({ projeto }: PostsProps) {
                         {projeto.nome}
                     </Typography>
 
-                    <Typography variant="body2" component="p">
-                        {projeto.linkImagem}
-                    </Typography>
+                    <Box className='cardImg'>
+                        <img alt='' className='img'
+                            src={projeto.linkImagem}
+                        ></img>
+                    </Box>
 
                     <Typography variant="body2" component="p">
                         {projeto.descricao}
@@ -108,7 +120,8 @@ function Projetos ({ projeto }: PostsProps) {
 
                     <Typography variant="body2" component="p">
                         {projeto.temas?.temas}
-                    </Typography> 
+                    </Typography>
+
 
                     <p id="contador-apoiar" > 
                       { apoiosContador() } 
@@ -140,30 +153,38 @@ function Projetos ({ projeto }: PostsProps) {
                     </Box>
                 </CardActions>
 
-                <form onSubmit={handleCreateNewComment}>
-                    <strong>Deixe seu feedback</strong>
-                    <textarea
-                        name='comment'
-                        placeholder='Deixe seu comentário'
-                        value={newCommentText}
-                        onChange={handleNewCommentChange}
-                        required
-                    />
-                    <footer>
-                        <button type="submit">Publicar</button>
-                    </footer>
-                </form>
+                <Box padding={2}>
+                    <form onSubmit={handleCreateNewComment}>
+                        <Box>
+                            <strong> Comentários </strong>
+                        </Box>
+                        <Box>
+                            <textarea
+                                name='comment'
+                                placeholder='Deixe seu comentário'
+                                value={newCommentText}
+                                onChange={handleNewCommentChange}
+                                required />
+                        </Box>
+                        <Box mx={1}>
+                          <Button variant="contained" className="marginLeft botaoTema" size='small'  >
+                            Publicar
+                          </Button>
+                        </Box>
+                    </form>
+                </Box>
 
-                <div>
+                <Box padding={2}>
                     {comments.map(comment => {
                         return (
                             <Comentarios conteudo={comment} />
                         )
                     })}
-                </div>
+                </Box>
 
             </Card>
         </Box>
+
     )
 }
 

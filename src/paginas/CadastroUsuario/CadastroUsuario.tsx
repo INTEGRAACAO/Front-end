@@ -23,10 +23,12 @@ export default function CadastroUsuario() {
     apelido: '',
     senha: '',
     linkFoto: '',
-    bio: '',
-    tipoAcesso: '',
-    dataNascimento: ''
+    bio:'',
+    tipoAcesso:'',
+    dataNascimento:'',
+    dataCadastro: ''
   })
+  
   const [userResult, setUserResult] = useState<User>({
     id: 0,
     nome: '',
@@ -34,9 +36,10 @@ export default function CadastroUsuario() {
     apelido: '',
     senha: '',
     linkFoto: '',
-    bio: '',
-    tipoAcesso: '',
-    dataNascimento: ''
+    bio:'',
+    tipoAcesso:'',
+    dataNascimento:'',
+    dataCadastro: '' 
   })
 
   useEffect(() => {
@@ -120,21 +123,23 @@ export default function CadastroUsuario() {
   }
 
   return (
-    <Grid container direction="row" justifyContent="center" alignItems="center">
-      <Grid item xs={6} className="imagem2" />
-      <Grid item xs={6} alignItems="center">
-        <Box paddingX={10}>
-          <form onSubmit={cadastrar} className='formCadastrar'>
-            <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className="textos2">Cadastrar</Typography>
-            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth required />
-            <TextField value={user.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='apelido' label='Apelido' variant='outlined' name='apelido' margin='normal' fullWidth required />
-            <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='Email' variant='outlined' name='email' margin='normal' fullWidth required />
-            <TextField value={user.linkFoto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='linkFoto' label='Link Foto' variant='outlined' name='linkFoto' margin='normal' fullWidth />
-            <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio' variant='outlined' name='bio' margin='normal' fullWidth />
+    <Grid container sm={12} className='bg-cadastrar'>
+      <Grid  item xs={2} className="imagem2">
+      <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-cadastro' />
+      </Grid>
+      <Grid item xs={5} alignItems="center" className='formCadastrar'>
+        <Box paddingX={10} >
+          <form onSubmit={cadastrar} >
+            
+            <TextField value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth required  className='form-cadastro text1' />
+            <TextField value={user.apelido} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='apelido' label='Usuário' variant='outlined' name='apelido' margin='normal' fullWidth required className='form-cadastro' />
+            <TextField value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='Email' variant='outlined' name='email' margin='normal' fullWidth required className='form-cadastro'/>
+            <TextField value={user.linkFoto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='linkFoto' label='Foto Perfil' variant='outlined' name='linkFoto' margin='normal' fullWidth className='form-cadastro'/>
+            <TextField value={user.bio} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='bio' label='Bio' variant='outlined' name='bio' margin='normal' fullWidth className='form-cadastro'/>
            
             <TextField
               value={dataNascimento}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => getDate(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => getDate(e)} 
               id="dataNascimento"
               label="Data de nascimento"
               placeholder="Digite sua Data de nascimento"
@@ -144,34 +149,40 @@ export default function CadastroUsuario() {
               type="date"
               InputLabelProps={{ shrink: true }}
               fullWidth
-              required
+              required className='form-cadastro'
             />
-            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth required />
-            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth required />
+            <TextField value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth required className='form-cadastro'/>
+            <TextField value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar Senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth required className='form-cadastro'/>
 
             <FormControl component="fieldset">
-              <FormLabel component="legend">Tipo Acesso</FormLabel>
+              <FormLabel component="legend" className='form-cadastro'>Tipo Acesso</FormLabel>
               <RadioGroup aria-label="gender" name="tipoAcesso" value={user.tipoAcesso} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)}>
-                <FormControlLabel value="Ong" control={<Radio />} label="Ong" />
-                <FormControlLabel value="Apoiador" control={<Radio />} label="Apoiador" />                
+                <FormControlLabel value="Ong" control={<Radio />} label="Ong" className='form-cadastro'/>
+                <FormControlLabel value="Apoiador" control={<Radio />} label="Apoiador" className='form-cadastro' />                
               </RadioGroup>
             </FormControl> 
             
             <Box marginTop={2} textAlign='center'>
               <Link to='/login' className="text-decorator-none">
-                <Button variant='contained' color='secondary'>
+                <Button variant='contained'  className="btnCancelar">
                   Cancelar
                 </Button>
               </Link>
 
-              <Button type="submit" variant='contained' color='primary' className="btnCancelar">
+              <Button type="submit" variant='contained' className="btnConfirmar" >
                 Cadastrar
               </Button>
 
             </Box>
           </form>
         </Box>
-      </Grid>
+
+        
+       </Grid> 
+       <Grid item xs={5}>
+        <img src="https://i.imgur.com/CuhzhB5.gif" alt="" />
+        
+        </Grid>
     </Grid>
   );
 }

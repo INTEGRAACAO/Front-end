@@ -1,0 +1,44 @@
+.valores-bg{
+    background-color: rgb(188, 115, 233, .1);
+}
+
+.img-valores{
+    display: flex;
+    flex-direction: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.titulo{
+    display: flex !important;
+    justify-content: center !important;
+    align-items: justify !important;
+    margin-top: 5% !important; 
+    font-weight: bold!important;
+}
+
+.borda{
+    margin-right: 15px !important;
+}
+
+
+.box1{
+    display: flex;
+}
+
+.box2{
+    
+}
+
+.box3{
+    
+}
+
+.card{
+    align-items: center;
+}
+
+.titulo-card{
+    text-align: center !important;
+    
+}

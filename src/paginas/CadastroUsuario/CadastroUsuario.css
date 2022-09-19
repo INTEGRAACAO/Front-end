@@ -1,23 +1,76 @@
-.imagem2 {
-  background-image: url(https://drive.google.com/file/d/1TbACV5IRF0Hgh0mD2hM_zDkdb5DkxKXK/view?usp=sharing);
-  background-repeat: no-repeat;
-  width: 100vh;
-  min-height: 100vh;
-  background-size: cover;
-  background-position: center;
+.bg-cadastrar{
+  background-color: rgb(188, 115, 233, 0.05);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.texto2 {
+.imagem2 > img{
+  
+  margin-left: 5rem;
+  height: 600px;
+}
+
+.formCadastrar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-cadastro label {
+  color: #6D53E6 !important ;
+}
+ .form-cadastro input:focus{
+  background-color:  rgb(188, 115, 233, .1) ;
+ }
+
+ .form-cadastro input{
+  color: #6D53E6 !important;
+ }
+.form-cadastro{
+  color:#6D53E6 !important;
+}
+.texto2 h3 {
   font-weight: bold !important;
-  color: black;
+  color: #6D53E6 !important;
 }
 
+.MuiTypography-colorTextPrimary {
+  color: #6D53E6 !important;
+}
 .btnCancelar {
   margin-right: 20px !important;
+  background-color: #6D53E6  !important;
+  color: white !important;
+}
+
+.btnCancelar:hover{
+  background-color: rgb(169, 43, 223) !important;
+  color: white;
+}
+
+.btnConfirmar{
+  background-color:  rgb(169, 43, 223) !important;
+  color: white !important;
+}
+
+.btnConfirmar:hover{
+  background-color:#6D53E6  !important;
+  color: white;
+}
+
+.img-cadastro{
+  
+  margin-left: 7rem;
+ 
+  height: 700px;
+}
+
+.TextField{
+  color: #6D53E6  !important;
 }
 
 
-
-label{
-  color: #000000 !important;
+.text1{
+  margin-top: 2rem !important;
 }
+
