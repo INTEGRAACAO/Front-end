@@ -86,7 +86,7 @@ function Home () {
               </div>
               <div className="btn-acao">
                 <div className="icones">
-                  <img src="https://i.imgur.com/UlFTFdG.png" alt="" />
+                  <img src="https://i.imgur.com/w74BDRy.png" alt="" />
                   <img src="https://i.imgur.com/Da17zmp.png" alt="" />
                   <img src="https://i.imgur.com/q5lbYtx.png" alt="" />
                 </div>

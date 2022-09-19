@@ -176,7 +176,6 @@ function Projetos({ projeto }: PostsProps) {
                 </Box>
 
                 <Box padding={2}>
-
                     {comments.map(comment => {
                         return (
                             <Comentarios conteudo={comment} />
