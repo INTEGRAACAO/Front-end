@@ -78,7 +78,9 @@ function Home () {
     return (
       <div className="home">
         <section className="container-home">
+
         <img className="titulo" src="https://i.imgur.com/n6O4QAd.png" alt="Home" />
+
             <section className="msg-block">
               <div className="msg-field">
                 <img src={user.linkFoto} alt="" />

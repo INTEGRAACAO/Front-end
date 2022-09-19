@@ -1,5 +1,5 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
-import { Button, Card, CardActions, CardContent, Typography } from '@material-ui/core'
+import { Button, Card, CardActions, CardContent, Typography, TextField } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import Projeto from '../../../models/Projeto';
@@ -63,7 +63,7 @@ function Projetos({ projeto }: PostsProps) {
       } else {
         element.innerText = apoioTexto[1];
         element.style.color = apoioColor[1];
-        apoiosArray.splice(apoiosArray.indexOf(userId), 1);
+        apoiosArray.splice(apoiosArray.indexOf(userId), 3);
         projeto.apoios = apoiosArray.join(",");
         //contador.innerText = `${apoiosArray.length} apoiaram`;
       }
@@ -90,23 +90,19 @@ function Projetos({ projeto }: PostsProps) {
 
         <Box m={2} >
             <Card variant="outlined">
-                <CardContent>
-
-                    <Typography color="textSecondary" gutterBottom>
-                        Postagens
-                    </Typography>
-
-                    <Typography variant="body2" component="p">
-                        {projeto.nome}
-                    </Typography>
+                <CardContent>                    
 
                     <Box className='cardImg'>
                         <img alt='' className='img'
                             src={projeto.linkImagem}
                         ></img>
                     </Box>
+                    
+                    <Typography variant="inherit" component="h2">
+                        {projeto.nome}
+                    </Typography>
 
-                    <Typography variant="body2" component="p">
+                    <Typography variant="body1" component="h4">
                         {projeto.descricao}
                     </Typography>
 
@@ -114,17 +110,17 @@ function Projetos({ projeto }: PostsProps) {
                         {projeto.data}
                     </Typography>
 
-                    <Typography variant="body2" component="p">
+                    <Typography variant="body1" component="h5">
                         {projeto.usuario?.nome}
                     </Typography>
 
-                    <Typography variant="body2" component="p">
+                    <Typography variant="body1" component="h5">
                         {projeto.temas?.temas}
                     </Typography>
 
 
                     <p id="contador-apoiar" > 
-                      { apoiosContador() } 
+                      {projeto.apoios} 
                     </p>
 
                     {apoioCheck()}
@@ -136,7 +132,7 @@ function Projetos({ projeto }: PostsProps) {
 
                         <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
                             <Box mx={1}>
-                                <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                <Button variant="contained" className="marginLeft botaoTema" size='small' >
                                     Atualizar
                                 </Button>
                             </Box>
@@ -144,7 +140,7 @@ function Projetos({ projeto }: PostsProps) {
 
                         <Link to={`/deletarProjetos/${projeto.id}`} className="text-decorator-none">
                             <Box mx={1}>
-                                <Button variant="contained" size='small' color="secondary">
+                                <Button variant="contained" size='small' className='botaoDeletar'>
                                     Deletar
                                 </Button>
                             </Box>
@@ -156,19 +152,23 @@ function Projetos({ projeto }: PostsProps) {
 
                 <Box padding={2}>
                     <form onSubmit={handleCreateNewComment}>
-                        <Box>
-                            <strong> Comentários </strong>
+                       
+                        <Box >
+                            <TextField
+                              id="comment"
+                              name="comment"
+                              label="Deixe seu Comentário"
+                              variant="outlined"
+                              value={newCommentText}
+                              onChange={handleNewCommentChange}
+                              className='box-comentario'
+                              color='primary'
+                            />
+                            
                         </Box>
-                        <Box>
-                            <textarea
-                                name='comment'
-                                placeholder='Deixe seu comentário'
-                                value={newCommentText}
-                                onChange={handleNewCommentChange}
-                                required />
-                        </Box>
+                        
                         <Box mx={1}>
-                          <Button variant="contained" className="marginLeft botaoTema" size='small'  >
+                          <Button type="submit" variant="contained" className="marginLeft botaoTema" size='small'  >
                             Publicar
                           </Button>
                         </Box>
