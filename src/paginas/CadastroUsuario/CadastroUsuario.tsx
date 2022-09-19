@@ -124,7 +124,7 @@ export default function CadastroUsuario() {
 
   return (
     <Grid container sm={12} className='bg-cadastrar'>
-      <Grid  className="imagem2">
+      <Grid  item xs={2} className="imagem2">
       <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-cadastro' />
       </Grid>
       <Grid item xs={5} alignItems="center" className='formCadastrar'>
@@ -139,7 +139,7 @@ export default function CadastroUsuario() {
            
             <TextField
               value={dataNascimento}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => getDate(e)}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => getDate(e)} 
               id="dataNascimento"
               label="Data de nascimento"
               placeholder="Digite sua Data de nascimento"
@@ -176,8 +176,13 @@ export default function CadastroUsuario() {
             </Box>
           </form>
         </Box>
-       
-      </Grid>
+
+        
+       </Grid> 
+       <Grid item xs={5}>
+        <img src="https://i.imgur.com/CuhzhB5.gif" alt="" />
+        
+        </Grid>
     </Grid>
   );
 }
