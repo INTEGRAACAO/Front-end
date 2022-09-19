@@ -9,7 +9,6 @@ import { UserState } from '../../../store/user/userReducer';
 import User from '../../../models/User';
 import Temas from '../../../models/Tema';
 import { toast } from 'react-toastify'
-import { Grid } from '@mui/material';
 
 
 function CadastroProjeto() {
@@ -62,7 +61,7 @@ function CadastroProjeto() {
   )
 
   useEffect(() => {
-    if (token === "") {
+    if (token == "") {
       toast.error('Você precisa estar logado', {
         position: "top-right",
         autoClose: 2000,
@@ -208,14 +207,12 @@ function CadastroProjeto() {
   }
 
   return (
-    <Grid item sm={12} className='cadastro-container'>
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
-        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Crie um Projeto</Typography>
+        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Conte um pouco mais sobre o seu projeto</Typography>
         <TextField className="input-projeto" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
-        <TextField value={projeto.apoios} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="apoios" label="Apoios" variant="outlined" name="apoios" margin="normal" fullWidth />
         <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="Coloque sua Imagem" variant="outlined" name="linkImagem" margin="normal" fullWidth />
-        <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="Descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
+        <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="Escreva aqui as suas ideias" variant="outlined" name="descricao" margin="normal" fullWidth />
 
         <FormControl >
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
@@ -240,7 +237,6 @@ function CadastroProjeto() {
         </FormControl >
       </form>
     </Container>
-    </Grid>
   )
 }
 

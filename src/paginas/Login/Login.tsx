@@ -149,7 +149,7 @@ function Login() {
         </Box>
       </Grid>
       <Grid item xs={5} alignItems="center">
-        <img src="https://i.imgur.com/05EJeab.png" alt="" />
+        <img src="https://i.imgur.com/jmNJFPj.gif" alt="" />
       </Grid>
     </Grid>
   );

@@ -4,6 +4,7 @@ import Box from '@mui/material/Box'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import { UserState } from '../../store/tokens/tokensReducer'
+import perfilgf from './perfilgf.gif';
 
 import User from '../../models/User'
 import { buscaId } from '../../services/Service'
@@ -83,6 +84,7 @@ function Perfil() {
     //console.log(dia)
     return (
         <Grid container>
+           
             <Grid item sm={12} className="card-container">
 
                 <div className='card-container-info'>
@@ -105,7 +107,7 @@ function Perfil() {
                         <div className='bioTexto'> {user.bio}</div> 
                         
                     </Box>
-                    
+                    <img src={perfilgf} alt="perfil gif" />
                 </Box>
             </Grid>
 

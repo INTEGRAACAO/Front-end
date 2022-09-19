@@ -76,3 +76,11 @@
     display: inline-block;
     width: 30rem;
  }
+ 
+ .redes{
+   justify-content: center;
+   font-size: 3rem!important;
+   color: #4487AB;
+   padding: 1rem;
+   display: flex;
+ }
