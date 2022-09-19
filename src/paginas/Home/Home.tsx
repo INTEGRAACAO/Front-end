@@ -78,7 +78,7 @@ function Home () {
     return (
       <div className="home">
         <section className="container-home">
-          <h4 className="titulo">Página Inicial</h4>
+        
             <section className="msg-block">
               <div className="msg-field">
                 <img src={user.linkFoto} alt="" />

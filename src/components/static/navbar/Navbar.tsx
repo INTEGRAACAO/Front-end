@@ -74,7 +74,7 @@ function Navbar() {
           <Link to= "/temas" >
             <Button variant="outlined">
               <img className="icone" src="https://i.imgur.com/Da17zmp.png" alt="" />
-              Temas
+              Tópicos
             </Button>
           </Link>
           <Link to= "/sobreNos" >
