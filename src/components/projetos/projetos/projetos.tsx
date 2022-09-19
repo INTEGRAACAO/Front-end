@@ -41,26 +41,49 @@ function Projetos({ projeto }: PostsProps) {
         setNewCommentText(event.target.value)
     }
 
-    function apoiar(e: React.MouseEvent<HTMLElement>) {
-        let apoiosArray = projeto.apoios.split(",");
-        let element = e.target as HTMLElement;
-        let contador = document.querySelector("#apoios-contador");
+    const apoioTexto = ["✌️ apoiei", "✋ apoiar"];
+    const apoioColor = ["#BC73E9", "#6650E6"];
+    const btnApoio = document.querySelector("#btn-apoio") as HTMLElement;
 
-        if (apoiosArray.indexOf(userId) == -1) {
-            element.innerText = "✌ apoiei";
-            element.style.color = "#BC73E9";
-            apoiosArray.push(userId);
-            projeto.apoios = apoiosArray.join(",");
-            //contador.innerText = `${apoiosArray.length} apoiaram`;
-        } else {
-            element.innerText = "🖐 apoiar";
-            element.style.color = "#6650E6";
-            apoiosArray.splice(apoiosArray.indexOf(userId), 1);
-            projeto.apoios = apoiosArray.join(",");
-            //contador.innerText = `${apoiosArray.length} apoiaram`;
-        }
-        console.log(apoiosArray);
-        console.log(projeto.apoios);
+    function apoiosContador(){
+      return `${projeto.apoios.split(",").length} apoiaram`;
+    }
+
+    function apoiar(e: React.MouseEvent<HTMLElement>) {
+      let apoiosArray = projeto.apoios.split(",");
+      let element = e.target as HTMLElement;
+      let contador = document.querySelector("#apoios-contador");
+
+      if (apoiosArray.indexOf(userId) == -1){
+        element.innerText = apoioTexto[0];
+        element.style.color = apoioColor[0];
+        apoiosArray.push(userId);
+        projeto.apoios = apoiosArray.join(",");
+        //contador.innerText = `${apoiosArray.length} apoiaram`;
+      } else {
+        element.innerText = apoioTexto[1];
+        element.style.color = apoioColor[1];
+        apoiosArray.splice(apoiosArray.indexOf(userId), 1);
+        projeto.apoios = apoiosArray.join(",");
+        //contador.innerText = `${apoiosArray.length} apoiaram`;
+      }
+    }
+
+    function apoioCheck() {
+      if(projeto.apoios.split(",").indexOf(userId) == -1){
+        return (
+          <p id="btn-apoiar" style={{ color: apoioColor[1], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
+            {apoioTexto[1]}
+          </p>
+        );
+      } else {
+        return (
+          <p id="btn-apoiar" style={{ color: apoioColor[0], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
+            {apoioTexto[0]}
+          </p>
+        )
+      }
+      
     }
 
     return (
@@ -99,13 +122,12 @@ function Projetos({ projeto }: PostsProps) {
                         {projeto.temas?.temas}
                     </Typography>
 
-                    <p id="apoios-contador" style={{ fontWeight: "bold", }}>
-                        {projeto.apoios.split(",").length} apoiaram
+
+                    <p id="contador-apoiar" > 
+                      { apoiosContador() } 
                     </p>
 
-                    <p id="btn-apoiar" style={{ color: "#6650E6", cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}>
-                        apoiar
-                    </p>
+                    {apoioCheck()}
 
                 </CardContent>
 
