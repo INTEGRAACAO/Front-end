@@ -1,11 +1,13 @@
 .card-container {
-  display: grid;
-  justify-content: center;
-  align-items: flex-start;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(188, 115, 233, 0.1);
+
+  height: 100%; 
+  background-color: rgb(188, 115, 233, 0.2);
+
+  width: 80%;
+  display: block;
+  margin: 0 auto;
 }
+
 
 .card-container-info {
   background-color: rgba(255, 255, 255, 0.916);
@@ -62,12 +64,17 @@
 
 .card-container-about {
   background-color: rgba(255, 255, 255, 0.916);
-  align-items: flex-start;
-  justify-content: flex-start;
-  height: 15rem;
-  width: 60rem;
+  margin: 2% auto;
+  padding: 3%;
   border-radius: 4px;
   display: flex;
-  padding: 3%;
-  margin-top: -200px;
+  align-items: center;
+  width: 60rem;
+  height: 15rem;
+}
+
+
+.projetos-perfil{
+   padding: 1%;
+   align-items: center;
 }
