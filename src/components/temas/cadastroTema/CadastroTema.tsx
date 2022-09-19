@@ -8,6 +8,8 @@ import Projeto from '../../../models/Projeto'
 import Temas from '../../../models/Tema';
 import { toast } from 'react-toastify';
 import './CadastroTema.css';
+import { Link } from 'react-router-dom';
+import { Box } from '@mui/material';
 
 function CadastroTema() {
   let navigate = useNavigate();
@@ -151,16 +153,17 @@ function CadastroTema() {
   
   return (
     <Container maxWidth="sm" className="topo">
-      <form onSubmit={onSubmit}>
-        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Crie um tema</Typography>
-        <TextField value={temas.temas} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="tema" variant="outlined" name="temas" margin="normal" fullWidth />
-        <Button type="submit" variant="contained" color="primary">
+      <Box className='form-tema'>
+        <form onSubmit={onSubmit}>
+        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Crie um tópico</Typography>
+        <TextField value={temas.temas} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="tema" label="Tópico" variant="outlined" name="temas" margin="normal" fullWidth />
+        <Button type="submit" variant="contained"  className='botao-tema'>
           Finalizar
         </Button>
-        {/* <Button type="submit" variant="contained" >
-          Cancelar
-        </Button> */}
+        
       </form>
+      </Box>
+      
 
       
     </Container>

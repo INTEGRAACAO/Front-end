@@ -1,5 +1,9 @@
-label{
-    color: blue!important;
+.form-tema{
+    border-radius: 4px!important;
+}
+
+.label{
+    color: black!important;
 }
 
 .input-projeto{
@@ -14,5 +18,23 @@ label{
     display: flex;
     margin-top: 20px;
 }
+
+.text-decoration-none{
+    text-decoration-none: none;
+}
+
+.botaor-tema{
+    display:flex;
+    align-items: center;
+    background-color:rgba(201,108,240,0.5)!important;
+  }
+  
+  .botao-tema:hover{
+    color: #df146c;
+    background-color: rgba(247, 251, 251, 0.821)!important;
+    font-weight: bold!important;
+    transform: scale(1.1);
+    transition: all 0.4s;
+  }
 
 
