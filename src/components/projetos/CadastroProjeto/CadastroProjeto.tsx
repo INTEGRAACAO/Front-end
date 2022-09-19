@@ -9,6 +9,7 @@ import { UserState } from '../../../store/user/userReducer';
 import User from '../../../models/User';
 import Temas from '../../../models/Tema';
 import { toast } from 'react-toastify'
+import { Box } from "@mui/material";
 
 
 function CadastroProjeto() {
@@ -208,8 +209,11 @@ function CadastroProjeto() {
 
   return (
     <Container maxWidth="sm" className="topo">
+      <Box>
+        <img className="titulo" src="https://i.imgur.com/O4hHFDR.png" alt="sobre nos" />
+      </Box>
       <form onSubmit={onSubmit}>
-        <Typography variant="h3" color="textSecondary" component="h1" align="center" >Conte um pouco mais sobre o seu projeto</Typography>
+
         <TextField className="input-projeto" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
         <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="Coloque sua Imagem" variant="outlined" name="linkImagem" margin="normal" fullWidth />
         <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="Escreva aqui as suas ideias" variant="outlined" name="descricao" margin="normal" fullWidth />
