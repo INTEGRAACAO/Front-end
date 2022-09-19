@@ -153,6 +153,7 @@ function Projetos({ projeto }: PostsProps) {
                     </Box>
                 </CardActions>
 
+
                 <Box padding={2}>
                     <form onSubmit={handleCreateNewComment}>
                         <Box>
