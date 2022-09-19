@@ -1,6 +1,7 @@
 .sobrenos {
   width: 100%;
   margin-bottom: 5%;
+  
 }
 .sobrenos .sobrenos-container {
   width: 80%;
@@ -16,6 +17,7 @@
   font-family: sans-serif;
   font-weight: lighter;
   text-indent: 3ch;
+  text-align: justify;
 }
 .sobrenos .sobrenos-container .equipe-container {
   display: flex;
