@@ -143,7 +143,9 @@ function Projetos ({ projeto }: PostsProps) {
                         required
                     /></Box>
                     <footer>
-                        <button type="submit">Publicar</button>
+                        <Box className='form-btn-projeto'>
+                        <Button variant="contained" type="submit">Publicar</Button>
+                    </Box>
                     </footer>
                 </form>
                 </Box>
