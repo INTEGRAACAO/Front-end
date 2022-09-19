@@ -1,6 +1,5 @@
 .btn{
     display:flex;
-    justify-content: flex-start;
 }
 
 .btnModal:hover{
