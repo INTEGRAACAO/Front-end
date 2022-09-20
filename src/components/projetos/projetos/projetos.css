@@ -31,3 +31,8 @@
 .Textfield label{
     color: black !important;
 }
+
+.curtidas{
+    height: 5rem!important;
+    width:5rem;
+}

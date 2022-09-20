@@ -7,7 +7,7 @@ interface Projeto {
     nome: string;
     linkImagem: string;
     descricao: string;
-    data: string;
+    dataProjeto: string;
     usuario?: User | null;
     temas?: Tema | null;
 }
