@@ -1,4 +1,4 @@
-.cardImg {
+.card-post {
     object-fit: cover;
     justify-content: flex-start;
     width: 30rem;
@@ -6,7 +6,7 @@
     padding: 2rem;
 }
 
-.img {
+.img-post {
     width: 300px;
     border-radius: 1rem;
 }
@@ -14,20 +14,8 @@
 .bg-projetos{
     background-color: rgb(188, 115, 233, 0.1);
 }
-
-.box-comentario label{
-    
-    padding: 2rem !important;
-    margin-bottom: 5rem !important;
-    color:black !important;
-    
-
-}
-
-.box-comentario {
-    color: black !important;
-}
-
-.Textfield label{
-    color: black !important;
+.post{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
 }
