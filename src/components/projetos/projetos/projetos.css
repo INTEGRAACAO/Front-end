@@ -39,4 +39,23 @@
     color: black !important;
 }
 
-.
+.img-perfil-post{
+    width: 2% !important;
+    height: 200rem !important;
+}
+
+.perfil-post{
+    width: 200px !important;
+}
+
+.Card {
+    width: 200px !important;
+}
+
+.element.style{
+    width: 50px !important;
+}
+
+.CardMedia> image{
+    height: 20rem !important;
+}
