@@ -104,13 +104,13 @@ function Projetos({ projeto }: PostsProps) {
                 <CardContent>
 
                     <Box className='perfil-post'>
-                        <img alt='perfil foto' className='img'
+                        <img alt='perfil foto' className='img-perfil-post'
                             src={projeto.usuario?.linkFoto}
                         ></img>
                     </Box>
 
-                    <Box className='cardImg'>
-                        <img alt='' className='img'
+                    <Box className='cardImg-post'>
+                        <img alt='' className='img-post'
                             src={projeto.linkImagem}
                         ></img>
                     </Box>
