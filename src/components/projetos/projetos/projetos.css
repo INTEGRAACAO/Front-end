@@ -1,21 +1,22 @@
 .card-post {
-    object-fit: cover;
-    justify-content: flex-start;
-    width: 30rem;
+    object-fit: cover !important;
+    justify-content: flex-start !important;
+    width: 3rem !important;
     height: 3rem!important;
     padding: 2rem;
 }
 
 .img-post {
-    width: 300px;
-    border-radius: 1rem;
+    width: 25% !important;
+    max-height: 100% !important;
+    border-radius: 10rem !important;
 }
 
 .bg-projetos{
     background-color: rgb(188, 115, 233, 0.1);
 }
-.post{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+
+.CardContent> img{
+    width: 800px !important;
+    height: 400px !important;
 }

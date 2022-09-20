@@ -92,9 +92,9 @@ function Projetos({ projeto }: PostsProps) {
             <Card variant="outlined">
                 <CardContent>
                     <Box className='post'>
-                        
-                    <Box className='card-post'>
-                        <img alt='' className='img-post'
+
+                    <Box className='cardImg'>
+                        <img alt='' className='img'
                             src={projeto.linkImagem}
                         ></img>
                     </Box>
