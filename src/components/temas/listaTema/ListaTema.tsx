@@ -51,17 +51,18 @@ function ListaTema() {
 
   return (
     <>
-      <Box className="container">
+      <Grid sm={12} className="container">
         <Box className="imagem-topicos">
           <img src="https://i.imgur.com/oDDHh4t.png" alt="topicos" />
         </Box>
         <Box className='modal-tema'>
           <ModalTema />
         </Box>
-        <Box className='temas'>
+        <Grid sm={10}>
+          <Box className='temas'>
           {temas.map(temas => (
-            <Box m={2} >
-              <Card variant="outlined">
+            <Box m={2} display="inline-block" justifyContent="center">
+              <Card variant="outlined" className='cardTema'>
                 <CardContent>
                   <Typography color="textSecondary" gutterBottom>
                     Esse tópico se refere à
@@ -91,10 +92,12 @@ function ListaTema() {
                 </CardActions>
               </Card>
             </Box>
+    
+        
           ))}
         </Box>
-
-      </Box>
+    </Grid>
+      </Grid>
     </>
 
   );
