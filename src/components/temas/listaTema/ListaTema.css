@@ -1,27 +1,47 @@
 .container{
   width:100%;
   display: grid;
-  justify-content: center;
   background-color: rgb(188, 115, 233, .2);
 }
 
 .imagem-topicos{
-  margin-top: 30px;
+  display:flex;
+  margin-top: 5%;
+  margin-left:30%;
+  justify-content:center;
+  width:40%;
+  height: 30%
 }
 
 .modal-tema{
   display: flex;
   justify-content:center;
-  margin-top:5rem;
 
 }
 .text-decorator-none{
     text-decoration: none;
 }
-.temas {
-  width: 100%;
+
+.temas{
+  margin-left: 30%;
 }
 
+.cardTema{
+  display: flex !important;
+    flex-direction: column;
+    align-items: center !important;
+    width: 250px!important;
+    box-shadow: 7px 7px 13px rgba(50, 50, 50, 0.22) !important;
+    padding: 20px !important;
+    margin: 20px !important;
+    transition: all 0.3s ease-out !important;
+    border-left: 8px solid rgba(201,108,240,0.5) !important;
+    font-weight: bold;
+}
+
+.cardTema:hover {
+  transform: translateX(-5px) !important;
+}
 .botaoTema:hover{
   color: #df146c;
   background-color: rgba(247, 251, 251, 0.821)!important;

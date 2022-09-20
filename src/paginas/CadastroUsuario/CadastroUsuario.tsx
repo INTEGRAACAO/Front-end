@@ -125,9 +125,9 @@ export default function CadastroUsuario() {
   return (
     <Grid container sm={12} className='bg-cadastrar'>
       <Grid  item xs={2} className="imagem2">
-      <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="" className='img-cadastro' />
+      <img src="https://i.imgur.com/Zzef03Z.pngyarm" alt="integrese" />
       </Grid>
-      <Grid item xs={5} alignItems="center" className='formCadastrar'>
+      <Grid item xs={5} alignItems="center">
         <Box paddingX={10} >
           <form onSubmit={cadastrar} >
             
@@ -163,15 +163,17 @@ export default function CadastroUsuario() {
             </FormControl> 
             
             <Box marginTop={2} textAlign='center'>
+            <Button type="submit" variant='contained' className="btnConfirmar" >
+                Cadastrar
+              </Button>
+              
               <Link to='/login' className="text-decorator-none">
                 <Button variant='contained'  className="btnCancelar">
                   Cancelar
                 </Button>
               </Link>
 
-              <Button type="submit" variant='contained' className="btnConfirmar" >
-                Cadastrar
-              </Button>
+              
 
             </Box>
           </form>
