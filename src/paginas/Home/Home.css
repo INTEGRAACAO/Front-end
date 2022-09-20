@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+ 
 }
 .home .msg-block .btn-acao .icones {
   width: 50%;
@@ -62,8 +63,16 @@
   border-radius: 4%;
   cursor: pointer;
 }
+
+ .btn-post{
+  display: flex;
+  justify-content: flex-end !important;
+  margin-right: 20px !important;
+  
+}
+
 .home .projetos-home .css-1c5ij41 {
   margin: 0 !important;
   width: 100% ;
-  
 }
+
