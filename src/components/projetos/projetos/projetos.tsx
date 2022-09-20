@@ -95,7 +95,7 @@ function Projetos({ projeto }: PostsProps) {
         dataPostFormatada = "carregando"
     }
 
-
+    const usuarioId = +userId;
 
     return (
 
@@ -143,27 +143,27 @@ function Projetos({ projeto }: PostsProps) {
 
                 </CardContent>
 
-                <CardActions>
-                    <Box display="flex" justifyContent="center" mb={1.5}>
-
-                        <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
-                            <Box mx={1}>
-                                <Button variant="contained" className="marginLeft botaoTema" size='small' >
-                                    Atualizar
-                                </Button>
-                            </Box>
-                        </Link>
-
-                        <Link to={`/deletarProjetos/${projeto.id}`} className="text-decorator-none">
-                            <Box mx={1}>
-                                <Button variant="contained" size='small' className='botaoDeletar'>
-                                    Deletar
-                                </Button>
-                            </Box>
-                        </Link>
-
+                {
+              (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
+                <>
+                  <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
+                    <Box mx={1}>
+                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                        atualizar
+                      </Button>
                     </Box>
-                </CardActions>
+                  </Link>
+                  <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
+                    <Box mx={1}>
+                      <Button variant="contained" size='small' color="secondary">
+                        deletar
+                      </Button>
+                    </Box>
+                  </Link>
+                </> 
+                : 
+                <Box> Você não pode editar</Box>
+                      }
 
 
                 <Box padding={2}>
