@@ -1,22 +1,44 @@
-.card-post {
-    object-fit: cover !important;
-    justify-content: flex-start !important;
-    width: 3rem !important;
-    height: 3rem!important;
+
+.cardImg-post {
+    object-fit: cover;
+    justify-content: flex-start;
+    width: 10rem!important;
+    height: 2rem!important;
     padding: 2rem;
+    display:flex;
 }
 
-.img-post {
-    width: 25% !important;
-    max-height: 100% !important;
-    border-radius: 10rem !important;
+.img-perfil-post{
+    width: 100%;
+    height: 100%;
+    border-radius:50%;
+}
+
+.perfil-post{
+    width: 25%;
+    height: 70%;
 }
 
 .bg-projetos{
     background-color: rgb(188, 115, 233, 0.1);
 }
 
-.CardContent> img{
-    width: 800px !important;
-    height: 400px !important;
+.box-comentario label{
+    
+    padding: 2rem !important;
+    margin-bottom: 5rem !important;
+    color:black !important;
+    
+
 }
+
+.box-comentario {
+    color: black !important;
+}
+
+.Textfield label{
+    color: black !important;
+}
+
+.
+

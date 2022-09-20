@@ -25,7 +25,7 @@ function CadastroTema() {
     nome: '',
     linkImagem: '',
     descricao: '',
-    data: '',
+    dataProjeto: '',
     usuario: null,
     temas: null
   })

@@ -85,6 +85,16 @@ function Projetos({ projeto }: PostsProps) {
         }
 
     }
+    try {
+        const formatadorDeData = new Intl.DateTimeFormat('pt-BR')
+        const dataPost = new Date(projeto.dataProjeto)
+        console.log(dataPost)
+        var dataPostFormatada = formatadorDeData.format(dataPost)
+    } catch (error) {
+        console.log(error);
+    }
+
+
 
     return (
 
@@ -93,8 +103,14 @@ function Projetos({ projeto }: PostsProps) {
                 <CardContent>
                     <Box className='post'>
 
-                    <Box className='cardImg'>
-                        <img alt='' className='img'
+                    <Box className='perfil-post'>
+                        <img alt='perfil foto' className='img-perfil-post'
+                            src={projeto.usuario?.linkFoto}
+                        ></img>
+                    </Box>
+
+                    <Box className='cardImg-post'>
+                        <img alt='' className='img-post'
                             src={projeto.linkImagem}
                         ></img>
                     </Box>
@@ -121,6 +137,30 @@ function Projetos({ projeto }: PostsProps) {
                     </Box>
                     </Box>
                 </CardContent>
+
+                    <Typography variant="inherit" component="h2">
+                        {projeto.nome}
+                    </Typography>
+
+                    <Typography variant="body2" component="p">
+                        Postado em: {dataPostFormatada}
+                    </Typography>
+
+                    <Typography variant="body1" component="h4">
+                        {projeto.descricao}
+                    </Typography>
+
+                    <Typography variant="body1" component="h5">
+                        Postado por: {projeto.usuario?.nome}
+                    </Typography>
+
+                    <Typography variant="body1" component="h5">
+                        Tópico: {projeto.temas?.temas}
+                    </Typography>
+
+                    <p id="contador-apoiar">
+                        {projeto.apoios}
+                    </p>
 
                 <p id="contador-apoiar" >
                     {projeto.apoios}
