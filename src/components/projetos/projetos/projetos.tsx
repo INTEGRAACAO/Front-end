@@ -45,82 +45,98 @@ function Projetos({ projeto }: PostsProps) {
     const apoioColor = ["#BC73E9", "#6650E6"];
     const btnApoio = document.querySelector("#btn-apoio") as HTMLElement;
 
-    function apoiosContador(){
-      return `${projeto.apoios.split(",").length} apoiaram`;
+    function apoiosContador() {
+        return `${projeto.apoios.split(",").length} apoiaram`;
     }
 
     function apoiar(e: React.MouseEvent<HTMLElement>) {
-      let apoiosArray = projeto.apoios.split(",");
-      let element = e.target as HTMLElement;
-      let contador = document.querySelector("#apoios-contador");
+        let apoiosArray = projeto.apoios.split(",");
+        let element = e.target as HTMLElement;
+        let contador = document.querySelector("#apoios-contador");
 
-      if (apoiosArray.indexOf(userId) == -1){
-        element.innerText = apoioTexto[0];
-        element.style.color = apoioColor[0];
-        apoiosArray.push(userId);
-        projeto.apoios = apoiosArray.join(",");
-        //contador.innerText = `${apoiosArray.length} apoiaram`;
-      } else {
-        element.innerText = apoioTexto[1];
-        element.style.color = apoioColor[1];
-        apoiosArray.splice(apoiosArray.indexOf(userId), 3);
-        projeto.apoios = apoiosArray.join(",");
-        //contador.innerText = `${apoiosArray.length} apoiaram`;
-      }
+        if (apoiosArray.indexOf(userId) == -1) {
+            element.innerText = apoioTexto[0];
+            element.style.color = apoioColor[0];
+            apoiosArray.push(userId);
+            projeto.apoios = apoiosArray.join(",");
+            //contador.innerText = `${apoiosArray.length} apoiaram`;
+        } else {
+            element.innerText = apoioTexto[1];
+            element.style.color = apoioColor[1];
+            apoiosArray.splice(apoiosArray.indexOf(userId), 3);
+            projeto.apoios = apoiosArray.join(",");
+            //contador.innerText = `${apoiosArray.length} apoiaram`;
+        }
     }
 
     function apoioCheck() {
-      if(projeto.apoios.split(",").indexOf(userId) == -1){
-        return (
-          <p id="btn-apoiar" style={{ color: apoioColor[1], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
-            {apoioTexto[1]}
-          </p>
-        );
-      } else {
-        return (
-          <p id="btn-apoiar" style={{ color: apoioColor[0], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}> 
-            {apoioTexto[0]}
-          </p>
-        )
-      }
-      
+        if (projeto.apoios.split(",").indexOf(userId) == -1) {
+            return (
+                <p id="btn-apoiar" style={{ color: apoioColor[1], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}>
+                    {apoioTexto[1]}
+                </p>
+            );
+        } else {
+            return (
+                <p id="btn-apoiar" style={{ color: apoioColor[0], cursor: "pointer", fontWeight: "bold", }} onClick={(e) => apoiar(e)}>
+                    {apoioTexto[0]}
+                </p>
+            )
+        }
+
     }
+    try {
+        const formatadorDeData = new Intl.DateTimeFormat('pt-BR')
+        const dataPost = new Date(projeto.dataProjeto)
+        console.log(dataPost)
+        var dataPostFormatada = formatadorDeData.format(dataPost)
+    } catch (error) {
+        console.log(error);
+        dataPostFormatada = "carregando"
+    }
+
+
 
     return (
 
         <Box m={2} >
             <Card variant="outlined">
-                <CardContent>                    
+                <CardContent>
 
-                    <Box className='cardImg'>
-                        <img alt='' className='img'
+                    <Box className='perfil-post'>
+                        <img alt='perfil foto' className='img-perfil-post'
+                            src={projeto.usuario?.linkFoto}
+                        ></img>
+                    </Box>
+
+                    <Box className='cardImg-post'>
+                        <img alt='' className='img-post'
                             src={projeto.linkImagem}
                         ></img>
                     </Box>
-                    
+
                     <Typography variant="inherit" component="h2">
                         {projeto.nome}
+                    </Typography>
+
+                    <Typography variant="body2" component="p">
+                        Postado em: {dataPostFormatada}
                     </Typography>
 
                     <Typography variant="body1" component="h4">
                         {projeto.descricao}
                     </Typography>
 
-                    <Typography variant="body2" component="p">
-                        {projeto.data}
+                    <Typography variant="body1" component="h5">
+                        Postado por: {projeto.usuario?.nome}
                     </Typography>
 
                     <Typography variant="body1" component="h5">
-                        {projeto.usuario?.nome}
+                        Tópico: {projeto.temas?.temas}
                     </Typography>
 
-                    <Typography variant="body1" component="h5">
-                        {projeto.temas?.temas}
-                    </Typography>
-
-
-                    <p id="contador-apoiar" > 
-                      {projeto.apoios} 
+                    <p id="contador-apoiar">
+                        {projeto.apoios}
                     </p>
 
                     {apoioCheck()}
@@ -152,25 +168,25 @@ function Projetos({ projeto }: PostsProps) {
 
                 <Box padding={2}>
                     <form onSubmit={handleCreateNewComment}>
-                       
+
                         <Box >
                             <TextField
-                              id="comment"
-                              name="comment"
-                              label="Deixe seu Comentário"
-                              variant="outlined"
-                              value={newCommentText}
-                              onChange={handleNewCommentChange}
-                              className='box-comentario'
-                              color='primary'
+                                id="comment"
+                                name="comment"
+                                label="Deixe seu Comentário"
+                                variant="outlined"
+                                value={newCommentText}
+                                onChange={handleNewCommentChange}
+                                className='box-comentario'
+                                color='primary'
                             />
-                            
+
                         </Box>
-                        
+
                         <Box mx={1}>
-                          <Button type="submit" variant="contained" className="marginLeft botaoTema" size='small'  >
-                            Publicar
-                          </Button>
+                            <Button type="submit" variant="contained" className="marginLeft botaoTema" size='small'  >
+                                Publicar
+                            </Button>
                         </Box>
                     </form>
                 </Box>
