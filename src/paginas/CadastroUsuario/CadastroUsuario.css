@@ -1,6 +1,7 @@
 .bg-cadastrar{
   display: flex;
   align-items: center;
+  background-color: rgb(188, 115, 233, 0.1);
 }
 
 .imagem2 > img{
