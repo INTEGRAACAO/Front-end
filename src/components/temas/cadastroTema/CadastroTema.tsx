@@ -8,7 +8,6 @@ import Projeto from '../../../models/Projeto'
 import Temas from '../../../models/Tema';
 import { toast } from 'react-toastify';
 import './CadastroTema.css';
-import { Link } from 'react-router-dom';
 import { Box } from '@mui/material';
 
 function CadastroTema() {

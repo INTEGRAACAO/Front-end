@@ -1,7 +1,5 @@
 import React from 'react';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import { Typography, Grid } from '@material-ui/core';
 import { Box } from '@mui/material';
 import './Footer.css'
