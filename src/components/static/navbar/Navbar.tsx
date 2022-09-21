@@ -6,8 +6,27 @@ import { addToken } from '../../../store/user/action';
 import './Navbar.css';
 import {toast} from 'react-toastify';
 import { Button } from "@material-ui/core";
+import { useState } from 'react';
+import Temas from '../../../models/Tema';
+import { busca } from '../../../services/Service';
 
 function Navbar() {
+
+   // const[busca, setBusca] = useState('');
+
+//const lowerBusca = busca.toLowerCase();
+
+//async function findByTema(temas: string) {
+//await busca(`/temas/temas/${tema.temas}`, setTema, {
+//headers: {
+//'Authorization': token
+     //     }
+
+    //  })
+ // }
+
+  //  const temasFiltrados = {tema.temas}.filter((tema.temas) => {tema.temas}.toLowerCase().includes(lowerBusca));
+
     const token = useSelector<UserState, UserState["tokens"]>(
         (state) => state.tokens
     );
@@ -35,7 +54,11 @@ function Navbar() {
         navbarComponent = 
         <nav className="navbar">
           <img id="logo" src="https://i.imgur.com/G5hWMIY.png" alt="" />
-          <input type="text" id="busca" name="busca" placeholder="Buscar"/>
+          <input type="text" id="busca" name="busca" placeholder="Buscar" 
+          
+          //value= {busca} onChange={(ev) => setBusca(ev.target.value)}
+           
+           />
           <Link to= "/home" >
             <Button variant="outlined">
               <img className="icone" src="https://i.imgur.com/t3uc0yh.png" alt="" />

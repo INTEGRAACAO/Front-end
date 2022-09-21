@@ -1,5 +1,4 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
-import { TextareaAutosize } from '@mui/base';
 import { Button, Card, CardActions, CardContent, Typography, TextField, CardMedia } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
@@ -142,14 +141,11 @@ function Projetos({ projeto }: PostsProps) {
                 <Typography className="projetoNome" gutterBottom variant="h5" component="div">
                     {projeto.nome}
                 </Typography>
-                <Typography variant="body1" component="p">
+                <Typography variant="subtitle2" component="h6">
                     Postado em: {dataPostFormatada}
                 </Typography>
                 <Typography variant="body1" >
                     {projeto.descricao}
-                </Typography>
-                <Typography variant="body1" component="h5">
-                    Postado por: {projeto.usuario?.nome}
                 </Typography>
 
                 <Typography variant="body1" component="h5">
@@ -165,14 +161,14 @@ function Projetos({ projeto }: PostsProps) {
                         <>
                             <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
                                 <Box mx={1}>
-                                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                    <Button variant="contained" className="marginLeft botaoDeletar" size='small' >
                                         atualizar
                                     </Button>
                                 </Box>
                             </Link>
                             <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
                                 <Box mx={1}>
-                                    <Button variant="contained" size='small' color="secondary">
+                                    <Button variant="contained" size='small' className="botaoTema" >
                                         deletar
                                     </Button>
                                 </Box>

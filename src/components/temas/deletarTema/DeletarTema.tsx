@@ -93,7 +93,7 @@ function DeletarTema() {
               </Button>
               </Box>
               <Box>
-              <Button onClick={nao} variant="contained" size='large' color="secondary">
+              <Button onClick={nao} variant="contained" size='large' className="botaoTema">
                 Não
               </Button>
               </Box>
