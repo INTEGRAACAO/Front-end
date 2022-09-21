@@ -36,7 +36,7 @@ function SobreNos() {
     return (
         <div className='sobrenos'>
             <div className="sobrenos-container">
-              <Box className='sobrenos'>
+              <Box >
                   <img className="titulo" src="https://i.imgur.com/ebJKIfb.png" alt="sobre nos" />
                   <p className="text-sobrenos"> São incontáveis as ações que os seres humanos fazem em prol uns dos outros todos os dias, desde pequenas gentilezas diárias à feitos que salvam vidas.
                       Essas atitudes se provam reais a todos os momentos e no intuito de unir esforços em prol de algo maior existem muitas ONG's com iniciativas que visam impactar o mundo, para isso é necessário a participação de muitos, unindo seus apoiadores e os conectando com os beneficiários dessas ações.
