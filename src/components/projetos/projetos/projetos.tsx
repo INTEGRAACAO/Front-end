@@ -121,6 +121,7 @@ function Projetos({ projeto }: PostsProps) {
         dataPostFormatada = "carregando"
     }
 
+    const usuarioId = +userId;
 
     return (
         <Card className="projeto" >
@@ -186,6 +187,68 @@ function Projetos({ projeto }: PostsProps) {
             <Box padding={2}>
                 <p></p>
                 <form onSubmit={handleCreateNewComment}>
+                    {apoioCheck()}
+
+                </CardContent>
+
+                {
+              (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
+                <>
+                  <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
+                    <Box mx={1}>
+                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                        atualizar
+                      </Button>
+                    </Box>
+                  </Link>
+                  <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
+                    <Box mx={1}>
+                      <Button variant="contained" size='small' color="secondary">
+                        deletar
+                      </Button>
+                    </Box>
+                  </Link>
+                </> 
+                : 
+                <Box> Você não pode editar</Box>
+                      }
+
+
+                <Box padding={2}>
+                    <form onSubmit={handleCreateNewComment}>
+
+                        <Box >
+                            <TextField
+                                id="comment"
+                                name="comment"
+                                label="Deixe seu Comentário"
+                                variant="outlined"
+                                value={newCommentText}
+                                onChange={handleNewCommentChange}
+                                className='box-comentario'
+                                color='primary'
+                            />
+
+                        </Box>
+
+                        <Box mx={1}>
+                            <Button type="submit" variant="contained" className="marginLeft botaoTema" size='small'  >
+                                Publicar
+                            </Button>
+                        </Box>
+                    </form>
+                </Box>
+
+                <Box padding={2}>
+                    {comments.map(comment => {
+                        return (
+                            <Comentarios conteudo={comment} />
+                        )
+                    })}
+                </Box>
+
+            </Card>
+        </Box>
 
                     <Box >
                         <TextareaAutosize
@@ -200,6 +263,7 @@ function Projetos({ projeto }: PostsProps) {
                         />
 
                     </Box>
+
 
                     <Box mx={1}>
                         <Button id="botaoPublicar" type="submit" className="marginLeft botaoPublicar botaoTema" >
