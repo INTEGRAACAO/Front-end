@@ -1,7 +1,6 @@
 .sobrenos {
   width: 100%;
-  margin-bottom: 5%;
-  background-color: rgb(188, 115, 233, 0.1)
+  background-color: rgb(188, 115, 233, 0.1);
 }
 .sobrenos .sobrenos-container {
   width: 80%;
@@ -19,7 +18,16 @@
   text-indent: 3ch;
   text-align: justify;
   line-height: 1.6;
+  margin-top: 3% !important;
 }
+
+.sobrenos .sobrenos-container .box-valores{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px !important;
+  border-left: 8px solid rgba(201,108,240,0.5) !important;
+}
+
 .sobrenos .sobrenos-container .equipe-container {
   display: flex;
   flex-direction: row;
