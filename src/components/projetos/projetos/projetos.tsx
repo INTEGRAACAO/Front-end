@@ -1,12 +1,13 @@
 import React, { ChangeEvent, FormEvent, useState, useEffect } from 'react'
+import { TextareaAutosize } from '@mui/base';
 import { Button, Card, CardActions, CardContent, Typography, TextField, CardMedia } from '@material-ui/core'
 import Box from '@mui/material/Box';
 import { Link } from 'react-router-dom';
 import Projeto from '../../../models/Projeto';
+import User from '../../../models/User';
 import Comentarios from '../comentarios/Comentarios';
 import { UserState } from '../../../store/user/userReducer';
 import { useSelector } from 'react-redux';
-import User from '../../../models/User';
 import { buscaId } from '../../../services/Service';
 import { Avatar, CardHeader, Grid } from '@mui/material';
 
@@ -20,6 +21,38 @@ function Projetos({ projeto }: PostsProps) {
     const userId = useSelector<UserState, UserState["id"]>(
         (state) => state.id
     );
+    // Pega o ID guardado no Store
+    const id = useSelector<UserState, UserState["id"]>(
+      (state) => state.id
+    );
+    // Métedo para pegar os dados de um Usuário especifico pelo ID
+    async function findById(id: string) {
+      await buscaId(`/usuario/${id}`, setUser, {
+        headers: {
+          'Authorization': token
+        }
+
+      })
+    }
+
+    useEffect(() => {
+      if (id !== undefined) {
+        findById(id)
+      }
+    }, [id])
+
+    const [user, setUser] = useState<User>({
+      id: +id,
+      nome: '',
+      email: '',
+      apelido: '',
+      senha: '',
+      linkFoto: '',
+      bio: '',
+      tipoAcesso: '',
+      dataNascimento: '',
+      dataCadastro: ''
+    })
 
     // Pega o Token guardado no Store
     const token = useSelector<UserState, UserState["tokens"]>(
@@ -33,8 +66,9 @@ function Projetos({ projeto }: PostsProps) {
 
     function handleCreateNewComment(event: FormEvent) {
         event.preventDefault()
-        setComments([...comments, newCommentText])
-        setNewCommentText('')
+        if (newCommentText != "" && newCommentText != null) {
+          setComments([...comments, newCommentText])
+        }
     }
 
     function handleNewCommentChange(event: ChangeEvent<HTMLTextAreaElement>) {
@@ -43,29 +77,21 @@ function Projetos({ projeto }: PostsProps) {
 
     const apoioTexto = ["✌️ apoiei", "✋ apoiar"];
     const apoioColor = ["#BC73E9", "#6650E6"];
-    const btnApoio = document.querySelector("#btn-apoio") as HTMLElement;
-
-    function apoiosContador() {
-        return `${projeto.apoios.split(",").length} apoiaram`;
-    }
 
     function apoiar(e: React.MouseEvent<HTMLElement>) {
         let apoiosArray = projeto.apoios.split(",");
         let element = e.target as HTMLElement;
-        let contador = document.querySelector("#apoios-contador");
 
         if (apoiosArray.indexOf(userId) == -1) {
             element.innerText = apoioTexto[0];
             element.style.color = apoioColor[0];
             apoiosArray.push(userId);
             projeto.apoios = apoiosArray.join(",");
-            //contador.innerText = `${apoiosArray.length} apoiaram`;
         } else {
             element.innerText = apoioTexto[1];
             element.style.color = apoioColor[1];
             apoiosArray.splice(apoiosArray.indexOf(userId), 3);
             projeto.apoios = apoiosArray.join(",");
-            //contador.innerText = `${apoiosArray.length} apoiaram`;
         }
     }
 
@@ -95,14 +121,13 @@ function Projetos({ projeto }: PostsProps) {
         dataPostFormatada = "carregando"
     }
 
+
     return (
-        <Card >
-            <CardHeader avatar={
-             <Avatar aria-label="recipe">
-              <img alt='perfil foto' 
-                        src={projeto.usuario?.linkFoto}
-                    ></img>
-           </Avatar>   
+        <Card className="projeto" >
+            <CardHeader id="perfil-foto" avatar={
+               <Avatar aria-label="recipe">
+                  <img alt="perfil foto" src={projeto.usuario?.linkFoto} />
+               </Avatar>   
             } 
             title={projeto.usuario?.nome}>
             </CardHeader>
@@ -113,7 +138,7 @@ function Projetos({ projeto }: PostsProps) {
                 image={projeto.linkImagem}
             />
             <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography className="projetoNome" gutterBottom variant="h5" component="div">
                     {projeto.nome}
                 </Typography>
                 <Typography variant="body1" component="p">
@@ -159,14 +184,15 @@ function Projetos({ projeto }: PostsProps) {
             </CardActions>
 
             <Box padding={2}>
+                <p></p>
                 <form onSubmit={handleCreateNewComment}>
 
                     <Box >
-                        <TextField
+                        <TextareaAutosize
                             id="comment"
                             name="comment"
-                            label="Deixe seu Comentário"
-                            variant="outlined"
+                            placeholder="Diga-nos o que está pensando"
+                            minRows={3}
                             value={newCommentText}
                             onChange={handleNewCommentChange}
                             className='box-comentario'
@@ -176,7 +202,7 @@ function Projetos({ projeto }: PostsProps) {
                     </Box>
 
                     <Box mx={1}>
-                        <Button type="submit" variant="contained" className="marginLeft botaoTema" size='small'  >
+                        <Button id="botaoPublicar" type="submit" className="marginLeft botaoPublicar botaoTema" >
                             Publicar
                         </Button>
                     </Box>
@@ -184,11 +210,13 @@ function Projetos({ projeto }: PostsProps) {
             </Box>
 
             <Box padding={2}>
-                {comments.map(comment => {
+                {
+                comments.map(comment => {
                     return (
-                        <Comentarios conteudo={comment} />
+                        <Comentarios conteudo={comment} imagem={user.linkFoto} nome={user.nome} />
                     )
-                })}
+                })
+                }
             </Box>
 
         </Card>

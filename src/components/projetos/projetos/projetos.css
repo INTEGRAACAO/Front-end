@@ -23,12 +23,9 @@
 }
 
 .box-comentario label{
-    
     padding: 2rem !important;
     margin-bottom: 5rem !important;
     color:black !important;
-    
-
 }
 
 .box-comentario {
@@ -59,3 +56,4 @@
 .CardMedia> image{
     height: 20rem !important;
 }
+

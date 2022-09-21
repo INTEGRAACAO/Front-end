@@ -64,7 +64,7 @@
   cursor: pointer;
 }
 
- .btn-post{
+.home .msg-block .btn-post{
   display: flex;
   justify-content: flex-end !important;
   margin-right: 20px !important;
