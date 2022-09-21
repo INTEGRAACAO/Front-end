@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import CadastroProjeto from './components/projetos/CadastroProjeto/CadastroProjeto';
 import CadastroUsuario from './paginas/CadastroUsuario/CadastroUsuario';
-import Contato from './paginas/contato/Contato';
 import Footer from './components/static/footer/Footer';
 import Home from './paginas/Home/Home';
 import Login from './paginas/Login/Login';
@@ -37,7 +36,6 @@ function App() {
           <Route path="/" element={<Login />} />
           <Route path="/login" element={<Login />} />
           <Route path="/home" element={<Home/>}/>
-          <Route path="/contato" element={<Contato/>}/>
           <Route path='/cadastroUsuario' element={<CadastroUsuario/>}/>
           <Route path='/formularioProjetos' element={<CadastroProjeto/>}/>
           <Route path='/formularioProjetos/:id' element={<CadastroProjeto/>}/>

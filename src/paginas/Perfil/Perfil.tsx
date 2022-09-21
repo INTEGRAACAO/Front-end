@@ -90,9 +90,9 @@ function Perfil() {
                 <img  src="https://i.imgur.com/xRxVaSZ.png" alt="Perfil" />
                 </Box>
                 <div className='card-container-info'>
-                <Box className='foto-perfil'>
+                <Box className='foto-profile'>
 
-                    <img className='img-foto-perfil'
+                    <img className='img-foto-profile'
                         src={user.linkFoto}
                         alt={user.nome} />
                 </Box>

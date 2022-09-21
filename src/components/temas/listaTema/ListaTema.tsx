@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Card, CardActions, CardContent, Button, Typography } from "@material-ui/core";
 import { Box, Grid } from '@mui/material'
-import { Navigate } from 'react-router-dom';
 import Temas from '../../../models/Tema'
 import './ListaTema.css';
 import { busca } from '../../../services/Service';
