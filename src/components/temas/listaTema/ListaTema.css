@@ -49,11 +49,7 @@
   transform: scale(1.1);
   transition: all 0.4s;
 }
-
 .botaoTema{
-  display:flex;
-  justify-content:flex-end;
-  align-items: center;
   background-color:rgba(201,108,240,0.5)!important;
 }
 
@@ -70,4 +66,7 @@
   background-color: rgba(62,114,240,0.5)!important;
   justify-content:flex-end;
   align-items: center;
+}
+.box-comentario {
+  width: 100%;
 }

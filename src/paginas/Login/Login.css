@@ -69,6 +69,7 @@
 
 .form-input-login input{
   color: #6d53e6 !important;
+  background-color: white;
 }
 
 .form-input-login input:focus {

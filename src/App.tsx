@@ -22,6 +22,7 @@ import SobreNos from './paginas/sobreNos/sobreNos';
 import Valores from './paginas/Valores/valores';
 
 
+
 function App() {
 
   return (
@@ -48,6 +49,7 @@ function App() {
           <Route path='/deletarTemas/:id' element={<DeletarTema/>}/>
           <Route path='/perfil' element={<Perfil/>}/>
           <Route path='/valores' element={<Valores/>}/>
+        
           
         </Routes>
       </div>

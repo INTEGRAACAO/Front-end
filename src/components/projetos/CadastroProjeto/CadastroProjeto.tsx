@@ -1,5 +1,5 @@
 import React, { useState, useEffect, ChangeEvent } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Grid } from "@material-ui/core"
 import { useNavigate, useParams } from 'react-router-dom'
 import './CadastroProjeto.css';
 import { useSelector } from 'react-redux';
@@ -208,39 +208,42 @@ function CadastroProjeto() {
   }
 
   return (
-    <Container maxWidth="sm" className="topo">
-      <Box>
-        <img className="titulo" src="https://i.imgur.com/O4hHFDR.png" alt="sobre nos" />
-      </Box>
-      <form onSubmit={onSubmit}>
+    <><Grid xs={1} className='bg-cadastro-proj'></Grid>
 
-        <TextField className="input-projeto" value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" fullWidth />
-        <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="Coloque sua Imagem" variant="outlined" name="linkImagem" margin="normal" fullWidth />
-        <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="Escreva aqui as suas ideias" variant="outlined" name="descricao" margin="normal" fullWidth />
-        <TextField value={projeto.apoios} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="apoios" label="#tag" variant="outlined" name="apoios" margin="normal" fullWidth />
-        <FormControl >
-          <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
-          <Select
-            labelId="demo-simple-select-helper-label"
-            id="demo-simple-select-helper"
-            onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
-              headers: {
-                'Authorization': token
-              }
-            })}>
-            {
-              temas.map(tema => (
+      <Grid xs={8} className='bg-cadastro-proj'>
+
+        <Box className='topo'>
+          <img className="titulo" src="https://i.imgur.com/O4hHFDR.png" alt="sobre nos" />
+        </Box>
+        <form onSubmit={onSubmit}>
+
+          <TextField  value={projeto.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="nome" label="Nome" variant="outlined" name="nome" margin="normal" className="form-input-login" fullWidth />
+          <TextField value={projeto.linkImagem} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="linkImagem" label="Coloque sua Imagem" variant="outlined" name="linkImagem" margin="normal" className="form-input-login" fullWidth />
+          <TextField value={projeto.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="descricao" label="Escreva aqui as suas ideias" variant="outlined" name="descricao" margin="normal" className="form-input-login" fullWidth />
+          <TextField value={projeto.apoios} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjeto(e)} id="apoios" label="#tag" variant="outlined" name="apoios" margin="normal" className="form-input-login" fullWidth />
+          <FormControl>
+            <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+            <Select
+              labelId="demo-simple-select-helper-label"
+              id="demo-simple-select-helper"
+              onChange={(e) => buscaId(`/temas/${e.target.value}`, setTema, {
+                headers: {
+                  'Authorization': token
+                }
+              })}>
+              {temas.map(tema => (
                 <MenuItem value={tema.id}>{tema.temas}</MenuItem>
-              ))
-            }
-          </Select>
-          <FormHelperText>Escolha um tema para a postagem</FormHelperText>
-          <Button type="submit" variant="contained" color="primary">
-            Finalizar
-          </Button>
-        </FormControl >
-      </form>
-    </Container>
+              ))}
+            </Select>
+            <FormHelperText>Escolha um tema para a postagem</FormHelperText>
+            <Button type="submit" variant="contained" className='botaoTema'>
+              Finalizar
+            </Button>
+          </FormControl>
+        </form>
+
+      </Grid>
+      <Grid item xs={3} className='bg-cadastro-proj'> <img src="https://i.imgur.com/jmNJFPj.gif" alt="" /></Grid></>
   )
 }
 
