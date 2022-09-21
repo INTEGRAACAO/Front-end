@@ -74,7 +74,7 @@ function Navbar() {
               Sobre nós
             </Button>
           </Link>
-          <Link to= "#" >
+          <Link to= "/login" >
             <Button onClick={goLogout} variant="outlined">
               <img className="icone" src="https://i.imgur.com/ZewcJoN.png" alt="" />
               Sair

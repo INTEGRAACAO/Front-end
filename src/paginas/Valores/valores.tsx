@@ -22,18 +22,15 @@ function Valores() {
                   component="img"
                   alt="IMAGEM ILUSTRATIVA"
                   height="175"
-                  image="https://i.imgur.com/vb8w8uH.png"
+                  image="https://i.imgur.com/OGQSM9b.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" className='titulo-card'>
-                    VALOR 1
+                    <h3>Diversidade</h3>
                   </Typography>
                   <Typography variant="body2" >
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque, non provident omnis aliquam pariatur fuga quaerat recusandae quisquam odit, esse delectus iure modi aut earum repellendus ratione laudantium perferendis?
-                    em ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis perferendis natus voluptatum ducimus explicabo, nam eos repellendus sint beatae ullam dolorum distinctio? Sapiente vitae quia consectetur ab laudantium qui?
-
+                 <h4> Acreditamos que para criar um ambiente seguro é necessário também um ambiente diverso, capaz de integrar todos os grupos sociais e acolhe-los. </h4>
+                  <p></p>
                   </Typography>
                 </CardContent>
               </Card>
@@ -46,19 +43,15 @@ function Valores() {
                   component="img"
                   alt="IMAGEM ILUSTRATIVA"
                   height="175"
-                  image="https://i.imgur.com/vb8w8uH.png"
+                  image="https://i.imgur.com/CjkSnM5.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" className='titulo-card'>
-                    VALOR 2
+                    <h3>Colaboração</h3>
                   </Typography>
                   <Typography variant="body2" >
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque, non provident omnis aliquam pariatur fuga quaerat recusandae quisquam odit, esse delectus iure modi aut earum repellendus ratione laudantium perferendis?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae nam libero nisi doloremque non placeat. Neque necessitatibus molestiae assumenda ratione delectus ullam cumque. Provident, fugiat perspiciatis qui officiis non sequi!
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae doloremque illum modi earum inventore et, ab consequatur repellat cum veritatis. Nemo voluptates minima enim animi ipsam incidunt molestias libero quidem!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis perferendis natus voluptatum ducimus explicabo, nam eos repellendus sint beatae ullam dolorum distinctio? Sapiente vitae quia consectetur ab laudantium qui?
+                   <h4>Acreditamos na força da participação, por isso fazemos  a ligação entre projetos sociais, com aqueles que gostariam de colaborar. </h4>
+                  <p></p>
                   </Typography>
                 </CardContent>
               </Card>
@@ -70,19 +63,14 @@ function Valores() {
                   component="img"
                   alt="IMAGEM ILUSTRATIVA"
                   height="175"
-                  image="https://i.imgur.com/vb8w8uH.png"
+                  image="https://i.imgur.com/ZGWazTX.jpg"
                 />
                 <CardContent>
                   <Typography gutterBottom variant="h5" component="div" className='titulo-card'>
-                    VALOR 3
+                    <h3>Independência</h3>
                   </Typography>
                   <Typography variant="body2" >
-                    Lizards are a widespread group of squamate reptiles, with over 6,000
-                    species, ranging across all continents except Antarctica
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem neque, non provident omnis aliquam pariatur fuga quaerat recusandae quisquam odit, esse delectus iure modi aut earum repellendus ratione laudantium perferendis?
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae nam libero nisi doloremque non placeat. Neque necessitatibus molestiae assumenda ratione delectus ullam cumque. Provident, fugiat perspiciatis qui officiis non sequi!
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae doloremque illum modi earum inventore et, ab consequatur repellat cum veritatis. Nemo voluptates minima enim animi ipsam incidunt molestias libero quidem!
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat veritatis perferendis natus voluptatum ducimus explicabo, nam eos repellendus sint beatae ullam dolorum distinctio? Sapiente vitae quia consectetur ab laudantium qui?
+                    <h4>A INTEGRAÇÃO nasceu de forma independente e não se vincula de nenhuma forma aos governos e partidos políticos. Agimos com base na consciência.</h4>
                   </Typography>
                 </CardContent>
               </Card>
