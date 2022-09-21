@@ -7,10 +7,11 @@ import { UserState } from '../../store/tokens/tokensReducer'
 import perfilgf from './perfilgf.gif';
 
 import User from '../../models/User'
-import { buscaId } from '../../services/Service'
+import { busca, buscaId } from '../../services/Service'
 
 import './Perfil.css'
-import ListaProjetos from '../../components/projetos/listaProjetos/ListaProjetos'
+import ProjetosPerfil from './projetosPerfil/projetosPerfil'
+import Projeto from '../../models/Projeto'
 
 function Perfil() {
 
@@ -80,8 +81,21 @@ function Perfil() {
         dataCadastroFormatada = "carregando"
     }
 
-
-    //console.log(dia)
+    const [posts, setPosts] = useState<Projeto[]>([])
+    async function getPost() {
+        await busca("/projetos", setPosts, {
+          headers: {
+            'Authorization': token
+          }
+        })
+      }
+    
+      useEffect(() => {
+    
+        getPost()
+    
+      }, [posts.length])
+      
     return (
         <Grid container>
 
@@ -90,11 +104,11 @@ function Perfil() {
                 <img  src="https://i.imgur.com/xRxVaSZ.png" alt="Perfil" />
                 </Box>
                 <div className='card-container-info'>
-
+              
                     <img className='img-foto-profile'
                         src={user.linkFoto}
                         alt={user.nome} />
-                    
+               
                     <div className='vazio'></div>
                     <div className="dados-usuário">
                         <div className='info'>{user.nome} </div>
@@ -114,7 +128,9 @@ function Perfil() {
                 </Box>
 
                 <section className="projetos-perfil container-home">
-                    <ListaProjetos />
+                {posts.map(post => (
+        <ProjetosPerfil projeto={post}/> 
+      ))}
                 </section>
             </Grid>
 
