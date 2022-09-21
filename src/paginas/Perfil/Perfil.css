@@ -14,10 +14,10 @@
   margin-top: 30px;
 }
 
-.foto-profile{
+/* .foto-profile{
   width: 50%;
   height: 70%;
-}
+} */
 
 
 .card-container-info {
@@ -32,9 +32,9 @@
 }
 
 .img-foto-profile{
-  width: 100%;
-  height: 100%;
-  border-radius:50% ;
+  border-radius: 50%;
+  width: 20%;
+  margin: 0 2% 0 0;
 }
 
 .dados-usuarios {
@@ -49,6 +49,7 @@
   padding: 0.3rem;
   font-weight: bold;
   font-family: sans-serif !important;
+  color: #6650e6;
 }
 
 .info-b {

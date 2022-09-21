@@ -23,35 +23,35 @@ function Projetos({ projeto }: PostsProps) {
     );
     // Pega o ID guardado no Store
     const id = useSelector<UserState, UserState["id"]>(
-      (state) => state.id
+        (state) => state.id
     );
     // Métedo para pegar os dados de um Usuário especifico pelo ID
     async function findById(id: string) {
-      await buscaId(`/usuario/${id}`, setUser, {
-        headers: {
-          'Authorization': token
-        }
+        await buscaId(`/usuario/${id}`, setUser, {
+            headers: {
+                'Authorization': token
+            }
 
-      })
+        })
     }
 
     useEffect(() => {
-      if (id !== undefined) {
-        findById(id)
-      }
+        if (id !== undefined) {
+            findById(id)
+        }
     }, [id])
 
     const [user, setUser] = useState<User>({
-      id: +id,
-      nome: '',
-      email: '',
-      apelido: '',
-      senha: '',
-      linkFoto: '',
-      bio: '',
-      tipoAcesso: '',
-      dataNascimento: '',
-      dataCadastro: ''
+        id: +id,
+        nome: '',
+        email: '',
+        apelido: '',
+        senha: '',
+        linkFoto: '',
+        bio: '',
+        tipoAcesso: '',
+        dataNascimento: '',
+        dataCadastro: ''
     })
 
     // Pega o Token guardado no Store
@@ -67,7 +67,7 @@ function Projetos({ projeto }: PostsProps) {
     function handleCreateNewComment(event: FormEvent) {
         event.preventDefault()
         if (newCommentText != "" && newCommentText != null) {
-          setComments([...comments, newCommentText])
+            setComments([...comments, newCommentText])
         }
     }
 
@@ -126,11 +126,11 @@ function Projetos({ projeto }: PostsProps) {
     return (
         <Card className="projeto" >
             <CardHeader id="perfil-foto" avatar={
-               <Avatar aria-label="recipe">
-                  <img alt="perfil foto" src={projeto.usuario?.linkFoto} />
-               </Avatar>   
-            } 
-            title={projeto.usuario?.nome}>
+                <Avatar aria-label="recipe">
+                    <img alt="perfil foto" src={projeto.usuario?.linkFoto} />
+                </Avatar>
+            }
+                title={projeto.usuario?.nome}>
             </CardHeader>
 
             <CardMedia
@@ -156,62 +156,36 @@ function Projetos({ projeto }: PostsProps) {
                     Tópico: {projeto.temas?.temas}
                 </Typography>
 
-                <p id="contador-apoiar">
-                    {projeto.apoios}
-                </p>
-
-                {apoioCheck()}
-
             </CardContent>
-            <CardActions>
-                <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
-                    <Box mx={1}>
-                        <Button variant="contained" className="marginLeft botaoTema" size='small' >
-                            Atualizar
-                        </Button>
-                    </Box>
-                </Link>
-
-                <Link to={`/deletarProjetos/${projeto.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                        <Button variant="contained" size='small' className='botaoDeletar'>
-                            Deletar
-                        </Button>
-                    </Box>
-                </Link>
-
-
-
-            </CardActions>
 
             <Box padding={2}>
-                
+
+                {
+                    (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
+                        <>
+                            <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
+                                <Box mx={1}>
+                                    <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                                        atualizar
+                                    </Button>
+                                </Box>
+                            </Link>
+                            <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
+                                <Box mx={1}>
+                                    <Button variant="contained" size='small' color="secondary">
+                                        deletar
+                                    </Button>
+                                </Box>
+                            </Link>
+                        </>
+                        :
+                        <Box> Você pode editar apenas seus posts</Box>
+                }
+
                 <form onSubmit={handleCreateNewComment}>
                     {apoioCheck()}
 
                 </form>
-
-                {
-              (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
-                <>
-                  <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
-                    <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
-                        atualizar
-                      </Button>
-                    </Box>
-                  </Link>
-                  <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
-                    <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
-                        deletar
-                      </Button>
-                    </Box>
-                  </Link>
-                </> 
-                : 
-                <Box> Você não pode editar</Box>
-                      }
 
 
                 <Box padding={2}>
@@ -239,36 +213,16 @@ function Projetos({ projeto }: PostsProps) {
                     </form>
                 </Box>
 
-        </Box>
+            </Box>
 
-                    <Box >
-                        <TextareaAutosize
-                            id="comment"
-                            name="comment"
-                            placeholder="Diga-nos o que está pensando"
-                            minRows={3}
-                            value={newCommentText}
-                            onChange={handleNewCommentChange}
-                            className='box-comentario'
-                            color='primary'
-                        />
-
-                    </Box>
-
-
-                    <Box mx={1}>
-                        <Button id="botaoPublicar" type="submit" className="marginLeft botaoPublicar botaoTema" >
-                            Publicar
-                        </Button>
-                    </Box>
 
             <Box padding={2}>
                 {
-                comments.map(comment => {
-                    return (
-                        <Comentarios conteudo={comment} imagem={user.linkFoto} nome={user.nome} />
-                    )
-                })
+                    comments.map(comment => {
+                        return (
+                            <Comentarios conteudo={comment} imagem={user.linkFoto} nome={user.nome} />
+                        )
+                    })
                 }
             </Box>
 
