@@ -185,11 +185,11 @@ function Projetos({ projeto }: PostsProps) {
             </CardActions>
 
             <Box padding={2}>
-                <p></p>
+                
                 <form onSubmit={handleCreateNewComment}>
                     {apoioCheck()}
 
-                </CardContent>
+                </form>
 
                 {
               (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
@@ -239,15 +239,6 @@ function Projetos({ projeto }: PostsProps) {
                     </form>
                 </Box>
 
-                <Box padding={2}>
-                    {comments.map(comment => {
-                        return (
-                            <Comentarios conteudo={comment} />
-                        )
-                    })}
-                </Box>
-
-            </Card>
         </Box>
 
                     <Box >
@@ -270,8 +261,6 @@ function Projetos({ projeto }: PostsProps) {
                             Publicar
                         </Button>
                     </Box>
-                </form>
-            </Box>
 
             <Box padding={2}>
                 {
