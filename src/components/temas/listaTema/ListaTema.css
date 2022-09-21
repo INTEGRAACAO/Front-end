@@ -1,7 +1,7 @@
 .container{
   width:100%;
   display: grid;
-  background-color: rgb(188, 115, 233, .2);
+  background-color: rgb(188, 115, 233, 0.1);
 }
 
 .imagem-topicos{
