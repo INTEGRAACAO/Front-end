@@ -1,11 +1,9 @@
-.cadastro-container {
-    background-color: rgb(188, 115, 233, 0.2);
+.bg-cadastro-proj {
+    background-color: rgb(188, 115, 233, 0.1);
 
 }
 
-label{
-    color: blue!important;
-}
+
 
 .input-projeto{
     color: black!important;
@@ -19,6 +17,7 @@ label{
 .topo {
     display: flex;
     margin-top: 20px;
+    justify-content: center;
 }
 
 
