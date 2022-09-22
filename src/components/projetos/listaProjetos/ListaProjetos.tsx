@@ -7,6 +7,7 @@ import { useSelector } from 'react-redux';
 import { UserState } from '../../../store/tokens/tokensReducer';
 import {toast} from 'react-toastify'
 import Projetos from '../projetos/projetos';
+import { Box, Grid } from '@mui/material'
 
 
 function ListaProjetos() {
@@ -48,13 +49,16 @@ function ListaProjetos() {
   }, [posts.length])
 
   return (
-    <>
+    <Grid container className='container-list-proj'>
+    <Box>
+      <img src="https://i.imgur.com/K8eGYUB.png" alt="Projetos" />
+    </Box>
     <section className="projetos">
       {posts.map(post => (
         <Projetos projeto={post}/> 
       ))}
     </section>
-    </>
+    </Grid>
 
     
   )
