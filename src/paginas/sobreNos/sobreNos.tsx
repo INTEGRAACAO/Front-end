@@ -56,7 +56,10 @@ function SobreNos() {
         <div className='equipe-container'>
           <div className='div-participante'>
             <img src="https://i.imgur.com/zClShYH.png" alt="Bruna Midori" className='img-participante' />
-            <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero eligendi, dolores ratione dolor dicta necessitatibus a unde quasi voluptatum fuga?</h4>
+            <h4>  Transição de Carreira, formada em Direito,
+Amo viajar e aprender coisas novas,
+Falo ingles e espanhol,
+Curiosa e me apaixonando pela programação.</h4>
             <div className='redes'>
               <a href="https://github.com/Brumidori" target="_blank">
                 <img src="https://i.imgur.com/Oltxj68.png" alt="" />
@@ -69,7 +72,7 @@ function SobreNos() {
 
           <div className='div-participante'>
             <img src="https://i.imgur.com/6YKW6ML.png" alt="Fernando Hemmel" className='img-participante' />
-            <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis quasi id natus optio at ab voluptatum a ea eveniet odit!</h4>
+            <h4>  Paulista formado em Sistema de informação,  amante de tecnologia e viagens, sempre em busca de novos conhecimentos.</h4>
 
             <div className='redes'>
               <a href="https://github.com/FHemmel" target="_blank">
@@ -84,7 +87,8 @@ function SobreNos() {
         <div className='equipe-container'>
           <div className='div-participante'>
             <img src="https://i.imgur.com/ODGZmAM.png" alt="Luiza Ramos" className='img-participante' />
-            <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. In itaque unde error. Accusamus labore, dignissimos similique ab placeat expedita accusantium.
+     
+            <h4>  Sou formada em Engenharia Mecânica e atualmente estudante de ADS na FIAP, apaixonada por gatos e por praia e descobrindo o íncrivel mundo da tecnologia.
             </h4>
 
             <div className='redes'>
@@ -99,13 +103,13 @@ function SobreNos() {
 
           <div className='div-participante'>
             <img src="https://i.imgur.com/r5KJRPG.png" alt="Vitor Galdino" className='img-participante' />
-            <h4> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit, autem repellendus nisi nemo rerum quod accusantium reiciendis placeat repellat. Iure.</h4>
+            <h4> Um jovem aficcionado por games, cultura geek e hardware se aventurando no gigantesco labirinto das linguagens de programação. </h4>
 
             <div className='redes'>
               <a href="https://github.com/VitorGaldino" target="_blank">
                 <img src="https://i.imgur.com/Oltxj68.png" alt="" />
               </a>
-              <a href="https://github.com/Brumidori" target="_blank">
+              <a href="https://www.linkedin.com/in/vitor-galdino-3036971ab/" target="_blank">
                 <img src="https://i.imgur.com/wgs9N9l.png" alt="" />
               </a>
             </div>
@@ -130,13 +134,13 @@ function SobreNos() {
         <div className='equipe-container'>
           <div className='div-participante'>
             <img src="https://i.imgur.com/oo33CLH.png" alt="Daniel Augusto" className='img-participante' />
-            <h4> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Rerum, non! Voluptatibus, deserunt dolore. Error, animi? Omnis nihil ipsam repudiandae velit!</h4>
+            <h4> É dev frontend, tem por hobby comer hamburger e ama andar de patins (mas precisa melhorar muito). </h4>
 
             <div className='redes'>
               <a href="https://github.com/otsudann" target="_blank">
                 <img src="https://i.imgur.com/Oltxj68.png" alt="" />
               </a>
-              <a href="https://github.com/Brumidori" target="_blank">
+              <a href="https://www.linkedin.com/in/otsudann/" target="_blank">
                 <img src="https://i.imgur.com/wgs9N9l.png" alt="" />
               </a>
             </div>
