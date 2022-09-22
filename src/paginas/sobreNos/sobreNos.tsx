@@ -43,7 +43,7 @@ function SobreNos() {
             Essas atitudes se provam reais a todos os momentos e no intuito de unir esforços em prol de algo maior existem muitas ONG's com iniciativas que visam impactar o mundo, para isso é necessário a participação de muitos, unindo seus apoiadores e os conectando com os beneficiários dessas ações.
             Com essa ideia, querendo valorizar toda iniciativa que tente trazer o bem do próximo e dar à ela visibilidade para o mundo, nossa plataforma traz consigo uma rede com conteúdo voltado ao combate a violência.
             Escolhemos esse tema por ser uma problemática que atinge milhões de brasileiros e por acreditarmos que existem muitas iniciativas não governamentais que podem impactar a vida das pessoas que lidam com a violência diariamente, seja ela qual for.
-            No INTEGR&#123;A&#125;AÇÃO as ONG's com projetos sociais voltados à este tema podem utilizar a plataforma para promover seu trabalho, se conectar com pessoas apoiadoras e também beneficiárias de suas iniciativas, integrando tudo e todos em um único ambiente.
+            No INTEGR&#123;A&#125;ÇÃO as ONG's com projetos sociais voltados à este tema podem utilizar a plataforma para promover seu trabalho, se conectar com pessoas apoiadoras e também beneficiárias de suas iniciativas, integrando tudo e todos em um único ambiente.
           </p>
         </Box>
 
