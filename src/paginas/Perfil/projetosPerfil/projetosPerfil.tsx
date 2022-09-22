@@ -124,21 +124,23 @@ function ProjetosPerfil({ projeto }: PostsProps) {
                 </Typography>
 
             </CardContent>
-            
-                <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
+
+                <Box display="flex" justifyContent="center" mb={1.5} >
+                <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                         <Button variant="contained" className="marginLeft botaoTema" size='small' >
                             atualizar
                         </Button>
                     </Box>
                 </Link>
-                <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
+                <Link to={`/deletarProjetos/${projeto.id}`} className="text-decorator-none">
                     <Box mx={1}>
                         <Button variant="contained" size='small' className="botaoDeletar">
                             deletar
                         </Button>
                     </Box>
                 </Link>
+                </Box>
                 </Card>
             </>
             :

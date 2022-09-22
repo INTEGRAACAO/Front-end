@@ -139,14 +139,16 @@ function Projetos({ projeto }: PostsProps) {
                 image={projeto.linkImagem}
             />
             <CardContent>
-                <Typography className="projetoNome" gutterBottom variant="h5" component="div">
+                <Typography className="projetoNome" gutterBottom variant="h4" component="div">
                     {projeto.nome}
                 </Typography>
-                <Typography variant="body1" component="p">
-                    Postado em: {dataPostFormatada}
-                </Typography>
+               
                 <Typography variant="h5" >
                     {projeto.descricao}
+                </Typography> 
+                
+                <Typography variant="body1" component="p">
+                   <b>Postado em:</b> {dataPostFormatada}
                 </Typography>
 
                 <Typography variant="body1" component="h5">
@@ -159,10 +161,10 @@ function Projetos({ projeto }: PostsProps) {
 
                 {
                     (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
-                        <>
+                        <><Box display="flex" justifyContent="center" mb={1.5}>
                             <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
                                 <Box mx={1}>
-                                    <Button variant="contained" className="marginLeft botaoTema" size='small'  >
+                                    <Button variant="contained" className="botaoTema" size='small'  >
                                         atualizar
                                     </Button>
                                 </Box>
@@ -174,6 +176,7 @@ function Projetos({ projeto }: PostsProps) {
                                     </Button>
                                 </Box>
                             </Link>
+                            </Box>
                         </>
                         :
                         <Box> Você pode editar apenas seus posts</Box>
