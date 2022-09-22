@@ -56,10 +56,8 @@ function SobreNos() {
         <div className='equipe-container'>
           <div className='div-participante'>
             <img src="https://i.imgur.com/zClShYH.png" alt="Bruna Midori" className='img-participante' />
-            <h4>  Transição de Carreira, formada em Direito,
-Amo viajar e aprender coisas novas,
-Falo ingles e espanhol,
-Curiosa e me apaixonando pela programação.</h4>
+            <h4>  Em transição de Carreira, formada inicialmente em Direito, falo inglês e espanhol.
+Amo viajar e aprender coisas novas, sou curiosa e estou me apaixonando pela programação.</h4>
             <div className='redes'>
               <a href="https://github.com/Brumidori" target="_blank">
                 <img src="https://i.imgur.com/Oltxj68.png" alt="" />
