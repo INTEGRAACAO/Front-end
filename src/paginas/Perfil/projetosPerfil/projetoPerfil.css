@@ -57,3 +57,8 @@
     height: 20rem !important;
 }
 
+.alinhaBotao{
+    display: row;
+    direction: row;
+    justify-content: flex-start;
+}

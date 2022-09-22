@@ -124,7 +124,9 @@ function ProjetosPerfil({ projeto }: PostsProps) {
                 </Typography>
 
             </CardContent>
-            
+
+                <Box display="flex" justifyContent="center" mb={1.5} >
+
                 <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                         <Button variant="contained" className="marginLeft botaoTema" size='small' >
@@ -139,6 +141,7 @@ function ProjetosPerfil({ projeto }: PostsProps) {
                         </Button>
                     </Box>
                 </Link>
+                </Box>
                 </Card>
             </>
             :

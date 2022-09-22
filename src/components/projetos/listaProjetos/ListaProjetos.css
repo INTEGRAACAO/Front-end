@@ -1,9 +1,17 @@
+.container-list-proj{
+    background-color: rgb(188, 115, 233, 0.1);
+    flex-direction: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    
+}
+
 .text-decorator-none{
     text-decoration: none;
 }
 .projetos {
   width: 100%;
-  background-color: rgb(188, 115, 233, 0.1);
+  
 }
 .projetos .css-ibnnmb {
   margin: 1% 0 !important;
