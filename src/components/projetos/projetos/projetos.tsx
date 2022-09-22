@@ -163,14 +163,14 @@ function Projetos({ projeto }: PostsProps) {
                 {
                     (projeto.usuario?.id !== null && usuarioId === projeto.usuario?.id) ?
                         <>
-                            <Link to={`/formularioPostagem/${projeto.id}`} className="text-decorator-none" >
+                            <Link to={`/formularioProjetos/${projeto.id}`} className="text-decorator-none" >
                                 <Box mx={1}>
                                     <Button variant="contained" className="marginLeft" size='small' color="primary" >
                                         atualizar
                                     </Button>
                                 </Box>
                             </Link>
-                            <Link to={`/deletarPostagem/${projeto.id}`} className="text-decorator-none">
+                            <Link to={`/deletarProjetos/${projeto.id}`} className="text-decorator-none">
                                 <Box mx={1}>
                                     <Button variant="contained" size='small' color="secondary">
                                         deletar
