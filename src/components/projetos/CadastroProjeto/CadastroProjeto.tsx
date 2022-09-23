@@ -204,7 +204,7 @@ function CadastroProjeto() {
   }
 
   function back() {
-    navigate('/projetos')
+    navigate('/home')
   }
 
   return (
