@@ -48,7 +48,7 @@ function DeletarProjetos() {
     }
 
     function sim() {
-      navigate('/projetos')
+      navigate('/home')
       deleteId(`/projetos/${id}`, {
         headers: {
           'Authorization': token

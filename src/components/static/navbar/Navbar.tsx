@@ -53,15 +53,7 @@ function Navbar() {
               <img className="icone" src="https://i.imgur.com/w74BDRy.png" alt="" />
               Mostre seu projeto
             </Button>
-          </Link>
-          
-          <Link to= "/projetos" >
-            <Button variant="outlined">
-              <img className="icone" src="https://i.imgur.com/8HEzH6V.png" alt="" />
-              Veja mais projetos
-            </Button>
-          </Link>
-          
+          </Link>          
           <Link to= "/temas" >
             <Button variant="outlined">
               <img className="icone" src="https://i.imgur.com/Da17zmp.png" alt="" />
