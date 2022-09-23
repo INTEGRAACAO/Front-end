@@ -2,11 +2,10 @@
     display: flex;
     background: radial-gradient(circle, (#ADDDF7) 100%);
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     height: 7rem;
     width: 100%;
     background-color: #0c0c0c1c;
-    
 }
 
 .box2{
@@ -17,3 +16,26 @@
 .textos{
     color: #42545e;
 }
+#nossoTrabalho {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+#nossoTrabalho h5 {
+  font-size: 1rem;
+}
+
+#nossoTrabalho #nossoRedes {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+#nossoTrabalho #nossoRedes a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#nossoTrabalho #nossoRedes a svg {
+  margin: 0 auto;
+}
+
