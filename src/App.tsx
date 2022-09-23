@@ -39,7 +39,7 @@ function App() {
           <Route path='/cadastroUsuario' element={<CadastroUsuario/>}/>
           <Route path='/formularioProjetos' element={<CadastroProjeto/>}/>
           <Route path='/formularioProjetos/:id' element={<CadastroProjeto/>}/>
-          <Route path='/projetos' element={<ListaProjetos/>}/>
+          
           <Route path='/deletarProjetos/:id' element={<DeletarProjetos/>}/>
           <Route path='/temas' element={<ListaTema/>}/>
           <Route path='/formularioTemas' element={<CadastroTema/>}/>
